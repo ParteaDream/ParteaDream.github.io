@@ -1,0 +1,8 @@
+# Mac特有文件
+.DS_Store
+# 编辑器缓存（若用VS Code/其他编辑器，可添加）
+.vscode/
+*.swp
+# 日志/临时文件
+*.log
+tmp/

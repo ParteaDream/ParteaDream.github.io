@@ -1,0 +1,713 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>克洛琳德</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1a5592a0-f19e-802c-9a49-cf5e9e0d4d0c" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="%E5%85%8B%E6%B4%9B%E7%90%B3%E5%BE%B7/UI_AvatarIcon_Clorinde.webp"/></div><h1 class="page-title" dir="auto">克洛琳德</h1><p class="page-description" dir="auto"></p><table class="properties"><tbody><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/water_gray.svg" style="width:14px;height:14px;display:block"/></span>元素类型</th><td>雷</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/archery_gray.svg" style="width:14px;height:14px;display:block"/></span>武器类型</th><td>单手剑</td></tr><tr class="property-row property-row-number"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/star_gray.svg" style="width:14px;height:14px;display:block"/></span>品质</th><td>5</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/fleur-de-lis_gray.svg" style="width:14px;height:14px;display:block"/></span>称号</th><td>秉烛狝影</td></tr><tr class="property-row property-row-number"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/heart_gray.svg" style="width:14px;height:14px;display:block"/></span>生命值</th><td>12956</td></tr><tr class="property-row property-row-number"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/sword_gray.svg" style="width:14px;height:14px;display:block"/></span>攻击力</th><td>337</td></tr><tr class="property-row property-row-number"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/shield_gray.svg" style="width:14px;height:14px;display:block"/></span>防御力</th><td>784</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>突破属性</th><td><strong>暴击率 +19.2%</strong></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/cake_gray.svg" style="width:14px;height:14px;display:block"/></span>生日</th><td><strong>9/20</strong></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/map-pin-alternate_gray.svg" style="width:14px;height:14px;display:block"/></span>国家</th><td><strong>枫丹</strong></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/home_gray.svg" style="width:14px;height:14px;display:block"/></span>所属</th><td><strong>审判庭</strong></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/stars_gray.svg" style="width:14px;height:14px;display:block"/></span>命之座</th><td><strong>迅捷剑座</strong></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/card_gray.svg" style="width:14px;height:14px;display:block"/></span>简介</th><td>不败的决斗代理人。以手中的剑维护着枫丹廷的「公义」。</td></tr><tr class="property-row property-row-status"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/burst_gray.svg" style="width:14px;height:14px;display:block"/></span>Status</th><td><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>完成</span></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/calendar_gray.svg" style="width:14px;height:14px;display:block"/></span>上线时间</th><td><time>@2024年6月5日</time></td></tr></tbody></table></header><div class="page-body"><div style="display:contents" dir="ltr"><figure id="1a5592a0-f19e-80e8-a40e-d5433ad6a2ca" class="image"><a href="%E5%85%8B%E6%B4%9B%E7%90%B3%E5%BE%B7/UI_Gacha_AvatarImg_Clorinde.webp"><img style="width:710px" src="%E5%85%8B%E6%B4%9B%E7%90%B3%E5%BE%B7/UI_Gacha_AvatarImg_Clorinde.webp"/></a></figure></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">天赋</summary><div class="indented"><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">战斗天赋</summary><div class="indented"><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">普通攻击·逐影之誓</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-802a-bcb0-d34a665b75c6" class=""><mark class="highlight-yellow">普通攻击</mark></p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-805e-9f74-f795797848ca" class="">进行至多五段的连续剑击。</p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-80f9-87c6-f2d8738c052f" class=""><mark class="highlight-yellow">重击</mark></p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-8066-b08c-e44206d4a582" class="">消耗一定体力，以铳枪打出扇面压制射击。</p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-802b-a58b-ec31a2f83a9d" class=""><mark class="highlight-yellow">下落攻击</mark></p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-808d-a162-fdd71a39fb4b" class="">从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害</p></div><div style="display:contents" dir="ltr"><table id="1ab592a0-f19e-8035-94c8-d4ffbc3200f0" class="simple-table"><tbody><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-8024-b258-c13d76251f16"><td id="_|FK" class="">Lv</td><td id="@eiJ" class="">1</td><td id="sxRk" class="">2</td><td id="zfDY" class="">3</td><td id="n=`D" class="">4</td><td id="dO`S" class="">5</td><td id="VA_{" class="">6</td><td id="oHSj" class="">7</td><td id="xwU^" class="">8</td><td id="{SoE" class="">9</td><td id="DMg:" class="">10</td><td id="}hSP" class="">11</td><td id="y[Cl" class="">12</td><td id="eUnp" class="">13</td><td id="?}?s" class="">14</td><td id="vyQT" class="">15</td></tr></div><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-8073-ae0a-f49b95dd3dc7"><td id="_|FK" class="">一段伤害</td><td id="@eiJ" class="">54.06%</td><td id="sxRk" class="">58.46%</td><td id="zfDY" class="">62.86%</td><td id="n=`D" class="">69.15%</td><td id="dO`S" class="">73.55%</td><td id="VA_{" class="">78.58%</td><td id="oHSj" class="">85.49%</td><td id="xwU^" class="">92.40%</td><td id="{SoE" class="">99.32%</td><td id="DMg:" class="">106.86%</td><td id="}hSP" class="">114.41%</td><td id="y[Cl" class="">121.95%</td><td id="eUnp" class="">129.49%</td><td id="?}?s" class="">137.04%</td><td id="vyQT" class="">144.58%</td></tr></div><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-80ba-9377-f58dae3a4c87"><td id="_|FK" class="">二段伤害</td><td id="@eiJ" class="">51.63%</td><td id="sxRk" class="">55.83%</td><td id="zfDY" class="">60.03%</td><td id="n=`D" class="">66.04%</td><td id="dO`S" class="">70.24%</td><td id="VA_{" class="">75.04%</td><td id="oHSj" class="">81.65%</td><td id="xwU^" class="">88.25%</td><td id="{SoE" class="">94.85%</td><td id="DMg:" class="">102.06%</td><td id="}hSP" class="">109.26%</td><td id="y[Cl" class="">116.46%</td><td id="eUnp" class="">123.67%</td><td id="?}?s" class="">130.87%</td><td id="vyQT" class="">138.08%</td></tr></div><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-8005-bde8-e6ec4f463930"><td id="_|FK" class="">三段伤害</td><td id="@eiJ" class="">34.185%+34.185%</td><td id="sxRk" class="">36.968%+36.968%</td><td id="zfDY" class="">39.75%+39.75%</td><td id="n=`D" class="">43.725%+43.725%</td><td id="dO`S" class="">46.507%+46.507%</td><td id="VA_{" class="">49.687%+49.687%</td><td id="oHSj" class="">54.06%+54.06%</td><td id="xwU^" class="">58.433%+58.433%</td><td id="{SoE" class="">62.805%+62.805%</td><td id="DMg:" class="">67.575%+67.575%</td><td id="}hSP" class="">72.345%+72.345%</td><td id="y[Cl" class="">77.115%+77.115%</td><td id="eUnp" class="">81.885%+81.885%</td><td id="?}?s" class="">86.655%+86.655%</td><td id="vyQT" class="">91.425%+91.425%</td></tr></div><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-80e4-83e3-e7bf53a803ac"><td id="_|FK" class="">四段伤害</td><td id="@eiJ" class="">23.134%+23.134%+23.134%</td><td id="sxRk" class="">25.017%+25.017%+25.017%</td><td id="zfDY" class="">26.9%+26.9%+26.9%</td><td id="n=`D" class="">29.59%+29.59%+29.59%</td><td id="dO`S" class="">31.473%+31.473%+31.473%</td><td id="VA_{" class="">33.625%+33.625%+33.625%</td><td id="oHSj" class="">36.584%+36.584%+36.584%</td><td id="xwU^" class="">39.543%+39.543%+39.543%</td><td id="{SoE" class="">42.502%+42.502%+42.502%</td><td id="DMg:" class="">45.73%+45.73%+45.73%</td><td id="}hSP" class="">48.958%+48.958%+48.958%</td><td id="y[Cl" class="">52.186%+52.186%+52.186%</td><td id="eUnp" class="">55.414%+55.414%+55.414%</td><td id="?}?s" class="">58.642%+58.642%+58.642%</td><td id="vyQT" class="">61.87%+61.87%+61.87%</td></tr></div><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-8087-a1e4-f86ee2c7fa9f"><td id="_|FK" class="">五段伤害</td><td id="@eiJ" class="">90.01%</td><td id="sxRk" class="">97.34%</td><td id="zfDY" class="">104.66%</td><td id="n=`D" class="">115.13%</td><td id="dO`S" class="">122.46%</td><td id="VA_{" class="">130.83%</td><td id="oHSj" class="">142.34%</td><td id="xwU^" class="">153.86%</td><td id="{SoE" class="">165.37%</td><td id="DMg:" class="">177.93%</td><td id="}hSP" class="">190.49%</td><td id="y[Cl" class="">203.05%</td><td id="eUnp" class="">215.61%</td><td id="?}?s" class="">228.17%</td><td id="vyQT" class="">240.73%</td></tr></div><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-8022-9713-e4a392eba530"><td id="_|FK" class="">重击伤害</td><td id="@eiJ" class="">128.14%</td><td id="sxRk" class="">138.57%</td><td id="zfDY" class="">149.00%</td><td id="n=`D" class="">163.90%</td><td id="dO`S" class="">174.33%</td><td id="VA_{" class="">186.25%</td><td id="oHSj" class="">202.64%</td><td id="xwU^" class="">219.03%</td><td id="{SoE" class="">235.42%</td><td id="DMg:" class="">253.30%</td><td id="}hSP" class="">271.18%</td><td id="y[Cl" class="">289.06%</td><td id="eUnp" class="">306.94%</td><td id="?}?s" class="">324.82%</td><td id="vyQT" class="">342.70%</td></tr></div><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-8020-955d-db3096e64f58"><td id="_|FK" class="">重击体力消耗</td><td id="@eiJ" class="">20</td><td id="sxRk" class="">20</td><td id="zfDY" class="">20</td><td id="n=`D" class="">20</td><td id="dO`S" class="">20</td><td id="VA_{" class="">20</td><td id="oHSj" class="">20</td><td id="xwU^" class="">20</td><td id="{SoE" class="">20</td><td id="DMg:" class="">20</td><td id="}hSP" class="">20</td><td id="y[Cl" class="">20</td><td id="eUnp" class="">20</td><td id="?}?s" class="">20</td><td id="vyQT" class="">20</td></tr></div><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-8052-b31b-f7d458470881"><td id="_|FK" class="">下坠期间伤害</td><td id="@eiJ" class="">63.93%</td><td id="sxRk" class="">69.14%</td><td id="zfDY" class="">74.34%</td><td id="n=`D" class="">81.77%</td><td id="dO`S" class="">86.98%</td><td id="VA_{" class="">92.93%</td><td id="oHSj" class="">101.10%</td><td id="xwU^" class="">109.28%</td><td id="{SoE" class="">117.46%</td><td id="DMg:" class="">126.38%</td><td id="}hSP" class="">135.30%</td><td id="y[Cl" class="">144.22%</td><td id="eUnp" class="">153.14%</td><td id="?}?s" class="">162.06%</td><td id="vyQT" class="">170.98%</td></tr></div><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-80ca-9a1d-ef06be83d3a8"><td id="_|FK" class="">低空/高空坠地冲击伤害</td><td id="@eiJ" class="">127.838%/159.676%</td><td id="sxRk" class="">138.243%/172.673%</td><td id="zfDY" class="">148.649%/185.67%</td><td id="n=`D" class="">163.513%/204.237%</td><td id="dO`S" class="">173.919%/217.234%</td><td id="VA_{" class="">185.811%/232.087%</td><td id="oHSj" class="">202.162%/252.511%</td><td id="xwU^" class="">218.513%/272.935%</td><td id="{SoE" class="">234.865%/293.359%</td><td id="DMg:" class="">252.702%/315.639%</td><td id="}hSP" class="">270.54%/337.919%</td><td id="y[Cl" class="">288.378%/360.2%</td><td id="eUnp" class="">306.216%/382.48%</td><td id="?}?s" class="">324.054%/404.761%</td><td id="vyQT" class="">341.892%/427.041%</td></tr></div></tbody></table></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><strong>狩夜之巡</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-8065-949e-eb336877019b" class="">预装铳枪，进入剑枪结合作战的「夜巡」状态。在此状态下，克洛琳德的普通攻击将转为进行铳枪射击「驰猎」，造成的伤害将转为无法被附魔覆盖的<mark class="highlight-purple">雷元素伤害</mark>，并且无法进行重击；施放元素战技将转为进行「贯夜」：进行突进剑击，造成<mark class="highlight-purple">雷元素伤害</mark>。上述方式造成的伤害视为普通攻击造成的伤害。</p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-8001-af0f-cb39d45f96fe" class=""><mark class="highlight-yellow">驰猎</mark></p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-8066-ac7f-eb160e1df76f" class="">· 生命之契大于或等于生命值上限的100%时：进行铳枪射击；</p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-80a0-9c8f-d14cb396e975" class="">· 生命之契小于生命值上限的100%时：发射铳枪时基于克洛琳德的生命值上限赋予她一定的生命之契，打出能穿透敌人的弹药，对路径上的敌人造成更高的伤害。</p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-8046-80dd-efff404858ad" class=""><mark class="highlight-yellow">贯夜</mark></p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-804b-97d1-fba1ec79e87c" class="">根据克洛琳德当前生命之契的百分比，决定此次贯夜的效果：</p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-8051-871b-db27bf09ca08" class="">· 生命之契为0%时，将进行突进剑击；</p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-805c-a21c-e38df53330da" class="">· 生命之契小于生命值上限的100%时，将为克洛琳德恢复生命值，回复量基于她的生命之契数值，并提升此次贯夜的范围与造成的伤害；</p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-8075-8476-d74ce453ae90" class="">· 生命之契大于或等于生命值上限的100%时，将进行贯夜 · 契令，为克洛琳德恢复更高比例的生命值，并进一步提升此次贯夜的攻击范围与造成的伤害。</p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-806f-aad0-e762ede120ae" class="">此外，克洛琳德处于夜巡状态下时，贯夜以外的治疗效果将不会生效，并转为为她赋予相当于生命值回复量一定比例的生命之契。</p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-80bd-9d62-ea2e49e50e1c" class="">「夜巡」状态将在克洛琳德退场时解除。</p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-807a-a211-c275f0a7fb76" class=""><mark class="highlight-yellow">始基力：荒性</mark></p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-80c2-8396-ecfad635016a" class="">每隔一段时间，克洛琳德的驰猎命中时，将在命中的位置降下流涌之刃，造成具有荒性的<mark class="highlight-purple">雷元素伤害</mark>。</p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-8093-929d-dade9e47f97e" class=""><em><mark class="highlight-gray">夜影中潜伏的邪祟之物早已在千年间被诛讨殆尽，然而人心中亦有光明难及的阴影。时至今日，她依然铭记着「黄金猎人」留下的告诫：点燃烛火的巡夜之人更应时刻保持警惕，莫要被冰冷的黑暗浸染。</mark></em></p></div><div style="display:contents" dir="ltr"><table id="1ab592a0-f19e-80bb-a18f-c65907d9ebb2" class="simple-table"><tbody><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-80cc-b43b-cda4fc5c6ea7"><td id="_xZF" class="">Lv</td><td id="x_=T" class="">1</td><td id="eq~A" class="">2</td><td id="XY?g" class="">3</td><td id="|T`;" class="">4</td><td id="gdXS" class="">5</td><td id="I&gt;Pu" class="">6</td><td id="se_R" class="">7</td><td id="kay\" class="">8</td><td id="xrHp" class="">9</td><td id=":|K?" class="">10</td><td id="s^\n" class="">11</td><td id="RwE|" class="">12</td><td id="x&gt;qx" class="">13</td><td id="KDgw" class="">14</td><td id="\Z{H" class="">15</td></tr></div><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-807c-9a42-d0d2ac9bdd6e"><td id="_xZF" class="">驰猎伤害</td><td id="x_=T" class="">26.763%/33.454%</td><td id="eq~A" class="">28.942%/36.177%</td><td id="XY?g" class="">31.12%/38.9%</td><td id="|T`;" class="">34.232%/42.79%</td><td id="gdXS" class="">36.41%/45.513%</td><td id="I&gt;Pu" class="">38.9%/48.625%</td><td id="se_R" class="">42.323%/52.904%</td><td id="kay\" class="">45.746%/57.183%</td><td id="xrHp" class="">49.17%/61.462%</td><td id=":|K?" class="">52.904%/66.13%</td><td id="s^\n" class="">56.638%/70.798%</td><td id="RwE|" class="">60.373%/75.466%</td><td id="x&gt;qx" class="">64.107%/80.134%</td><td id="KDgw" class="">67.842%/84.802%</td><td id="\Z{H" class="">71.576%/89.47%</td></tr></div><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-80d2-8484-f599b63a9769"><td id="_xZF" class="">驰猎赋予生命之契</td><td id="x_=T" class="">35.0%生命值上限</td><td id="eq~A" class="">35.0%生命值上限</td><td id="XY?g" class="">35.0%生命值上限</td><td id="|T`;" class="">35.0%生命值上限</td><td id="gdXS" class="">35.0%生命值上限</td><td id="I&gt;Pu" class="">35.0%生命值上限</td><td id="se_R" class="">35.0%生命值上限</td><td id="kay\" class="">35.0%生命值上限</td><td id="xrHp" class="">35.0%生命值上限</td><td id=":|K?" class="">35.0%生命值上限</td><td id="s^\n" class="">35.0%生命值上限</td><td id="RwE|" class="">35.0%生命值上限</td><td id="x&gt;qx" class="">35.0%生命值上限</td><td id="KDgw" class="">35.0%生命值上限</td><td id="\Z{H" class="">35.0%生命值上限</td></tr></div><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-80ab-bcc1-f9489f9e7c87"><td id="_xZF" class="">贯夜治疗量</td><td id="x_=T" class="">0%/105.0%/120.0%生命之契</td><td id="eq~A" class="">0%/105.0%/120.0%生命之契</td><td id="XY?g" class="">0%/105.0%/120.0%生命之契</td><td id="|T`;" class="">0%/105.0%/120.0%生命之契</td><td id="gdXS" class="">0%/105.0%/120.0%生命之契</td><td id="I&gt;Pu" class="">0%/105.0%/120.0%生命之契</td><td id="se_R" class="">0%/105.0%/120.0%生命之契</td><td id="kay\" class="">0%/105.0%/120.0%生命之契</td><td id="xrHp" class="">0%/105.0%/120.0%生命之契</td><td id=":|K?" class="">0%/105.0%/120.0%生命之契</td><td id="s^\n" class="">0%/105.0%/120.0%生命之契</td><td id="RwE|" class="">0%/105.0%/120.0%生命之契</td><td id="x&gt;qx" class="">0%/105.0%/120.0%生命之契</td><td id="KDgw" class="">0%/105.0%/120.0%生命之契</td><td id="\Z{H" class="">0%/105.0%/120.0%生命之契</td></tr></div><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-8098-98cc-c89ff042b9e0"><td id="_xZF" class="">生命之契转化</td><td id="x_=T" class="">80.0%治疗量</td><td id="eq~A" class="">80.0%治疗量</td><td id="XY?g" class="">80.0%治疗量</td><td id="|T`;" class="">80.0%治疗量</td><td id="gdXS" class="">80.0%治疗量</td><td id="I&gt;Pu" class="">80.0%治疗量</td><td id="se_R" class="">80.0%治疗量</td><td id="kay\" class="">80.0%治疗量</td><td id="xrHp" class="">80.0%治疗量</td><td id=":|K?" class="">80.0%治疗量</td><td id="s^\n" class="">80.0%治疗量</td><td id="RwE|" class="">80.0%治疗量</td><td id="x&gt;qx" class="">80.0%治疗量</td><td id="KDgw" class="">80.0%治疗量</td><td id="\Z{H" class="">80.0%治疗量</td></tr></div><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-801a-9c9d-ed7ff0e57c23"><td id="_xZF" class="">流涌之刃伤害</td><td id="x_=T" class="">43.20%</td><td id="eq~A" class="">46.44%</td><td id="XY?g" class="">49.68%</td><td id="|T`;" class="">54.00%</td><td id="gdXS" class="">57.24%</td><td id="I&gt;Pu" class="">60.48%</td><td id="se_R" class="">64.80%</td><td id="kay\" class="">69.12%</td><td id="xrHp" class="">73.44%</td><td id=":|K?" class="">77.76%</td><td id="s^\n" class="">82.08%</td><td id="RwE|" class="">86.40%</td><td id="x&gt;qx" class="">91.80%</td><td id="KDgw" class="">97.20%</td><td id="\Z{H" class="">102.60%</td></tr></div><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-802e-a53b-ccfa4f111960"><td id="_xZF" class="">流涌之刃间隔</td><td id="x_=T" class="">10.0秒</td><td id="eq~A" class="">10.0秒</td><td id="XY?g" class="">10.0秒</td><td id="|T`;" class="">10.0秒</td><td id="gdXS" class="">10.0秒</td><td id="I&gt;Pu" class="">10.0秒</td><td id="se_R" class="">10.0秒</td><td id="kay\" class="">10.0秒</td><td id="xrHp" class="">10.0秒</td><td id=":|K?" class="">10.0秒</td><td id="s^\n" class="">10.0秒</td><td id="RwE|" class="">10.0秒</td><td id="x&gt;qx" class="">10.0秒</td><td id="KDgw" class="">10.0秒</td><td id="\Z{H" class="">10.0秒</td></tr></div><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-8073-891a-ff9f89907e82"><td id="_xZF" class="">夜巡状态持续时间</td><td id="x_=T" class="">9.0秒</td><td id="eq~A" class="">9.0秒</td><td id="XY?g" class="">9.0秒</td><td id="|T`;" class="">9.0秒</td><td id="gdXS" class="">9.0秒</td><td id="I&gt;Pu" class="">9.0秒</td><td id="se_R" class="">9.0秒</td><td id="kay\" class="">9.0秒</td><td id="xrHp" class="">9.0秒</td><td id=":|K?" class="">9.0秒</td><td id="s^\n" class="">9.0秒</td><td id="RwE|" class="">9.0秒</td><td id="x&gt;qx" class="">9.0秒</td><td id="KDgw" class="">9.0秒</td><td id="\Z{H" class="">9.0秒</td></tr></div><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-80da-aa01-c05ca91146d7"><td id="_xZF" class="">冷却时间</td><td id="x_=T" class="">16.0秒</td><td id="eq~A" class="">16.0秒</td><td id="XY?g" class="">16.0秒</td><td id="|T`;" class="">16.0秒</td><td id="gdXS" class="">16.0秒</td><td id="I&gt;Pu" class="">16.0秒</td><td id="se_R" class="">16.0秒</td><td id="kay\" class="">16.0秒</td><td id="xrHp" class="">16.0秒</td><td id=":|K?" class="">16.0秒</td><td id="s^\n" class="">16.0秒</td><td id="RwE|" class="">16.0秒</td><td id="x&gt;qx" class="">16.0秒</td><td id="KDgw" class="">16.0秒</td><td id="\Z{H" class="">16.0秒</td></tr></div></tbody></table></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><strong>残光将终</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-80a7-9348-eff75e7d82a4" class="">基于生命值上限为自己赋予生命之契，随后以剑枪齐奏的技艺闪身截击，造成<mark class="highlight-purple">雷元素范围伤害</mark>。</p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-807f-8982-f466284747f0" class=""><em><mark class="highlight-gray">以凡人之躯对抗非人之物的古老技艺，据说其传承最早可以追溯到反抗雷穆利亚帝国的纯水骑士。话虽如此，只要能想办法控制住力道，倒也不是完全不能在决斗中对普通的敌人使用。</mark></em></p></div><div style="display:contents" dir="ltr"><table id="1ab592a0-f19e-8004-a5bc-ea7c133d91cb" class="simple-table"><tbody><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-8065-afeb-ede91ee32413"><td id="O=Jf" class="">Lv</td><td id="uBQD" class="">1</td><td id="B?&gt;l" class="">2</td><td id="=kn@" class="">3</td><td id="~]jx" class="">4</td><td id="Nyl`" class="">5</td><td id=";XzW" class="">6</td><td id="gJrp" class="">7</td><td id="}J:|" class="">8</td><td id="dsuM" class="">9</td><td id="fvms" class="">10</td><td id="_~ri" class="">11</td><td id="smVA" class="">12</td><td id="zPE=" class="">13</td><td id="`EWU" class="">14</td><td id="u_eu" class="">15</td></tr></div><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-8055-a1e9-ec20b5cb5d90"><td id="O=Jf" class="">技能伤害</td><td id="uBQD" class="">126.88%×5</td><td id="B?&gt;l" class="">136.396%×5</td><td id="=kn@" class="">145.912%×5</td><td id="~]jx" class="">158.6%×5</td><td id="Nyl`" class="">168.116%×5</td><td id=";XzW" class="">177.632%×5</td><td id="gJrp" class="">190.32%×5</td><td id="}J:|" class="">203.008%×5</td><td id="dsuM" class="">215.696%×5</td><td id="fvms" class="">228.384%×5</td><td id="_~ri" class="">241.072%×5</td><td id="smVA" class="">253.76%×5</td><td id="zPE=" class="">269.62%×5</td><td id="`EWU" class="">285.48%×5</td><td id="u_eu" class="">301.34%×5</td></tr></div><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-8037-8d64-ef3bfe669524"><td id="O=Jf" class="">赋予生命之契</td><td id="uBQD" class="">66.0%生命值上限</td><td id="B?&gt;l" class="">72.0%生命值上限</td><td id="=kn@" class="">78.0%生命值上限</td><td id="~]jx" class="">84.0%生命值上限</td><td id="Nyl`" class="">90.0%生命值上限</td><td id=";XzW" class="">96.0%生命值上限</td><td id="gJrp" class="">102.0%生命值上限</td><td id="}J:|" class="">108.0%生命值上限</td><td id="dsuM" class="">114.0%生命值上限</td><td id="fvms" class="">120.0%生命值上限</td><td id="_~ri" class="">126.0%生命值上限</td><td id="smVA" class="">132.0%生命值上限</td><td id="zPE=" class="">138.0%生命值上限</td><td id="`EWU" class="">144.0%生命值上限</td><td id="u_eu" class="">150.0%生命值上限</td></tr></div><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-8069-a73b-d17314c6a1fe"><td id="O=Jf" class="">冷却时间</td><td id="uBQD" class="">15秒</td><td id="B?&gt;l" class="">15秒</td><td id="=kn@" class="">15秒</td><td id="~]jx" class="">15秒</td><td id="Nyl`" class="">15秒</td><td id=";XzW" class="">15秒</td><td id="gJrp" class="">15秒</td><td id="}J:|" class="">15秒</td><td id="dsuM" class="">15秒</td><td id="fvms" class="">15秒</td><td id="_~ri" class="">15秒</td><td id="smVA" class="">15秒</td><td id="zPE=" class="">15秒</td><td id="`EWU" class="">15秒</td><td id="u_eu" class="">15秒</td></tr></div><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-80e4-9ba5-e7b0112a35a5"><td id="O=Jf" class="">元素能量</td><td id="uBQD" class="">60</td><td id="B?&gt;l" class="">60</td><td id="=kn@" class="">60</td><td id="~]jx" class="">60</td><td id="Nyl`" class="">60</td><td id=";XzW" class="">60</td><td id="gJrp" class="">60</td><td id="}J:|" class="">60</td><td id="dsuM" class="">60</td><td id="fvms" class="">60</td><td id="_~ri" class="">60</td><td id="smVA" class="">60</td><td id="zPE=" class="">60</td><td id="`EWU" class="">60</td><td id="u_eu" class="">60</td></tr></div></tbody></table></div></div></details></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">固有天赋</summary><div class="indented"><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">破夜的明焰</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-8047-9bad-f77300b8d14b" class="">队伍中附近的角色对敌人触发<mark class="highlight-purple">雷元素相关反应</mark>后，将基于克洛琳德攻击力的20%，提升克洛琳德的普通攻击与<mark class="highlight-yellow">残光将终</mark>造成的<mark class="highlight-purple">雷元素伤害</mark>。此效果持续15秒，至多叠加3层，每层独立计时。通过这种方式至多使克洛琳德的上述攻击造成的伤害提升1800。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">契令的酬偿</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-80de-8778-cbbb4de4057e" class="">如果克洛琳德的生命之契大于或等于生命值上限的100%，生命之契的数值提升或降低时，克洛琳德的暴击率提升10%，此效果持续15秒，至多叠加2层，每层独立计时。</p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-8008-bc1d-c17249508aa1" class="">此外，<mark class="highlight-yellow">狩夜之巡</mark>的夜巡状态获得强化：持续期间，治疗回复量转化为生命之契的比例提升至100%。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">夜巡之获</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-8068-a54a-e21c2f79ab40" class="">在小地图上显示周围的<mark class="highlight-yellow">枫丹区域特产</mark>的位置。</p></div></div></details></div></div></details></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">命之座</summary><div class="indented"><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">第1层<strong>「自此，行过烛影之帷」</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-80ef-bc47-ef34cc0a80bc" class=""><mark class="highlight-yellow">狩夜之巡</mark>的夜巡状态持续期间，克洛琳德的普通攻击造成的<mark class="highlight-purple">雷元素伤害</mark>命中敌人时，将在敌人附近唤出夜巡之影进行两次协同攻击，各自造成克洛琳德30%攻击力的<mark class="highlight-purple">雷元素伤害</mark>。</p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-8005-aadd-d01fc9d3a052" class="">此效果每1.2秒至多触发一次，通过这种方式造成的伤害视为普通攻击伤害。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">第2层<strong>「自此，直面长夜之危」</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-8068-bd03-c29cece940d7" class="">固有天赋「破夜的明焰」的效果获得强化：队伍中附近的角色对敌人触发<mark class="highlight-purple">雷元素相关反应</mark>后，将基于克洛琳德攻击力的30%，提升克洛琳德的普通攻击与<mark class="highlight-yellow">残光将终</mark>造成的<mark class="highlight-purple">雷元素伤害</mark>。此效果持续15秒，至多叠加3层，每层独立计时。处于3层状态下时，克洛琳德的抗打断能力提升。通过这种方式至多使克洛琳德的上述攻击造成的伤害提升2700。</p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-8029-ae28-faf272bcfcd2" class="">需要解锁固有天赋「破夜的明焰」。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">第3层<strong>「我将铭记白昼的誓言」</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-809d-af13-df0eb076ad85" class=""><mark class="highlight-yellow">狩夜之巡</mark>的技能等级提高3级。</p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-8047-89c8-d3d5594606c6" class="">至多提升至15级。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">第4层<strong>「铭记泪，生命与仁爱」</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-8032-a617-e70c8f900d95" class=""><mark class="highlight-yellow">残光将终</mark>对敌人造成伤害时，将根据克洛琳德的当前生命之契百分比提升此次伤害，每1%生命之契都将使此次<mark class="highlight-yellow">残光将终</mark>造成的伤害提升2%；通过这种方式，至多使<mark class="highlight-yellow">残光将终</mark>造成的伤害提升200%。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">第5层<strong>「也铭记黎明终将到来」</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-8053-856e-e6d19076ff73" class=""><mark class="highlight-yellow">残光将终</mark>的技能等级提高3级。</p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-8052-b239-eb2bc8aa962c" class="">至多提升至15级。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">第6层<strong>「为此，勿将希望弃扬」</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-805b-bd52-d6829ced0bda" class="">施放<mark class="highlight-yellow">狩夜之巡</mark>后的12秒内，克洛琳德的暴击率提升10%，暴击伤害提升70%。</p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-8083-9c0f-d45b4a66befa" class="">此外，夜巡状态持续期间，明烛之影会在特定条件下出现，进行追击，造成克洛琳德200%攻击力的<mark class="highlight-purple">雷元素伤害</mark>，通过这种方式造成的伤害视为普通攻击伤害。</p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-8079-9295-c979aa18c785" class="">明烛之影会在如下情况下出现：</p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-80db-916f-f59cfd3bbd46" class="">· 克洛琳德即将被攻击命中时；</p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-8052-bd76-f856c95015c5" class="">· 克洛琳德进行贯夜 · 契令时。</p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-8051-9ddc-f0aa83e8d494" class="">每1秒至多通过上述方式唤出1次明烛之影，一次夜巡状态持续期间，至多唤出6次明烛之影。</p></div><div style="display:contents" dir="auto"><p id="1ab592a0-f19e-8042-8805-fe25d22116d6" class="">此外，夜巡状态持续期间，克洛琳德受到的伤害降低80%，抗打断能力提高，该效果将在夜巡状态结束或唤出6次明烛之影的1秒后移除。</p></div></div></details></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">其它</summary><div class="indented"><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">衣装</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1a5592a0-f19e-80b2-94a5-c6908be6ad3f" class=""><strong>荣光之剑</strong></p></div><div style="display:contents" dir="auto"><p id="1a5592a0-f19e-8060-9d15-f3f83be15a0a" class="">克洛琳德的装扮款式。在没有力量作为担保的情况下，法律的尊严和正义的秩序难免显得脆弱。而身着工作制服的克洛琳德成为了最凌厉的震慑。</p></div><div style="display:contents" dir="ltr"><figure id="1a5592a0-f19e-804c-886b-f8d9fa2b91d6" class="image"><a href="%E5%85%8B%E6%B4%9B%E7%90%B3%E5%BE%B7/UI_Gacha_AvatarImg_Clorinde%201.webp"><img style="width:2048px" src="%E5%85%8B%E6%B4%9B%E7%90%B3%E5%BE%B7/UI_Gacha_AvatarImg_Clorinde%201.webp"/></a></figure></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">特色料理</summary><div class="indented"><div style="display:contents" dir="ltr"><figure id="1a5592a0-f19e-805b-9b88-cff6d8b68102" class="image"><a href="%E5%85%8B%E6%B4%9B%E7%90%B3%E5%BE%B7/UI_ItemIcon_108678.webp"><img style="width:256px" src="%E5%85%8B%E6%B4%9B%E7%90%B3%E5%BE%B7/UI_ItemIcon_108678.webp"/></a></figure></div><div style="display:contents" dir="auto"><p id="1a5592a0-f19e-804b-8b8a-ccc86b0d8579" class=""><em><mark class="highlight-gray">克洛琳德的特色料理。食材选用了刚刚猎获的禽肉，只经过略微炙烤。弹嫩口感与鲜美回味让人将疑问抛之脑后，毕竟克洛琳德已经率先品尝过了。你应该…也具备如猎人般强劲的肠胃吧？</mark></em></p></div><div style="display:contents" dir="auto"><p id="1a5592a0-f19e-80ad-a159-de96521855cf" class="">恢复80点体力。</p></div><div style="display:contents" dir="ltr"><figure id="1a5592a0-f19e-802c-b37a-f64ae6cc7668" class="image"><a href="%E5%85%8B%E6%B4%9B%E7%90%B3%E5%BE%B7/CleanShot_2025-02-25_at_21.49.512x.png"><img style="width:266px" src="%E5%85%8B%E6%B4%9B%E7%90%B3%E5%BE%B7/CleanShot_2025-02-25_at_21.49.512x.png"/></a></figure></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">养成素材</summary><div class="indented"><div style="display:contents" dir="ltr"><figure id="1ab592a0-f19e-806f-803f-f926a019ffe4" class="image"><a href="%E5%85%8B%E6%B4%9B%E7%90%B3%E5%BE%B7/CleanShot_2025-03-03_at_14.26.512x.png"><img style="width:1386px" src="%E5%85%8B%E6%B4%9B%E7%90%B3%E5%BE%B7/CleanShot_2025-03-03_at_14.26.512x.png"/></a></figure></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">妮可少女的研究</summary><div class="indented"><div style="display:contents" dir="ltr"><table id="1ab592a0-f19e-8080-b1f8-d8e33b804837" class="simple-table"><tbody><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-80a1-9b04-ee021d902ccd"><td id="eKUK" class="">元素微粒</td><td id="]MNS" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-8015-88ac-e1496dbd71d9"><td id="eKUK" class="">驰猎/贯夜/1命/6命</td><td id="]MNS" class="">1</td></tr></div><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-8009-8794-e09c0733e541"><td id="eKUK" class="">冷却时间</td><td id="]MNS" class="">2s</td></tr></div></tbody></table></div><div style="display:contents" dir="ltr"><table id="1ab592a0-f19e-80eb-b6f3-d75198439088" class="simple-table"><tbody><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-80a6-b5bc-e96048a4b63a"><td id="Hr{T" class="">技能抗打断</td><td id="_AV;" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-8029-8fe3-e154b226ad8e"><td id="Hr{T" class="">2命</td><td id="_AV;" class="">0.3</td></tr></div><div style="display:contents" dir="ltr"><tr id="1ab592a0-f19e-800e-b532-dbe5dc608e33"><td id="Hr{T" class="">6命</td><td id="_AV;" class="">0</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><ul id="1ab592a0-f19e-8096-9b67-fc5312bf5866" class="bulleted-list"><li style="list-style-type:disc">元素战技的驰猎属于普通攻击动作，而贯夜不属于普通攻击动作，即使造成的伤害仍是普通攻击伤害。普通攻击动作触发的有行秋大招、菲谢尔6命等等。另一方面，北斗大招是普通攻击伤害触发的。</li></ul></div><div style="display:contents" dir="auto"><ul id="1ab592a0-f19e-80f4-99bc-f70385bccb1e" class="bulleted-list"><li style="list-style-type:disc">大招伤害范围 ≈ 雷电将军大招拔刀范围</li></ul></div><div style="display:contents" dir="auto"><ul id="1ab592a0-f19e-800a-8458-d17e16f24d74" class="bulleted-list"><li style="list-style-type:disc">1命伤害范围 ≈ 大招普攻范围</li></ul></div><div style="display:contents" dir="auto"><ul id="1ab592a0-f19e-802d-8b4a-f6b62b36c4f8" class="bulleted-list"><li style="list-style-type:disc">6命伤害范围 ≈ 雷电将军大招重击范围</li></ul></div><div style="display:contents" dir="auto"><ul id="1ab592a0-f19e-8009-85d5-e39044a96750" class="bulleted-list"><li style="list-style-type:disc">大招伤害、贯夜Lv2~3伤害会把敌人<strong>朝向克洛琳德自己击退</strong>。</li></ul></div><div style="display:contents" dir="auto"><ul id="1ab592a0-f19e-8068-bdc9-ccb29f3d56dd" class="bulleted-list"><li style="list-style-type:disc"><strong>产球：</strong>驰猎/贯夜/1命/6命伤害命中怪物，产 1 雷元素微粒，CD 2s。</li></ul></div><div style="display:contents" dir="auto"><ul id="1ab592a0-f19e-80ba-933d-d7419e7e56f3" class="bulleted-list"><li style="list-style-type:disc"><strong>附着：</strong>驰猎/贯夜 1 元素量，共享默认附着 CD（3次/2.5s）1命/6命 1 元素量，共享 CD：每 1s 至多附着一次大招 1 元素量，为默认附着 CD （3次/2.5s）大招间隔为 0.1s，共 5 次伤害，因此可附着 2 次。</li></ul></div><div style="display:contents" dir="auto"><ul id="1ab592a0-f19e-80c0-8788-eea699850e5a" class="bulleted-list"><li style="list-style-type:disc"><strong>抗打断：</strong>2命 0.3 = 行秋大招6命 0 = 不可打断</li></ul></div></div></details></div></div></details></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
