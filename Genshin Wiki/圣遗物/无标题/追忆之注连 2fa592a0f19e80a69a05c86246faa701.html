@@ -1,0 +1,724 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>追忆之注连</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2fa592a0-f19e-80a6-9a05-c86246faa701" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="%E8%BF%BD%E5%BF%86%E4%B9%8B%E6%B3%A8%E8%BF%9E/UI_RelicIcon_15019_4.png"/></div><h1 class="page-title" dir="auto">追忆之注连</h1><p class="page-description" dir="auto"></p><table class="properties"><tbody><tr class="property-row property-row-status"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/burst_gray.svg" style="width:14px;height:14px;display:block"/></span>状态</th><td><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>完成</span></td></tr></tbody></table></header><div class="page-body"><div style="display:contents" dir="auto"><div id="2fa592a0-f19e-801d-bfeb-d1a53601e98a" class="column-list"><div style="display:contents" dir="auto"><div id="2fa592a0-f19e-80c3-b429-c11934b9b5eb" style="width:20.000000000000014%" class="column"><div style="display:contents" dir="ltr"><figure id="2fa592a0-f19e-8006-a22e-c5b1a0ca375d" class="image"><a href="%E8%BF%BD%E5%BF%86%E4%B9%8B%E6%B3%A8%E8%BF%9E/UI_RelicIcon_15019_4%201.png"><img style="width:144px" src="%E8%BF%BD%E5%BF%86%E4%B9%8B%E6%B3%A8%E8%BF%9E/UI_RelicIcon_15019_4%201.png"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="2fa592a0-f19e-80a3-809f-f84477e69fd7" style="width:20%" class="column"><div style="display:contents" dir="ltr"><figure id="2fa592a0-f19e-80c7-87ce-e20b803a5e14" class="image"><a href="%E8%BF%BD%E5%BF%86%E4%B9%8B%E6%B3%A8%E8%BF%9E/UI_RelicIcon_15019_2.png"><img style="width:132px" src="%E8%BF%BD%E5%BF%86%E4%B9%8B%E6%B3%A8%E8%BF%9E/UI_RelicIcon_15019_2.png"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="2fa592a0-f19e-805c-b9a6-e2f7f9218255" style="width:20%" class="column"><div style="display:contents" dir="ltr"><figure id="2fa592a0-f19e-800b-80a9-d642a11dabb4" class="image"><a href="%E8%BF%BD%E5%BF%86%E4%B9%8B%E6%B3%A8%E8%BF%9E/UI_RelicIcon_15019_5.png"><img style="width:108px" src="%E8%BF%BD%E5%BF%86%E4%B9%8B%E6%B3%A8%E8%BF%9E/UI_RelicIcon_15019_5.png"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="2fa592a0-f19e-80c7-a3be-f1386859da7b" style="width:20%" class="column"><div style="display:contents" dir="ltr"><figure id="2fa592a0-f19e-8088-b036-cdabccee3057" class="image"><a href="%E8%BF%BD%E5%BF%86%E4%B9%8B%E6%B3%A8%E8%BF%9E/UI_RelicIcon_15019_1.png"><img style="width:108px" src="%E8%BF%BD%E5%BF%86%E4%B9%8B%E6%B3%A8%E8%BF%9E/UI_RelicIcon_15019_1.png"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="2fa592a0-f19e-802d-aaa1-c03ddb98a607" style="width:20%" class="column"><div style="display:contents" dir="ltr"><figure id="2fa592a0-f19e-800a-af28-c564f3713be1" class="image"><a href="%E8%BF%BD%E5%BF%86%E4%B9%8B%E6%B3%A8%E8%BF%9E/UI_RelicIcon_15019_3.png"><img style="width:96px" src="%E8%BF%BD%E5%BF%86%E4%B9%8B%E6%B3%A8%E8%BF%9E/UI_RelicIcon_15019_3.png"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80f4-aece-e068b9b6f21e" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80a3-8492-e245de020812" class=""><mark class="highlight-yellow"><strong>二件套</strong></mark></p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80e8-b5d6-e2cbc0da1907" class="">攻击力提高18%。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8099-9894-dd96a4c4147d" class=""><mark class="highlight-yellow"><strong>四件套</strong></mark></p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8096-976f-e0428bf6878f" class="">施放元素战技时，如果角色的元素能量高于或等于15点，则会流失15点元素能量，使接下来的10秒内，普通攻击、重击、下落攻击造成的伤害提高50%，持续期间内该效果不会再次触发。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80d9-acf6-e111d2e5bb2d" class="">
+</p></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">故事</summary><div class="indented"><div style="display:contents" dir="ltr"><figure id="2fa592a0-f19e-8043-97b3-c3feae20cee0" class="image"><a href="%E8%BF%BD%E5%BF%86%E4%B9%8B%E6%B3%A8%E8%BF%9E/UI_RelicIcon_15019_4%202.png"><img style="width:120px" src="%E8%BF%BD%E5%BF%86%E4%B9%8B%E6%B3%A8%E8%BF%9E/UI_RelicIcon_15019_4%202.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-800c-a011-f8413f4bde3c" class=""><strong>羁缠之花：</strong>精美的水引御守，据说能够封存实现愿望的力量。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-800f-aa77-d7551b3c4c7a" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8016-9002-f9369de15b9b" class="">以名为「水引」的工艺编织而成的御守，</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80a3-a2d7-edf0fa35ab42" class="">据说能将祈愿与其因缘紧紧地系于其中。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8056-b7f9-c2997890894f" class="">一度师从神通广大的狐狸大人，学习打理神社事宜。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8004-be4e-f7b5985f1cfa" class="">那时的我，不过是从小小渔村来到鸣神的幼稚巫女。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8063-951f-fc3faaeeb617" class="">比茶筅还要愚钝，也还未曾褪去孩童的任性与好奇，</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8069-96a9-c65b132cf7de" class="">对斋宫大人优雅难懂的话语，总是抱着天真的怀疑。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-801f-ab00-f584ce748b54" class="">「世上之事彼此羁绊纠缠，因而实在之中产生了虚幻的愿景。」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8000-821d-ece55252137e" class="">「所谓御守，全无实现愿望的能力，却能借助羁缠使之永恒。」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80c2-9faf-c1d896002714" class="">见我一脸茫然、无法理解的模样，狐狸大人忍俊不禁，</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80b2-bb01-d55121f3df5f" class="">愉快地用烟管敲了敲我的脑袋，又狡猾地转换了话题：</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80a5-86fc-d811548ca274" class="">「想必小响，一定也遇见了因缘之人吧？」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-803a-bd6f-cde62a2e6db7" class="">「与那粗鲁的莽夫，能有什么因缘可言！」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80c0-b838-ce02b3042bfb" class="">「啊呀，是这样吗？」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80fe-bd47-edc68d25c1ab" class="">但最后黑夜淹没了一切。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8081-b47f-c5115811401d" class="">而所谓的因缘也失落了。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8056-8d97-cff901b9ec2e" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fa592a0-f19e-8051-8792-ceb5379d9d71" class="image"><a href="%E8%BF%BD%E5%BF%86%E4%B9%8B%E6%B3%A8%E8%BF%9E/UI_RelicIcon_15019_2%201.png"><img style="width:120px" src="%E8%BF%BD%E5%BF%86%E4%B9%8B%E6%B3%A8%E8%BF%9E/UI_RelicIcon_15019_2%201.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8054-9b5b-ef1b94974549" class=""><strong>思忆之矢：</strong>样式有点古旧的破魔矢，似乎一直被某人精心保存着。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8078-9eb9-de6f5459c15c" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80c9-b071-e11c5c5f736e" class="">神社祈福驱灾所用的破魔矢，</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-800e-bef9-ea5c3b4ccfff" class="">据说能够追赶破灭一切心魔。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-805f-b5a9-f7ebf59b6932" class="">人们常说破魔之矢能够驱逐邪恶，但邪恶从来不是客观之物。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80f9-a237-e0382ebac682" class="">邪恶往往出自人心，出自因恐惧而谵妄，变得冰冷烬寂的心。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80f9-9b4e-ea40e4105817" class="">斋宫大人离去久矣，我也已不再是鸣神大社见习的年轻巫女。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80e5-9e35-d691f521d14a" class="">每当握起那根空空的烟管，空虚与隐痛便如幽灵般萦绕而生。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80c6-8446-f7c078a1a6a9" class="">拥有了值得挂念的人，失去了无法不挂念的人，时光如同纺车碌碌不停。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80d8-882c-c779465d66fc" class="">沉静而安谧，狐狸大人隐入漆黑深渊的白色身影，依旧刻印在巫女梦中。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80b2-9368-da75106e8271" class="">大天狗大人，也因守护不周的罪疚发怒离去，自我远流，留下光代一人，</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80e5-a99a-fbe5b3e65adf" class="">晴之介在哀恸的盛怒下远走别国，长正则为了洗清御舆的污名投身官府。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8053-b1d3-c0d66afb6661" class="">至于那个在神林教授我弓术，绯色的樱枝下耐心倾听我幼稚约定的男人，</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80b1-9088-e25160e2d43d" class="">他终会回到我面前，即使飞溅的鲜血令他目盲，漆黑污秽将他化为凶兽…</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-807a-a890-cc9d1e1f5883" class="">以我们的弓与矢拯救他，成全注定走向失去的约定。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-808d-bca9-ccc7b3b86822" class="">以我们的弓与矢射灭邪魔，驱除痴妄与无谓的执着。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80f5-8332-fc3494f950f1" class="">「请来见我，嗜赌如命的呆瓜。」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-803e-86d0-eca2042a66a5" class="">「这次不要再迷路了，昆布丸。」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-801c-babb-d881ddd8744f" class="">不过，最后的那一场赌局，胜者究竟是谁呢…</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80cd-9b9a-e1a552f91e92" class="">思考着无关紧要的事情，她轻抚着华美的弓。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80f9-96bb-eb5570238878" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fa592a0-f19e-80f9-8b34-df7ccbdd5cbd" class="image"><a href="%E8%BF%BD%E5%BF%86%E4%B9%8B%E6%B3%A8%E8%BF%9E/UI_RelicIcon_15019_5%201.png"><img style="width:132px" src="%E8%BF%BD%E5%BF%86%E4%B9%8B%E6%B3%A8%E8%BF%9E/UI_RelicIcon_15019_5%201.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-800d-a0ea-ec753d462470" class=""><strong>朝露之时：</strong>以水引和铃铛装饰的青铜怀表，时间永远停在了某个秋日的黎明。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80b5-bbb6-d99a4cef1856" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8093-8274-e916f44348b6" class="">雅致的怀表，装饰着神社的铃铛，</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-807b-97c8-e1f17f368d2f" class="">指针永远停留在晨露未消的时刻。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-807c-a9db-e255d3619833" class="">天色渐青之时，草叶尖端的朝露凝结复又消散。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80fa-a914-fba1934c988b" class="">纵使光彩如万华镜般绚丽，美景亦不过是瞬间。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80f1-8c56-fab0a440bf6a" class="">我曾在秋夜的坂道上，和斋宫大人同赏蝉鸣与月光。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8054-9968-c593ffc553ca" class="">那时的我还不过是一个乡下巫女，年幼而无比倔强。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-802c-8c21-d39d8c49fdc6" class="">像一只叽叽喳喳的团雀般，聒噪着坚持自己的见解，</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-806d-9a48-e5b0527f391f" class="">望着狐狸大人浅笑的面庞出神，却未听懂她的话语：</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80f3-be6d-c9e1b622449c" class="">「若是企图永远留住片刻之美，恰似妄图将朝露紧紧握在手中。」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-800e-a801-eccac033f091" class="">「我已如朝露逝去，你对于我的所有印象，皆不过残留的愿景。」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8060-9b13-e470f6ea213d" class="">模糊的记忆中她说着难懂的话，面色如桂月般哀伤，令我一时恍然…</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80fc-948c-e01c86ed79fd" class="">须臾过后，她便用烟管敲敲我的脑袋，神情一如既往的嗔怪与嘲弄：</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8066-8aad-d4880a69b894" class="">「天快亮了，小响。」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80d6-b921-e54e0ad51289" class="">「我们该回去了。」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8099-8043-fda698226a76" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fa592a0-f19e-805d-b91f-c1ad513262da" class="image"><a href="%E8%BF%BD%E5%BF%86%E4%B9%8B%E6%B3%A8%E8%BF%9E/UI_RelicIcon_15019_1%201.png"><img style="width:132px" src="%E8%BF%BD%E5%BF%86%E4%B9%8B%E6%B3%A8%E8%BF%9E/UI_RelicIcon_15019_1%201.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80cd-bb1c-d1fbd2199cd5" class=""><strong>祈望之心：</strong>特制的占卜签筒，底部的机关能让人轻易抽掉不想要的愿签。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8022-ac54-db3f932b4f72" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8016-8642-f23ba97cb0dc" class="">神社占卜吉凶使用的特制签筒，</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80ae-85b1-c71e5c14c627" class="">据说有着狐狸附加其上的好运。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-809c-a60b-f5a7d6d5c87a" class="">占卜是迷途之人的求问，因此无论吉凶，皆是前路解答。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8003-8c6b-fd562c10bd9c" class="">简言之，世上只有迷惘的问者，而没有不确的占卜结果。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8056-acbb-e97e85181bae" class="">在神社的求学时光受益匪浅，愚钝如我也学会了狐狸大人的说辞。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-806b-a13d-ed17e2c0f494" class="">这段时间里，即使不近人情的影向天狗大人，也有了自己的女儿。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8078-804d-e1321991333c" class="">呆头大叔昆布丸，也成了将军殿下的旗本，将迎娶高门武士之女…</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80a7-a192-ec0f4ef51f5d" class="">「真是可爱的孩子，连整天闹着杀伐玩耍的天狗大人，也稍微有了母亲的自觉呢…」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8041-a52e-ff8ea26b447c" class="">「不过…神社里总是缺少了一点小孩子的生气，这样可不好。小响变回小孩如何？」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80fd-9384-cbc801f17842" class="">一如既往，狐狸大人开着有点过分的玩笑，带着绯樱酒的醉气，自顾自地凑了上来。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8079-b7e3-c670e58e6a64" class="">「别苦着脸了，小响。就让斋宫大人为你算上一卦，如何？」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-801e-a2b5-d45bf2ff8a83" class="">「哈哈，是大吉！你看，是大吉呀！你可知这意味着什么？」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-807b-a781-f4c6a4053651" class="">「您抽去了所有的凶签。请您不要再取笑我了，斋宫大人…」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-809e-97a4-d1959abc3c72" class="">「不…这意味着你所思恋之人，将有幸成为你永恒的记忆。」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80b7-b4dd-dbaac2d5930c" class="">所以你要坚强地活下去，久久地活在这世上。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80e2-8dba-ff232e1d731f" class="">就算珍重所有的人都逝去了，只要你还活着，</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8044-90e8-d52994a7c20c" class="">那与这些人一同度过的时光也永远不会消逝…</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8085-80ff-d9753125b577" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fa592a0-f19e-8008-8ee5-f290cbc8746f" class="image"><a href="%E8%BF%BD%E5%BF%86%E4%B9%8B%E6%B3%A8%E8%BF%9E/UI_RelicIcon_15019_3%201.png"><img style="width:144px" src="%E8%BF%BD%E5%BF%86%E4%B9%8B%E6%B3%A8%E8%BF%9E/UI_RelicIcon_15019_3%201.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80cb-b90d-cb1e0e2e066b" class=""><strong>无常之面：</strong>保存良好的祭礼狐面，永远带着一副神秘的浅笑。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8095-ad57-d7cd4004f9d7" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-805f-a713-dbd945449afb" class="">明净雅致的祭典面具，曾经属于某位神子，</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8062-bd43-dc9404ec3127" class="">嘴角勾勒着淡淡的微笑，双眼却再无神采。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8054-b53c-df6a56f025a0" class="">在大社学习已有些时日，自认成熟了许多。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8061-8d10-e637063f3bea" class="">不再像小时那样愚钝，越来越能独当一面。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80f7-87bd-e9ae68ab1b7a" class="">但不知怎的，我愈是成长，斋宫大人的面庞却愈发掩上阴翳，</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-802b-8108-d009242ba4d8" class="">浮现在她脸上的并非忧心，也非恐惧，而是深切悲哀的不舍…</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-804a-afda-d59e12a658e1" class="">「世界之理本就无常，痴恋瞬灭之物，将遗失隽永的记忆，」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-807a-bb71-e3feff00b9f5" class="">「失去记忆之人，无异于失去生命，是乃永恒黑暗的死亡。」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80e5-88d6-c2fac23b0864" class="">这一次，即使浅笑也掩饰不住悲伤的神情，</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8089-b659-f8c6c978a941" class="">明明是祭典的日子，却仿佛即将告别一样…</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80d8-9d8b-ef8118a7d96b" class="">「对了，你也给我讲讲昆布丸那个呆瓜吧…」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-807d-ad5e-ca2863465cf0" class="">「怎么…你还怕我这老女人把他抢走不成？」</p></div></div></details></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

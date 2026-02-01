@@ -1,0 +1,724 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>来歆余响</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2fa592a0-f19e-80be-a407-c92b5e026966" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="%E6%9D%A5%E6%AD%86%E4%BD%99%E5%93%8D/UI_RelicIcon_15024_4.png"/></div><h1 class="page-title" dir="auto"><strong>来歆余响</strong></h1><p class="page-description" dir="auto"></p><table class="properties"><tbody><tr class="property-row property-row-status"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/burst_gray.svg" style="width:14px;height:14px;display:block"/></span>状态</th><td><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>完成</span></td></tr></tbody></table></header><div class="page-body"><div style="display:contents" dir="auto"><div id="2fa592a0-f19e-80c4-af74-d1e11c981a69" class="column-list"><div style="display:contents" dir="auto"><div id="2fa592a0-f19e-80f1-9ef3-f3addd408295" style="width:20%" class="column"><div style="display:contents" dir="ltr"><figure id="2fa592a0-f19e-800b-ba45-fa9270641f0a" class="image"><a href="%E6%9D%A5%E6%AD%86%E4%BD%99%E5%93%8D/UI_RelicIcon_15024_4%201.png"><img style="width:240px" src="%E6%9D%A5%E6%AD%86%E4%BD%99%E5%93%8D/UI_RelicIcon_15024_4%201.png"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="2fa592a0-f19e-80ae-802d-f660c9d61959" style="width:20%" class="column"><div style="display:contents" dir="ltr"><figure id="2fa592a0-f19e-806e-b9ae-e60cb71e1247" class="image"><a href="%E6%9D%A5%E6%AD%86%E4%BD%99%E5%93%8D/UI_RelicIcon_15024_2.png"><img style="width:240px" src="%E6%9D%A5%E6%AD%86%E4%BD%99%E5%93%8D/UI_RelicIcon_15024_2.png"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="2fa592a0-f19e-80ac-a250-fc58ee05ce3b" style="width:20%" class="column"><div style="display:contents" dir="ltr"><figure id="2fa592a0-f19e-80dc-9ca8-dcc75b77e1e7" class="image"><a href="%E6%9D%A5%E6%AD%86%E4%BD%99%E5%93%8D/UI_RelicIcon_15024_5.png"><img style="width:126.5px" src="%E6%9D%A5%E6%AD%86%E4%BD%99%E5%93%8D/UI_RelicIcon_15024_5.png"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="2fa592a0-f19e-80f8-bd94-f8a8a8b70741" style="width:20%" class="column"><div style="display:contents" dir="ltr"><figure id="2fa592a0-f19e-8063-b744-ed82e8aac0e8" class="image"><a href="%E6%9D%A5%E6%AD%86%E4%BD%99%E5%93%8D/UI_RelicIcon_15024_1.png"><img style="width:240px" src="%E6%9D%A5%E6%AD%86%E4%BD%99%E5%93%8D/UI_RelicIcon_15024_1.png"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="2fa592a0-f19e-806e-ba47-cb6a5497ea31" style="width:20%" class="column"><div style="display:contents" dir="ltr"><figure id="2fa592a0-f19e-80e8-a9e6-e22d6bde0802" class="image"><a href="%E6%9D%A5%E6%AD%86%E4%BD%99%E5%93%8D/UI_RelicIcon_15024_3.png"><img style="width:240px" src="%E6%9D%A5%E6%AD%86%E4%BD%99%E5%93%8D/UI_RelicIcon_15024_3.png"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80f8-b437-eb44ecf201d1" class=""><mark class="highlight-yellow"><strong>二件套</strong></mark></p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80eb-a61e-f553839eea87" class="">攻击力提高18%。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8007-8a5c-f0b873211f98" class=""><mark class="highlight-yellow"><strong>四件套</strong></mark></p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8068-85f0-f325ad6afbba" class="">普通攻击命中敌人时，有36%概率触发「幽谷祝祀」：普通攻击造成的伤害提高，伤害提高值为攻击力的70%，该效果将在普通攻击造成伤害后的0.05秒后清除。普通攻击未触发「幽谷祝祀」时，会使下次触发概率提升20%；0.2秒内至多判定1次触发与否。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-800f-bcdd-e15809e33a38" class="">
+</p></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">故事</summary><div class="indented"><div style="display:contents" dir="ltr"><figure id="2fa592a0-f19e-80e6-bdcf-ecf5e6dc5ab3" class="image"><a href="%E6%9D%A5%E6%AD%86%E4%BD%99%E5%93%8D/UI_RelicIcon_15024_4%202.png"><img style="width:120px" src="%E6%9D%A5%E6%AD%86%E4%BD%99%E5%93%8D/UI_RelicIcon_15024_4%202.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8049-b7de-e0dac7d3bedc" class=""><strong>魂香之花：花型的玉雕。魂香幽幽的气息似有似无地萦绕其中。</strong></p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80d6-96c2-ea666e7cde61" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-803b-b86e-e5e695b8f5b5" class="">每年魂香花开，正是翘英庄奉茶典仪筹备的开端。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-805b-9b61-f459bb000206" class="">待到花朵凋零，九窨一提的花茶恰好被供在堂前。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8085-9b51-fe14e418f56d" class="">魂香花期之短，一如仙人匆匆而来，又飘然而去。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8048-9152-d3b959f42bf7" class="">只留下含糊的药君之名，和众多语焉不详的传说。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80ec-a57e-fa1da0018ef0" class="">在一个故事里，药君的仙躯化作古茶树的繁枝。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-803f-b5de-e6468330bcf7" class="">另一个故事里，却乘着被驯服的恶兽飞往仙山。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8015-b8ae-f44a0787c3c7" class="">还有这样一个故事——</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8086-bfdf-e5a88c4438f3" class="">少女一爬上岸就匆忙捡起地上的帷帽，胡乱戴在头上。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-805c-9731-d8a369918b4d" class="">若没有面前的遮蔽，她总会自惭形秽，不敢开口说话。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8021-b2d6-cba6fe84a9b4" class="">害她如此狼狈的罪魁祸首，此时才从水中探出头来，</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80c8-afb3-cefb69962beb" class="">就像在炫耀这场较量的胜利，五彩的锦鳞闪闪发光。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80c6-8c5a-dc8f44b4a1c8" class="">「咳…咳咳！会游泳很了不起吗？我咒你迟早被水淹死！」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8096-b374-e4e7b47be91c" class="">虽说自己当时的确愤愤不平，可那毕竟只是句玩笑话。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8084-a49f-d766288221a7" class="">但熠熠流光最终却真的消失在深潭里，再没有浮上来。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8041-8069-ee01c6a3496d" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fa592a0-f19e-804a-b63d-f0a7f3dcf956" class="image"><a href="%E6%9D%A5%E6%AD%86%E4%BD%99%E5%93%8D/UI_RelicIcon_15024_2%201.png"><img style="width:120px" src="%E6%9D%A5%E6%AD%86%E4%BD%99%E5%93%8D/UI_RelicIcon_15024_2%201.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8094-9466-d451bf312808" class=""><strong>垂玉之叶：宛如叶片的玉佩。过去在特定的友人之间，似乎有着特殊的含义。</strong></p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80ce-86f4-ef0adf059166" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80d6-8796-f5409603040d" class="">很久之前，河对岸还没有渡口，只有一片云烟氤氲的山坡。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8034-afd4-c49bed31f9b3" class="">这座山的主人尚未决定在这里种些什么，就被人捷足先登。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-805a-acdb-eb9345b624fd" class="">「等这棵树长大一些，我便把叶子摘了，研茶给你们喝。」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80e7-9b5c-c0aceb8781d0" class="">「到时候就在这里，把留云借风、理水叠山他们都叫来…」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8046-9f33-ebdd822bcae5" class="">「你把树随随便便种在我的地界上，还好意思说这种话。」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80c2-aa0e-f32ebc296a5b" class="">身为山王的少女虽然忿忿答道，倒也总是构想着茶的香气。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-805e-aa58-e325aa5a1474" class="">后来，谁人静静地将这玉玦系在了小树的细梢上。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8046-9429-ead63dd98ccd" class="">再后来，山的主人回来了，却变成了其它的模样，</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-802e-9f4c-e23e20a88f61" class="">也失去了解开系绳的手指。那是很久以前的事情…</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8059-af40-cfc0ce99c78e" class="">许多年后，它的枝条被山中住民移植在河的对岸。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80d2-adb4-ca92a57d44de" class="">茶香也从沉玉谷传到璃月港，又传到了许多地方。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8043-aaa5-c089febe65d5" class="">关于沉玉谷的茶树有诸多传说。其中一则，是说：</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80fc-aade-ea3d4acff932" class="">无论水文、土壤与日照如何，这种树只在沉玉谷繁茂生长。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-800d-b8b8-f4b110f4744b" class="">是因为它们记得在遥远过去，茶树幼苗旁老友之间的约定。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-801f-8da8-cf59c521f0e7" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fa592a0-f19e-8066-a6f8-c0760ba54ec1" class="image"><a href="%E6%9D%A5%E6%AD%86%E4%BD%99%E5%93%8D/UI_RelicIcon_15024_5%201.png"><img style="width:120px" src="%E6%9D%A5%E6%AD%86%E4%BD%99%E5%93%8D/UI_RelicIcon_15024_5%201.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-809b-9e8a-db55976b19e8" class=""><strong>祝祀之凭：圆形的玉佩。在某个传说中，它是何地之祭祀肇始的凭证。</strong></p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8006-8de8-f4fa8c3f7e17" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80df-af6e-e46af5dba911" class="">传说这枚玉佩的璞石来自尘封许久的神山。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8026-8ca8-e9e498c5333c" class="">一如离开海滨的星螺会回想起浪涛的声响，</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8006-92c3-cb70dd7111f6" class="">玉环当中也会传来细细的、汨汨的流水声。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80d2-b285-ce75f3dcc173" class="">在客栈中，常常能听见这样的传闻…</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80bc-a27e-deb2ba17741f" class="">「传说中啊，山涧的至宝原本是一块璞玉，能降下甘霖。」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80fb-868b-c7dbd644ad63" class="">「但后来，在世间纷乱的时候，妖邪们便觊觎它的力量。」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8047-b118-f8721f5958f7" class="">「于是山主将它分成数块，造成不同的模样，蒙蔽耳目；」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80c0-95be-f251590ae4b8" class="">「又将它们沉在水底、藏在山中，有的则供在神龛之上。」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80ec-bcf8-d8204fec9247" class="">「在沉玉谷的传说里，这些玉饰是得了神明契约祝福的。」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80e7-9afc-ca69c4a5421d" class="">「只不过，这么多年过去了都没有人能够找到…」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80cd-9829-fb7bb6160796" class="">祭司一直小心翼翼地将这枚玉环戴在身上。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80fa-9a32-f190ac3a213e" class="">只在某年临行前，悄悄拿给毫无雅趣的友人看过。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8059-b879-c043e679c553" class="">祭司郑重讲着花纹来历、先祖与神明悠久的契约，</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8081-8b64-ed8ba5130e8f" class="">但友人却手握药杵挥汗如雨，全然没有放在心上。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80f6-bdc0-c414bdd63fd2" class="">「同样的祭祀年复一年。都听你讲了不知多少回了。」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8056-8f55-db8ca9275d5b" class="">「不是说过回来以后要请我喝茶吗？到时候再说吧。」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8085-99dd-d02921b48e0a" class="">但水中来的，最终却不如她所想，最终消失在了水里…</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80d9-8fa8-c91a80b42023" class="">时至今日，遗珑埠的匠人仍会制作这种造型古朴的佩饰。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80a9-9fa5-c2708dbeb10a" class="">往来的客商们也纷纷依着传说，将精巧的玉环凑近耳畔，</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8057-afe3-d172327bf8bd" class="">倾听其中，是否果真能传来，雨水叩打山石的细细声响。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80d3-845b-ee4056e316c5" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fa592a0-f19e-80de-ba6c-c45c7826837b" class="image"><a href="%E6%9D%A5%E6%AD%86%E4%BD%99%E5%93%8D/UI_RelicIcon_15024_1%201.png"><img style="width:120px" src="%E6%9D%A5%E6%AD%86%E4%BD%99%E5%93%8D/UI_RelicIcon_15024_1%201.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8074-8864-dcf8b75d543d" class=""><strong>涌泉之盏：能够源源不断涌出清泉的茶盏。或许是仙家的赠礼、遗物或是失物吧。</strong></p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8073-b2d6-f0ebbc5ea630" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8081-b3db-c0b99a2e2662" class="">起初，这是友人们的赠礼，其中连通着小小洞天。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80e0-bf66-f40040d1b738" class="">盏中的清泉不会干涸，正适合做一个临时的居所。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80fa-a383-de0b24be075b" class="">它既然装得下日月的倒影，也能装得下一尾游鱼。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8008-bfcb-e5a4a506db63" class="">比起夜叉命中注定的劫数，她自诩还是幸运得多。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80ef-957c-ddbf7306aee5" class="">但继承古老仪式的代价，是无法长久地踏上陆地。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8074-a1c5-dd4af9e838f1" class="">那时奔流在璃月地表的甜水，远远不如现今之多，</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8000-9e81-ddf29936255a" class="">山下港城、平原的集子对她而言远得就像一个梦。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8052-98b3-d219cc532e3f" class="">可那个怕麻烦的家伙却说，会捧着这只茶盏出发。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-803d-ac02-c5e7ce34d936" class="">那家伙嘴里的璃月港，和庄里办的庙会一样漏洞百出。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80ff-bdb3-de0c7dbf4679" class="">这趟旅途一定会像现在一样争吵不断，充斥种种麻烦。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-805e-bdd9-d52b14a707ed" class="">她知道彼此都爱逞口舌之快，却不敢靠近熙攘的人群。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8091-95c2-df4858bc178c" class="">世间再没像她们这样渺小的仙人，歆羡又畏惧着繁华。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80af-ab69-c6309e326d4e" class="">「但我们之间有许多的约定。这是很好的事情。」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8041-b2a2-ee86f3d02dbf" class="">在临行前，她心想。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-806f-9cf9-ebafec2a059b" class="">「旅行会很有趣吧。能介绍她认识别的老朋友。」</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80c7-80d7-d304731c715c" class="">后来风炉与茶釜物尽其用，茶盏的模样也被人们学去。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80b9-bf3d-c012b688b669" class="">于是在每个人的案几上、掌心里，都可以有一轮明月。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-806e-b5a3-f8058af1345a" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fa592a0-f19e-8057-83af-d9a639a26711" class="image"><a href="%E6%9D%A5%E6%AD%86%E4%BD%99%E5%93%8D/UI_RelicIcon_15024_3%201.png"><img style="width:120px" src="%E6%9D%A5%E6%AD%86%E4%BD%99%E5%93%8D/UI_RelicIcon_15024_3%201.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8027-97d3-d3a7581ca3db" class=""><strong>浮溯之珏：由一块美玉制成的对耳环。有着无比温润的感觉。</strong></p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-806b-af3f-e9a2bc9828ad" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80a8-a216-c096de230f8d" class="">沉玉谷有许多山、许多水，与许多故事。其中，最著名的是：</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8062-bfdc-dce117279a42" class="">古时曾经有一块璞玉，为了不落入妖邪之手，被沉入了水中…</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80f6-a0d5-cbe3a25fd8b2" class="">传说的大河下总会生出许多支流。其中又有故事说，</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80c1-9547-e7f86049379e" class="">美玉曾为神山中璞玉，是经帝君之手才被精心雕琢。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80d5-873c-f2e34170ea53" class="">而没于清水的奇石也许是珏、璋、玦，抑或是杯盏。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-803c-96ca-d7e64e96531c" class="">还有这么一说：故事中的「玉」其实是美人的喻体。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8057-b7f7-cd5fdc4e4bdc" class="">传说之中，也曾经有人见过这样的景象…</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-80a0-adc6-de2da770ffc9" class="">那是无数尾如同日照下的宝石一般的鲤，</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8059-90ca-f1129bb880ff" class="">脱离了本应该桎梏水生之物的河流湖泊，</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8087-a30d-c21965945eeb" class="">自由地成群随风巡行在山谷之间的空中。</p></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8080-b3da-e177b326e149" class="">在谁人耳畔琳琅的对玉也化成别的模样。</p></div></div></details></div><div style="display:contents" dir="auto"><p id="2fa592a0-f19e-8065-bf14-f8e1ce8a0d8d" class="">
+</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
