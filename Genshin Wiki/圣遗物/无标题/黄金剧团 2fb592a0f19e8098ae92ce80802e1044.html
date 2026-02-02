@@ -1,0 +1,723 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>黄金剧团</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2fb592a0-f19e-8098-ae92-ce80802e1044" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="%E9%BB%84%E9%87%91%E5%89%A7%E5%9B%A2/UI_RelicIcon_15032_4.png"/></div><h1 class="page-title" dir="auto">黄金剧团</h1><p class="page-description" dir="auto"></p><table class="properties"><tbody><tr class="property-row property-row-status"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/burst_gray.svg" style="width:14px;height:14px;display:block"/></span>状态</th><td><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>完成</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>编号</th><td>15032</td></tr></tbody></table></header><div class="page-body"><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-8035-8174-d6b808085f89" class="image" style="text-align:left"><a href="%E9%BB%84%E9%87%91%E5%89%A7%E5%9B%A2/UI_RelicIcon_15032_4%201.png"><img style="width:132px" src="%E9%BB%84%E9%87%91%E5%89%A7%E5%9B%A2/UI_RelicIcon_15032_4%201.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8030-a8f1-eeb9eb4c5340" class=""><mark class="highlight-yellow"><strong>二件套</strong></mark></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8067-a514-ec01fcf58337" class="">元素战技造成的伤害提升20%。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-803b-bc36-e2167eb308ea" class=""><mark class="highlight-yellow"><strong>四件套</strong></mark></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8030-a11c-e5578699d8f5" class="">元素战技造成的伤害提升25%；此外，处于队伍后台时，元素战技造成的伤害还将进一步提升25%，该效果将在登场后2秒移除。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80da-826a-f5922e9f89d5" class="">
+</p></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">故事</summary><div class="indented"><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-813b-8953-fd72c5eb86e6" class="image"><a href="%E9%BB%84%E9%87%91%E5%89%A7%E5%9B%A2/UI_RelicIcon_15032_4%202.png"><img style="width:120px" src="%E9%BB%84%E9%87%91%E5%89%A7%E5%9B%A2/UI_RelicIcon_15032_4%202.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-81be-b913-df6b3b17d53f" class=""><strong>黄金乐曲的变奏：由砗磲、贝母和金箔精心制成的花朵，正骄傲地盛放着。</strong></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8117-82b1-f0c95fcc73ad" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8099-8136-fb10672547fa" class="">命运之曲曾沿各处水道奏响，传播着文明与秩序的谐和旋律。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8031-a0b7-dd439781dc0d" class="">音符所落，蛮荒被文明扫荡取代，无序的原始之地改换新颜。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80bd-a0d0-fd164441af67" class="">强盛的海风席卷而过，浮游而生的无根萍草随之飘摇。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8039-9a1b-f66be861504a" class="">在某个如海草般短命的部落，年轻的乐师与勇士相遇。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8009-b8e7-eca2926ad4d7" class="">繁星般的征服史诗之中，这段谣曲并不那么引人瞩目，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8060-b39d-f461ff65e233" class="">但海浪见证了两位战士的情谊，亦预示了他们的结局。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8089-8b05-c4dff69d416c" class="">年轻的乐师尚未褪去蛮族的朴拙性情，与被征服的奴仆很快成为朋友。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80bf-b323-f199dfe832c1" class="">那奴仆的名字如今已无人知晓，但日后「卡西奥多」之名将广布天下。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8088-b369-caa70660cf37" class="">后来，年轻的勇士追随年轻的乐师前往黄金帝都最高之城卡皮托利姆…</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80b0-9877-c83997527493" class="">他们完成了严苛的课业与试炼，从而被黄金神王擢升成为骄傲的主人。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80fc-a878-f7a80a2c32c7" class="">「骄傲正如黄金之花在荣耀王国公民的胸前盛放，神王的远见之下将再无贫弱蛮荒」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-804b-85a5-db1d6de6da55" class="">「骄傲是荣耀王国的尊严之盾，也是金光闪烁的矛头，守护着神王无可匹敌的威权」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a0-b37d-d5b8aa8d1373" class="">「只有在威权的管束下，秩序才得以诞生，秩序的统领下，艺术与美自由蓬勃绽放」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8053-ac88-df18bd24315a" class="">「在美好的黄金国，弱小、蒙昧与野蛮永不受容忍与庇护——要么臣服，要么灭亡」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8079-bb16-db42d89b6336" class="">「我的好友，我的兄弟，莫要留恋那贫微的过去，切莫贪念旧日之人虚假卑贱的尊严」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80fd-b02f-c69f206d1002" class="">「既已抛弃朴拙的身躯，弱小的精神，成为钢铁般的纯粹之人，又何以为小事叹息？」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8018-9a7a-d3304647d7c9" class="">「我的朋友，我的兄弟，且听你如发条般永恒不变的内心旋律：那是神王在向你低语」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80eb-9da1-f782f7159d79" class="">「荣耀王国的双眼只望向黄金的完美未来，未来亦将为旧日之人的必然灭亡奏响终曲」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-819c-a0e7-ed44478ff8f2" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-8118-b4d0-ec4c53d02d0b" class="image"><a href="%E9%BB%84%E9%87%91%E5%89%A7%E5%9B%A2/UI_RelicIcon_15032_2.png"><img style="width:120px" src="%E9%BB%84%E9%87%91%E5%89%A7%E5%9B%A2/UI_RelicIcon_15032_2.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8077-82e4-efb975f57122" class=""><strong>黄金飞鸟的落羽：</strong>黄金与白银掐丝打造的鸟羽，其上一颗蓝宝石晶莹剔透。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-81dc-acf5-e2422e84bd1b" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80b5-aae6-c02cba17277e" class="">海风渐落的时刻，天空慢慢染上了粉红暮色。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ba-8514-dab667c74d62" class="">千桅泊处，海鸟不曾停留，仅散落片片飞羽。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a7-a976-f92ef9167dcc" class="">一度谐和宏大的交响乐曲也有谢幕的时刻，正如任何帝国都无法永治长安。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8016-b417-ed6497fbd391" class="">随着水道的扩展，威权不仅带来进步与秩序，也带来了傲慢、暴力与剥削。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8083-b2ee-db3c23f2ba93" class="">「旧日之人」的遥远城邦里、隐士流亡的山谷中，甚至卡皮托利姆山脚下…</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c1-98d0-f49ff67e98b6" class="">协调曲调的高贵乐师与盔明甲亮的钢铁军团到来，从人们手中接管了一切。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80b7-aa08-c2e336e438fa" class="">而那些尚未被征服、尚未被夺去水滴的顽强之人则各自团结起来誓死抵抗。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8040-a5b5-cf1460ec386c" class="">「正如我所忧心，正如我所叹息，我的兄弟。当你在高歌奏乐之时，也当倾听弱者的呼声」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c3-b208-cbb7379eb91f" class="">「并非所有人情愿被剥夺家乡与自然，并非所有人都能接受我们的曲调」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8012-93b4-fd4b0fab4dea" class="">「你曾称他们为『旧日之人』，我的兄弟。但忠于旧日的人，也有不容忽视的执着与尊严」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-803c-8fa6-eb2fec40288b" class="">「我们曾以为可任意征服与支配他人，但荣耀王国的光辉又怎可能——」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c5-a6dc-d074608778e4" class="">「软弱！软弱！懦弱的怜悯心蒙蔽你的神智，令你的心变得柔软，成为暴露在背后的弱点」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a5-9c19-c09439ea5ac5" class="">「既然蛮荒与蒙昧依然隐藏在枫丹的任何土地，毒害着枫丹的任何水源，我们便灭绝它们」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8054-adb8-e54c8d095869" class="">「假若蛮族愿意融入黄金的宏伟秩序，我们就接纳他们，正如光荣王如何接纳了我们那样」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80d2-9114-e4ff60b8673e" class="">「但自毒龙斯库拉摧毁我们的高塔，屠害我们的乐师，被荼毒的蛮族已不值得拯救与接纳」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80df-bee5-fb66f9714fa2" class="">「既然不值得接纳，便应当从土地和水源中将他们清除，如我们消灭瘟疫、扑灭野火那般」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-801f-b5bc-e75c6b4c01aa" class="">就在这一刻，黄金的时代骤然停滞，从而陷入了无穷无尽的战争与叛乱。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8099-8e0f-c5e6a121561f" class="">王座间充斥着征服与消灭的呼声与蛮族痛苦的哭嚎，从中神王骤然惊醒…</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-81c7-83d4-eb1bbdb26697" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-81e7-95fc-ca077a1e8c1c" class="image"><a href="%E9%BB%84%E9%87%91%E5%89%A7%E5%9B%A2/UI_RelicIcon_15032_5.png"><img style="width:120px" src="%E9%BB%84%E9%87%91%E5%89%A7%E5%9B%A2/UI_RelicIcon_15032_5.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-815f-8bb0-ebd7d2cbb732" class=""><strong>黄金时代的先声：黄金与白银镶嵌而成的美妙日晷，似乎晷盘之上时间早已停止了流动。</strong></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-81f2-b2e8-ccd6286cf0a7" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-807c-9ca3-c93d1cbcffef" class="">欢快自在的黎明海风，将这古老的诗曲吹送——</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8018-bf5c-cc85ea1da25b" class="">时光之流不再向前涌动，而是随歌手退回那往昔。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80d1-9d17-f126af56a078" class="">沿着海流一路漂荡，经过荣耀王国饰金的穹顶，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8041-85bb-fc3b41633a41" class="">在夏日的轻风之中，穿过高墙围绕的绿色庄园。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ef-af7b-d79f0764bbae" class="">不论那些泛着轻舟的贵人，或被俘而来的蛮族，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a7-a26b-c617696eb189" class="">都沉浸在美好时代的乐曲当中，迷醉于回忆里…</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8009-b3e2-f0575cc337b3" class="">因为这是金灿灿的盛世——正值光荣王好时代。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80cc-b248-daeb73d666d8" class="">「我来自孤岛上的狭隘王国，生于棚屋，长于苇草搭建的村社」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-807a-a6e7-df5b61d900fb" class="">「当身穿闪亮盔甲的武士来到我家乡，宣告了『征服』的消息」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80f6-83d9-d4498f895881" class="">「我还只是一介孩童，天真地追随着这些高大的半神前往首都」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-807e-b1c1-ebfad04c8aed" class="">「幸而凭着灵巧的手指与清亮的嗓音，我避免了受奴役的命运」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8014-8ac9-c56638f59293" class="">「自此之后，受到神王赏识的我才初次接触文明与秩序的力量」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8070-92e5-d518c574b2b6" class="">「脱胎换骨，舍弃我的名与族，世人将只知『波爱修斯』之名！」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8045-ade2-d26db93b39a7" class="">就这样，生于蛮族的孩子为黄金帝宫所震撼，为宏伟的威权之美所折服。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a7-ab85-deb1947b69e7" class="">努力抛弃与遗忘蛮荒的旧日习俗，如初生婴儿般饥渴地吞噬着新的知识…</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80f8-92b0-fc7d91a37b2c" class="">一切只为脱胎换骨成为这伟大文明的一部分——成为真正身怀荣耀之人。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8091-b716-c81852e04d8d" class="">不为其他，正因为这是金灿灿的盛世——正值光荣王高居王座的好时代。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8162-9324-c5c36c840e3f" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-8173-afff-ece4036bf5a6" class="image"><a href="%E9%BB%84%E9%87%91%E5%89%A7%E5%9B%A2/UI_RelicIcon_15032_1.png"><img style="width:120px" src="%E9%BB%84%E9%87%91%E5%89%A7%E5%9B%A2/UI_RelicIcon_15032_1.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8173-a048-de7fd477cb71" class=""><strong>黄金之夜的喧嚣：形制古老的银瓮，曾经满盛着红宝石般的美酒，如今其中却是苦涩的海水。</strong></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-81b9-bd57-da43ea4e32a9" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8073-9461-f9921004a4be" class="">平静的海面一阵涌动，送扁舟滑入清寂的庄园与神殿之间。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80f1-90f3-fb210ad957a8" class="">苍白的月光下，白日里曾夺目璀璨的黄金穹顶也失了颜色。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c9-bf1b-cf9331f85656" class="">神王从威权的大梦中骤然惊醒，清幽的星光已消失不见。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8059-adb2-ffceadd4f8a7" class="">暴力与隔阂萦成比黑夜更深的黑暗，笼罩了黄金的穹顶。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-804c-8d40-d12292317067" class="">惊悸与悔恨之中，他召集身边最忠诚的卫士与调律乐师，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8036-b092-f5a406902761" class="">下达了最后一道命令，意图将分裂的疆土重归和平如一…</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-800e-a88b-f3b2962e94c5" class="">然而正如覆水难收，积重难返的傲慢与偏见压垮了调律者与执权之人…</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c6-9dcd-e3ebf985a3ce" class="">一切高贵的牺牲，一切无私的计划被奸人所破坏，最终化作一片瓦砾。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8028-a2d9-c5d1f5b7a005" class="">不论是魔龙亲王的蛮族大军，还是决意耗尽自身力量拯救帝国的神王，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-806b-9550-cc6461d9a72e" class="">都被无可控制的风暴席卷而去，连华丽的宫阙、碧绿的庄园一同毁灭…</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-801d-b063-e8fae5058078" class="">而失去了黄金乐曲的引导，一度高贵的荣耀王国人化作了残缺的魔像…</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8026-9fad-cba00e62aa7c" class="">在黄金之夜的最后喧嚣平息之后，调律师波爱修斯躺在瓦砾之间，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a4-a777-ed0bbcd83dce" class="">只有瓦砾听清了他神志不清的低语，只有瓦砾记录了叛徒的罪恶…</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-800e-a291-c3f37b9c9fc0" class="">「只因一时的疯狂，他背叛了我们所有人」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-802d-ac14-f3a1c85b0d9f" class="">「秩序不会轻易改变，人的悔改亦是如此」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-81e9-8ddc-e7d6bdfe4c4c" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-8161-b7fb-ed62eba84d5a" class="image"><a href="%E9%BB%84%E9%87%91%E5%89%A7%E5%9B%A2/UI_RelicIcon_15032_3.png"><img style="width:120px" src="%E9%BB%84%E9%87%91%E5%89%A7%E5%9B%A2/UI_RelicIcon_15032_3.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-817d-b035-c901caa2c976" class=""><strong>黄金剧团的奖赏：形制古老的王冠，相比起君主的头饰，不如说更像是舞台道具。</strong></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-810a-9f10-cfd14227bcab" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8048-938c-ec6fe5541b6b" class="">在那片庄严静默的深海底部，荣耀王国曾经高耸的王城所在，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-809c-b69c-e2821668bf1c" class="">如那盛大旧梦的可怜残影一般，矗立着一座褪色的黄金城堡。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c8-b802-cca3b12943d7" class="">黄金时代的宏伟歌剧已然落幕，谐和有致的乐章亦不再回响。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-807f-a628-f240b968af85" class="">在野心与背叛毁灭的废墟上，「旧日之人」建起了新的国度。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-800d-b6d2-f06ee1d3c46e" class="">「可怖，可怖！完美的秩序又被野蛮践踏，弱者与蒙昧占领了帝国的旧土」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a5-b959-e6104a213005" class="">「精灵与泉水，泉水与骑士…孩童的呓语取代史诗，松散的歌谣替代了乐章」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-806d-883d-d259f7873e4c" class="">「本应永恒的威权被神王的一时疯狂摧毁，如今又被新生的蛮族国家嘲弄…」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80f3-aebf-db2c069ce142" class="">「难道伟大的帝国终将复归野蛮？难道蒙昧与无知终将把文明和理性征服？」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8060-8eb9-cba2b6ffd784" class="">在褪色城堡的黄金剧场之上，失去乐章的乐师如是放声哀歌不再归来的往日，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8032-96ac-ebf7bb545534" class="">而静静地聆听着的，则是沉默而饥渴的魔像，等待着猎食与吞噬无辜的灵魂。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8049-9586-e9bad6b022c8" class="">待到黄金的大乐章重新奏响之时，「金色剧团」终将领取诚实者应得的报酬。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-806d-9a27-fe8d1f79d2b0" class="">待到完美的秩序在人类中分出主人与奴仆，健全与美令荣耀王国再度光荣…</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8066-a729-d318909f3f2a" class="">待到那一日，待到那一日…</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8005-b2f5-e336d4f9ecba" class="">「金色剧团」的每一位成员，自当赢得整个未来作为奖赏。</p></div></div></details></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

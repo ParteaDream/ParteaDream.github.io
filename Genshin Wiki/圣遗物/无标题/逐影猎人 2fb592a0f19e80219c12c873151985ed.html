@@ -1,0 +1,724 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>逐影猎人</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2fb592a0-f19e-8021-9c12-c873151985ed" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="%E9%80%90%E5%BD%B1%E7%8C%8E%E4%BA%BA/UI_RelicIcon_15031_4.png"/></div><h1 class="page-title" dir="auto">逐影猎人</h1><p class="page-description" dir="auto"></p><table class="properties"><tbody><tr class="property-row property-row-status"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/burst_gray.svg" style="width:14px;height:14px;display:block"/></span>状态</th><td><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>完成</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>编号</th><td>15031</td></tr></tbody></table></header><div class="page-body"><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-806f-9543-ce1a38331501" class="image" style="text-align:left"><a href="%E9%80%90%E5%BD%B1%E7%8C%8E%E4%BA%BA/UI_RelicIcon_15031_4%201.png"><img style="width:132px" src="%E9%80%90%E5%BD%B1%E7%8C%8E%E4%BA%BA/UI_RelicIcon_15031_4%201.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8048-a2f6-ce6aab481f56" class=""><mark class="highlight-yellow"><strong>二件套</strong></mark></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a2-af43-d1387c826cda" class="">普通攻击与重击造成的伤害提高15%。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80e0-b186-d35058d4671e" class=""><mark class="highlight-yellow"><strong>四件套</strong></mark></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c3-aa21-fa96ebb9090c" class="">当前生命值提升或降低时，暴击率提升12%，该效果持续5秒，至多叠加3次。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-804a-88f8-f352d087a314" class="">
+</p></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">故事</summary><div class="indented"><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-800f-9196-fa3b9aaa0974" class="image"><a href="%E9%80%90%E5%BD%B1%E7%8C%8E%E4%BA%BA/UI_RelicIcon_15031_4%202.png"><img style="width:120px" src="%E9%80%90%E5%BD%B1%E7%8C%8E%E4%BA%BA/UI_RelicIcon_15031_4%202.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80b3-bbb1-c31653507424" class=""><strong>猎人的胸花：老旧的勋章，在过去曾被用来配发给在战斗中做出了杰出贡献的人。</strong></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-807d-a56b-ce098c2d1a52" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8018-b3a5-e0329737d961" class="">在过去，用于褒奖曾为枫丹安定而做出战斗贡献的人，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80e1-baa0-f0f7584ebaaf" class="">而设计、制作的勋章。这种勋章大部分是光荣的象征，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8052-a226-def19fd5c23e" class="">但得主有时会将其藏在不见光的地方，或是投入水中。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80db-b8a0-c3ec47084d82" class="">「追寻森森鬼影，将其尽数驱逐、猎杀」，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ce-b158-e55e394203e2" class="">这是后来被充满尊敬地称为「黄金猎人」，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-806d-a5ea-c50f5559e219" class="">而本人却将这一名号视为耻辱的卡西奥多，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80e8-93cf-fcd879f612f4" class="">协助建立「逐影猎人」这一职的名称由来。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-802a-8722-f9c81b08d630" class="">但世间邪道与妖魔罕有，被贬为邪道与妖魔的人常有。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8074-9adb-e04079566d65" class="">如今的逐影庭更专注于犯罪调查而非战斗，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8062-8106-e5906f33a827" class="">并大量吸收了作为种族相对年轻的美露莘。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ac-9aa0-e58edab1bc3d" class="">这枚勋章曾经属于一名参与指挥白淞之围的逐影猎人。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8064-95a8-c9582b780493" class="">他因此离开了逐影庭的行列，计划与杯中物度过余生。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c3-972b-f0b1c7656b86" class="">直到旧友的托付让他不情愿地再度尝试与人一同生活，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80dc-bf2d-ca9be0e9ea4f" class="">再度开始尝试为了儿女创造一个没有森森鬼影的世界。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8037-abf0-f9c791bd14f1" class="">在最后，迎接他的是消除一切藩篱与隔阂的平静海洋。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8092-b57a-f761532764cf" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-808f-b542-d861f80e0ce3" class="image"><a href="%E9%80%90%E5%BD%B1%E7%8C%8E%E4%BA%BA/UI_RelicIcon_15031_2.png"><img style="width:120px" src="%E9%80%90%E5%BD%B1%E7%8C%8E%E4%BA%BA/UI_RelicIcon_15031_2.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8083-afa5-c19f813be610" class=""><strong>杰作的序曲：用于调整旧式机关发条力矩的便携工具。如今失去了实用价值。</strong></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a9-ba26-cd3903a04b52" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-804f-8987-f9df5d3ab3a6" class="">调整机关发条力矩的小工具，适用于各种规格的发条盒。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-809a-ad18-ce0fff490599" class="">随着阿兰·吉约丹的「新式」发条机关普及而失去效用。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8030-b2f1-eb7593b1680a" class="">如今后者已经过了数百年的验证，不再被称为「新式」。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-802f-8284-e76a57e72201" class="">关于阿兰·吉约丹其人。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-802a-befa-e419106e5620" class="">在加入并离开逐影庭，并最终枫丹建立动能工程科学研究院前，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80b6-ad6e-f7fe173e858b" class="">吉约丹曾在如今沦为废墟的自然哲学学院主持有关能源的研究。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8097-a854-c3c9bc0b5582" class="">据说他一生中从未与同样曾在逐影庭效力的妹妹以外的人亲近。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-803a-b236-cc72d039370a" class="">关于他有诸多传说。其之一：</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-808d-8bf8-eb5dc6db9a2f" class="">据说他在学院时期就制造出了拥有思考能力的机械，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ed-87da-cf0a29c3ea55" class="">并曾借助这台机械协助自己与妹妹在逐影庭的工作。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8088-83e1-dec53bb6e358" class="">这些说法来自曾与他共事者（多数殁于厄里那斯），</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80e4-b302-fc8e03ac9d6d" class="">加上没有实际物证，因此从未进入相关的官方记载。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80fb-b8f7-cc55732d2066" class="">被问及时他有一次评论道：很遗憾。没什么可说的。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8098-8ca6-f4fda18c34cc" class="">除此之外再没有对相关的提问与调查做出任何回应。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80af-994b-e40cbc28bac4" class="">其之二：</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-809e-afaf-fc5e3fef7251" class="">老年时他从枫丹科学院退休并投身工坊，不再见人。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80f3-a613-d684ebb4af50" class="">他在他的岁月尽头从事的研究成果从未公开发表过，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80fc-9138-e70457a2e2ba" class="">事后在个人工坊中，只能找到建造何物留下的痕迹。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c8-a1f2-f1b5dd4f9200" class="">在后来，这些传说与科培琉司未能演完的遗作一样，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-804c-83f4-c7a97cd1aaa8" class="">激起了无数人的遐想、灵感与努力。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c3-8926-cb41a915dd07" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-80a2-b966-d02b600ba256" class="image"><a href="%E9%80%90%E5%BD%B1%E7%8C%8E%E4%BA%BA/UI_RelicIcon_15031_5.png"><img style="width:120px" src="%E9%80%90%E5%BD%B1%E7%8C%8E%E4%BA%BA/UI_RelicIcon_15031_5.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8087-97c8-dfe9da2a2c31" class=""><strong>裁判的时刻：制式的怀表，走时精准度并不算高。</strong></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8004-81d1-de56d5c9f6f8" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-800d-a6f4-d64770d94288" class="">过去配发给枫丹执法者的怀表，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8042-b20a-cf414e054a4a" class="">作为怀表而言精准度并不算高，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-808a-b58b-d95c3e204b81" class="">但能在执勤时起到徽章的作用，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8046-8eba-d74e8e4e520f" class="">在枫丹曾有非常广泛的认知度。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c7-a6ef-f9af79002c58" class="">大魔术师「帕西法尔」请求比武审判的消息经由报刊报导，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-808e-9967-f8e4e5cf57e7" class="">连同她出人意料的罪行一同，在枫丹廷引起了相当的轰动。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8056-a848-c7082b954030" class="">审判庭之后对此要求的应允与人选，更是甚嚣尘上的消息，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8076-a6b3-dcc633938124" class="">由决斗代理人玛尔菲莎为控方的代表，参与此次比武审判。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8084-9683-d6685501a340" class="">关于玛尔菲莎的出身是否会令她在决斗中判断或表现失常，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8058-8452-f23593f88c01" class="">她与帕西法尔过去可能存在的联系…以及更为通俗易懂的，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8004-bc5e-ea5857cf46b0" class="">两者「战斗力」孰高孰低，都是当时为人津津乐道的话题。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8087-9038-e36abde9a69b" class="">过去曾经与「帕西法尔」相识的记者卡尔·英戈德彼时已经辞职，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a7-979a-f35051ae81c7" class="">他决定不再以此为业，情愿作为探险者与荒野、废墟和遗迹为伍。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-801d-9ad1-eabe0628b2ef" class="">但出于职业的骄傲或是怀旧，他一直珍藏着身为记者拍摄的画片。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8085-ad17-cbc541129528" class="">数年后，一次他回到枫丹时应时任水仙十字院副院长的旧友之约，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8030-b646-f403d7825e2e" class="">来为当时水仙十字院的成员合影时，透过镜头看着另一侧的面容，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ef-a9b4-dc2ea0a6151c" class="">他想起了自己曾经怀着许多希望在白淞镇与枫丹廷之间来回奔波，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80aa-868b-fcfff8380f7a" class="">那是有梦幻般虚幻的数月，对有的人而言太长，对有的人则太短。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-807e-9d60-d1d498e41439" class="">想起即使事态像能够消去一切的洪水升起般，渐渐看不见一丝光，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8048-ab2d-ed3d765ce3b2" class="">即使所有人都劝他应及时抽身，却始终不愿意放弃的年轻的自己。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8004-81d3-d4daea0a0aa3" class="">想起了自己透过镜头看到的许多笑容，听到的许多对未来的畅想，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c6-9446-e2a9c870d538" class="">还有后来隔着砖石土地闷闷地传来的喊声、破裂声与金属碰撞声。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80b3-90ab-f2c3d8ff3071" class="">想起最终用「戏法」强行将自己转移到漆黑而安全的地窖的少女，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8089-b1bd-c7e7798a6e3f" class="">没能作为记者在比武中记录她最后一战的懊悔才将他的视野席卷。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80fc-8bef-d0352aacd94b" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-80c7-8eac-f5647b08ef5f" class="image"><a href="%E9%80%90%E5%BD%B1%E7%8C%8E%E4%BA%BA/UI_RelicIcon_15031_1.png"><img style="width:120px" src="%E9%80%90%E5%BD%B1%E7%8C%8E%E4%BA%BA/UI_RelicIcon_15031_1.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8018-957a-e4a2facef29b" class=""><strong>遗忘的容器：容纳烈酒的便携金属容器，适合放在大衣口袋中随时使用。</strong></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80f0-830c-d9ad73f8147a" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8012-ad07-d96075e3c75c" class="">过去，某个曾为枫丹廷效力之人的酒壶。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8001-90ff-f47cb9b873f3" class="">从事某些特定工作的人，若非生性冷酷，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8019-8a4a-c525e6b8f586" class="">最终若不依赖其中灵药，迟早走向崩溃。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80d5-b7c7-ebbf172b2dc1" class="">它曾属于曾经为枫丹的安定而做了不得不做之事的人。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80f9-b286-d3c9cfc79529" class="">而他在负伤退役许多年后在最后一次调查时，才明白，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c5-9fe9-f361a1b3a9bd" class="">循着足迹跳入兔子洞，迎接他的不是仙境，总是漩涡。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-806f-b3c8-ccf43dbc83b2" class="">……</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80de-b90b-c8afd548ce27" class="">记忆如同破裂的潜水护具中涌出的气泡一般浮现出来。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-800e-9f29-da7fc700bbf7" class="">他想起了自己幼时与德怀特、贝瑟，还有卡尔的游戏，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80d6-bf82-db9255a2ffd7" class="">在当时他总是扮演英雄，卡尔总是扮演恶龙贾巴沃克，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80b4-b001-df15274ac900" class="">而他熟悉无比的院长的怀抱与此刻的感受有多么相似。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80fa-9654-f35e67db1f53" class="">想起白淞镇的赤红火光照亮的无数被仇恨扭曲的面庞，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-804c-ac5c-f3d77a1f2f86" class="">他这才想到自己也曾将无罪的孩子送进了水仙十字院。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8052-942d-e16a6940e2c1" class="">最后最为鲜明的，是初次遇见「儿子与女儿」的心情。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ed-afdd-cfb0f0f27848" class="">仿佛看到漫长隧道尽头的光，看到戴上面具前的自己。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8039-9e87-c046d4e43617" class="">但就如同在漆黑的地狱深处紧紧攫着蛛丝的徒劳一般，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8000-aa98-eccb2aa41147" class="">「亲爱的阿兰，亲爱的玛丽安…我从不和你们亲近，」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-808a-8f26-ee5e6d60bafd" class="">「直到最后，我也不知该如何成为你们的『父亲』。」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c0-945e-f57d3d73d7e0" class="">「但是只有看着你们长大的记忆，我实在不想失去…」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ea-9ec4-e53885261397" class="">酒醒时，所有荣誉、耻辱、爱与执着，都已溶于水中。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80e6-912d-f9182f14823a" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-80d9-a82d-eea0c1ce9514" class="image"><a href="%E9%80%90%E5%BD%B1%E7%8C%8E%E4%BA%BA/UI_RelicIcon_15031_3.png"><img style="width:120px" src="%E9%80%90%E5%BD%B1%E7%8C%8E%E4%BA%BA/UI_RelicIcon_15031_3.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-804f-a8fa-c8a0a516dbf2" class=""><strong>老兵的容颜：老旧的面具，能够一定程度上替代因伤害而损毁的面容。依据伤残的面积、使用者的性别，有不同的设计。</strong></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8040-a22a-f9514c717722" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-809c-a19c-df8a2ced8036" class="">过去，配发给为枫丹廷效力而面部负伤者的假面。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-802f-91d1-e0a45df1c750" class="">能够替代骇人的面容，是老兵的光荣或耻辱之相。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80d8-8de8-ed20f5e51e23" class="">即使能将伤痕完全遮盖，心里的伤也不会消失吧。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-803f-93be-eeddbb738bb5" class="">「如果我没能回来，那两个孩子就托付给你了。」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80e2-9d3f-d2c40b39bfed" class="">一同长大、又一同曾经为枫丹廷效力的友人说道。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8029-9598-c8fca9a06e79" class="">已经没有请你来并肩战斗了，友人原本想这么说，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80d9-96e7-d863bf1a1831" class="">但是如今她与他之间的默契，是一段空白的年月。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-803c-9a13-c02f086eaf7d" class="">仿佛只要不去谈论，白淞镇的事情就不曾发生过。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80df-b082-f4487b1b7ed4" class="">这回院子恐怕会被淹没，我和院长不在也不安全，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c7-9a2c-f0d06956cfbf" class="">想把孩子们托付给值得信赖的人，像你和英戈德，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80da-9134-ee9ed4661238" class="">友人看出了无法发言的他面具下的神色，解释道。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-800c-909e-e0eb5aca6a61" class="">「等凯旋回来，再叫上拉斯克和英戈德一起吧。」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8053-9a40-f0f77c3c252d" class="">「这次就由我来下厨吧！让你们好好见识见识。」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8009-a1bc-c2d415881a99" class="">看到他眼里流露出的狐疑，友人气鼓鼓地补充道：</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c4-9a26-cf8c7d503ecb" class="">「这几年我可学会了烘培！孩子们都很喜欢的！」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8082-803f-fa90a25fcb4e" class="">「那么再见喽，吉约丹…我亲爱的埃马纽艾尔。」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ba-958b-f36738905646" class="">「你那头也一切顺利才好，不要遇上什么事情。」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-803c-a55e-fb6d26f83481" class="">「希望我的斯彭西安还没有被小伙子们折腾坏…」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8027-af13-df9bc210130c" class="">虽然不喜欢小孩子——应该说，不想与任何人来往，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8056-80ca-e3666aa6aa3e" class="">因为只要看到人，就会想到他们体内也流着红血。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-800b-8d2f-f87c6d5863ed" class="">但既然是老友的请求，那就暂时帮忙看着他们吧，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a8-88cb-f2e57bd4757d" class="">等贝瑟回来，就把烫手的山芋还给她…</p></div></div></details></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c0-84d8-fb5c187f5b64" class="">
+</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

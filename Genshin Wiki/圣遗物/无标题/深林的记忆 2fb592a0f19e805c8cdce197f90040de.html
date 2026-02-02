@@ -1,0 +1,723 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>深林的记忆</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2fb592a0-f19e-805c-8cdc-e197f90040de" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="%E6%B7%B1%E6%9E%97%E7%9A%84%E8%AE%B0%E5%BF%86/UI_RelicIcon_15025_4.png"/></div><h1 class="page-title" dir="auto"><strong>深林的记忆</strong></h1><p class="page-description" dir="auto"></p><table class="properties"><tbody><tr class="property-row property-row-status"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/burst_gray.svg" style="width:14px;height:14px;display:block"/></span>状态</th><td><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>完成</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>编号</th><td>15025</td></tr></tbody></table></header><div class="page-body"><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-809d-85e8-dae0ea5fb6e4" class="image" style="text-align:left"><a href="%E6%B7%B1%E6%9E%97%E7%9A%84%E8%AE%B0%E5%BF%86/UI_RelicIcon_15025_4%201.png"><img style="width:132px" src="%E6%B7%B1%E6%9E%97%E7%9A%84%E8%AE%B0%E5%BF%86/UI_RelicIcon_15025_4%201.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80cf-b1e2-f1edece9b163" class=""><mark class="highlight-yellow"><strong>二件套</strong></mark></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c4-8fbd-ecadc439e2ef" class="">获得15%草元素伤害加成。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80cb-a7b6-dfcfb6d18d54" class=""><mark class="highlight-yellow"><strong>四件套</strong></mark></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8055-a201-dd355b20494b" class="">元素战技或元素爆发命中敌人后，使命中目标的草元素抗性降低30%，持续8秒。装备者处于队伍后台时，依然能触发该效果。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8037-9ff1-c226e7b74b5f" class="">
+</p></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">故事</summary><div class="indented"><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-80ab-aa95-e60d744169c5" class="image"><a href="%E6%B7%B1%E6%9E%97%E7%9A%84%E8%AE%B0%E5%BF%86/UI_RelicIcon_15025_4%202.png"><img style="width:120px" src="%E6%B7%B1%E6%9E%97%E7%9A%84%E8%AE%B0%E5%BF%86/UI_RelicIcon_15025_4%202.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80e3-a7da-fbcc8492c23c" class=""><strong>羁缠之花：</strong>精美的水引御守，据说能够封存实现愿望的力量。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-807c-954e-f1213b93ae45" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80e4-92c0-dd8ce9225a82" class="">森林王在诞生之时，曾经得到了草木之王授予的宝冠。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-805f-a1bf-c073caae248d" class="">它最后传给了第一个循着王的足印，穿过迷宫的少女。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-809e-bdb5-cd0723df6201" class="">她曾经收留了许多迷失林中，又不曾踩踏野花的孩子。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a8-9466-eab4f48f48b3" class="">因为她只明白随侍王下，为王守卫迷宫的生活，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-806c-a724-ec3fc20d9665" class="">因为她晓得这个世界只是森林所做的梦的道理，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8023-bcad-ffdcc84e6a09" class="">便将林中狩猎、梦中行走的道理教给了孩子们，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-808f-b7f8-caabdea75338" class="">她们要热爱林中的草木，因为那都是王的园圃；</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8038-9f59-ddb2b9b30598" class="">要尊重倒在箭下的猎物，因为那都是王的臣民。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8030-b790-f234504cf4e5" class="">她的传喻在迷失深林的孩子中流传很久，也变化许多。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-809f-9962-cd3ca15c4d7e" class="">最后这些教导的起源已经被忘记了。但一些人成为了巡视森林的守护者，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8063-b696-def03e437510" class="">回到了人的世界中，在最漫长的夜幕降临时，点起篝火驱赶黑暗的影子；</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-809f-bc56-cac0f6419a51" class="">也有一人始终在树篱间行走，最终为狩猎野兽，忘记了日月，身披黑血。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80f8-bbd1-dd9e2f8053f8" class="">她几乎与末代森林王一样古老。在最后她做了一个关于迷宫与狩猎的梦。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8055-8379-f586d7053191" class="">这个梦是如此广大，以至于它曾一度将所有森林子民的梦都包裹在其中。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80d2-ae90-ea9294ea8b20" class="">这个迷宫是无限广袤的猎场，树根与溪流勾画的路径比虎的斑纹更绵密，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8069-94ca-d8760b2e4d01" class="">比流水上的月光更善于变幻。试图布道「死」的深邃低语在迷宫中迷失，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80e0-b11f-cafe7cff4b8a" class="">因为只有她与明白森林王教导的孩子才能穿过迷宫，走进无边际的猎场。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80db-8bcb-c3a66b512559" class="">直到最后低语消失，恶兽逃逸，被侵蚀透彻的她才与这个大梦一同消散。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-807a-b388-c9c6ed3c9fd6" class="">她在最后与许许多多梦的碎片一同流入了人子的梦中。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a6-9a18-cc762fa37ba7" class="">如同破碎的镜子会从许多角度映照出许多各异的形象，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8021-89ea-eb2d881c49b1" class="">她留下的梦也以诸多不同的形式在人们的叙事中流传。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8064-89d5-ffef5bdd26fd" class="">最终通行（胜出）的故事，与她原本已经没有关系了。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-809c-af61-e65b4c2a40b6" class="">她在故事之中流传的名字，实际上是那顶冠冕的名字。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ad-bc84-e2f37e6ce3ae" class="">最后她留给自己的是自己的真名、一掬映着月光的水，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a1-985e-ee64296796b1" class="">以及从自己爱戴的王手中得到的宝冠上取下的饰金花。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8058-9586-cf850461f51a" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-80e5-a58c-ea0014a6c222" class="image"><a href="%E6%B7%B1%E6%9E%97%E7%9A%84%E8%AE%B0%E5%BF%86/UI_RelicIcon_15025_2.png"><img style="width:120px" src="%E6%B7%B1%E6%9E%97%E7%9A%84%E8%AE%B0%E5%BF%86/UI_RelicIcon_15025_2.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-800f-9aa2-f8b51f7872a5" class=""><strong>翠蔓的智者：飘逸如羽的翠色叶片，取自林中智者的衣衫。</strong></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8044-a2ff-d7f125d2f576" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80b0-8de3-ccaf5f37eefa" class="">那是迷宫之王的年岁…</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80d1-b121-d9c6ca057b87" class="">据说王侍门下最贤睿的少女通晓百兽的语言，能从月光中解读诗文。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8044-9211-cc57439584d0" class="">守护着静谧的森林、抱月的静水与梦中森林尽头那无边无际的猎场。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-803a-9665-d8d2667fa45d" class="">「吾等诞生在绿茵的御林中，吾等的世界在树荫之下、草甸之上。」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80f3-82ea-f01b1239a87a" class="">「取自森林的，都将回归森林。只要遵循天地之理，便无虞生死。」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ee-9b8b-fd32cbedabf3" class="">「因为遵循自然的，终会穿过御林的迷宫，抵达漫无边际的原野。」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-806c-a076-d617c2eadae7" class="">她的教导虽曾经启发了许多孩子，最终也像虎的血脉一样渐渐稀薄…</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-807d-8c2a-eddec64cffdb" class="">那是异兆之月的年岁…</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-808f-a646-dfb407c0e00d" class="">据说盲眼的少年循着甲胄洁白的长兄的足印穿越诸多王国、山岳与河流，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80df-aa27-db76b14ee042" class="">最终，在黯色的深林中迷失。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-808e-8d7f-e61492df1d6e" class="">尽管痴于剑术，却比谁都温柔。虽然过于恪守教导，却比谁都坚持正义…</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-805e-91f9-f6a478022176" class="">在心中永远洁白的幻影的尽头，找到的却是月光般清白的镇林圣物之一。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a2-bec9-c5b090d082b9" class="">之后，则是渴求血肉的野兽。当猎手终于循着白枝的微光来到他的身边，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ca-8a6c-c2334b1f1054" class="">他已经失去了许愿的力量，心中指导他的洁白身影也变得暗淡、消失了…</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-808f-8e91-e83eebd54c1f" class="">那是黑夜占了上风的年岁，黎明还远远未到来的年岁。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-806c-a853-d8e5c37e53ea" class="">从噩梦中，智者瞥见了黯色的长剑与水中的晕开的红。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8048-b767-fa720e0dfe90" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-80aa-a045-d565662e9d8f" class="image"><a href="%E6%B7%B1%E6%9E%97%E7%9A%84%E8%AE%B0%E5%BF%86/UI_RelicIcon_15025_5.png"><img style="width:132px" src="%E6%B7%B1%E6%9E%97%E7%9A%84%E8%AE%B0%E5%BF%86/UI_RelicIcon_15025_5.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8013-b2eb-dafe95e274d1" class=""><strong>贤智的定期：投身贤睿之道者所用的时计，其中盛装的并非无生命的砂砾，而是细小的芥子。</strong></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-807c-a4f0-d67dfd331f55" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80fd-80e6-e663e4abad31" class="">过往的传说中，森林王是长生不死的，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8051-a98f-c2485b3fa8b7" class="">在寿限的尽头，身躯会融入密林当中，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ea-9b38-e0d549f98971" class="">爪牙化为铁木，斑纹幻为无尽的迷宫，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c1-8f0d-e5ddd77b126a" class="">灼灼的双眼则分为天上与水中的明月。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a9-97c8-c6a437df8b52" class="">凡死去的，将借另一副躯体得获新生；</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8016-b845-c9ac48e4073a" class="">凡腐朽的，将催发出纯净幼嫩的新芽。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-800e-b37b-cb49ff916269" class="">「但是，因死而销却的灵魂，永远遗失的记忆，」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8068-b165-d71e353398be" class="">「生灭的循环定期之中，可有它们存在的位置？」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8033-9e06-c2b7b93f7cd7" class="">「灵魂是虚无的概念而已，而记忆也终将归于大地。」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8093-a04f-de3f5428500e" class="">「本就虚无之物不足为惧，其消弭又有何值得担忧？」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-807a-b50a-c56f39fc131f" class="">「互相提醒彼此提携，将大家的形象永远铭记便好，」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-805a-9d49-cd34a9506395" class="">「如此自然能克服生灭的循环，将记忆长久留存吧！」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-802c-96c8-c7f3eec641a7" class="">很久以后，约定相互提醒的挚友先染上了遗忘的恶疾。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-806e-a42d-cc8be251f73d" class="">依照未完全忘却的旧梦中描绘的三人、三精灵的形象，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8089-9316-d6509578aa13" class="">以及被学院所流逐的狂医留下的记录与猜想，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-801c-bbf3-e333e95298b2" class="">去捕获梦想——捕获能操控梦想的林中居民，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a5-890c-d722e7437cf0" class="">让挚友再度想起自己的形象与一同的记忆吧。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-808a-b87d-c263b2bfca32" class="">如果主宰记忆的器官已经太过残破无法复原，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-809c-a37f-d682d775b11d" class="">那带上另一位老友，一同在过往的梦中生活，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-802e-8e1f-fd2e39695625" class="">在小树屋中玩耍，在无限深远的密林中探险，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-804b-b22d-fc69402a7b06" class="">那也不错。在梦中，谁都有重新开始的机会。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80e1-9a65-f97833592364" class="">首先要捕获那些梦中的精灵。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80fb-beea-cf06446ae398" class="">那些佣兵曾经为我做过很多。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8004-9d0a-cf6d345e28e4" class="">这次应该也不会让我失望吧。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-807d-ad0a-ff34b7c22a2b" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-808a-9218-d7f66971bbef" class="image"><a href="%E6%B7%B1%E6%9E%97%E7%9A%84%E8%AE%B0%E5%BF%86/UI_RelicIcon_15025_1.png"><img style="width:132px" src="%E6%B7%B1%E6%9E%97%E7%9A%84%E8%AE%B0%E5%BF%86/UI_RelicIcon_15025_1.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8053-b063-de034138eda0" class=""><strong>迷误者之灯：本是沙漠形制的油灯，但其上生出了苍翠荧光的绿叶。</strong></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8028-ab41-f69993e602fd" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8079-959a-d6455a3537b3" class="">相传在愚昧之主毁灭于自己的野心之后，大漠群王并起，又如火星般爆裂堙灭。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ec-bc76-d3a3036adac7" class="">诸多渺小的暴君聚集逃离末日的流民，依托古老废墟建立起神殿、宫城与高墙。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80f5-b62c-c4b795566b13" class="">遗迹之城日复一日倾圮不停，自夸强盛一时、极富一时的各路暴君亦朝生暮死。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80b0-b3cd-cefac8dc7f63" class="">这座油灯便属于其中一个衰颓王国的年轻王子，是贵胄宝库中剩余的秘宝之一。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8005-af46-d5b35cd12213" class="">「父王为追逐猎鹰而登上高塔，古老的高塔无力支撑肥胖的贵躯，将之甩入了滚烫的流沙」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-805e-a6a2-c496899f5e7a" class="">「就这样，王国的寿数结束了，本当继承王座的我也卷入了无谓的混乱，被阴谋抛来掷去」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8067-9a64-e06d387db8f8" class="">「在那时我也曾有至爱的人儿，她一心想做王后，却并不太在乎坐在那王座上的姓甚名谁」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8090-8303-ffba6e41080b" class="">「于是我失去了爱人，为了性命与印玺，用蝰蛇的吻封住她的口，沙的被衾掩盖她的躯体」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8000-8125-fe2e5f0583a1" class="">「后来，就像记忆中一切王国，内患与外敌、舅父们与叔父们，奴隶们与贱民们自相残害」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-802a-a886-c4cbdb18634c" class="">「匮乏与争斗就像畸形的双生子，在这片失去神的热砂之上不断轮舞，蜃楼间埋葬着自我」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a6-9bb1-d2c1c8338ce8" class="">就这样，热砂上的王国被热砂埋葬，一度豪奢的王子沦为失去一切的流民。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-802b-bd08-d76552e4a567" class="">怀着征服新天地的愿望，孤身一人携着仅剩的财物踏上了前往雨林的路途。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-808d-b11a-f363e310d170" class="">但很久以后，意图如长鬓的猛虎般继承丛林的王子，却被静谧的月光征服。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-805e-a18b-d4f09255e209" class="">被手持白弓的女猎手矫健的身影所吸引，在夜复一夜追踪与被驱逐的途中，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-808f-baf1-d1197e48b9cf" class="">失乡的王子渐渐明白了雨林的呢喃与猛虎的低语，由普慈的梦想所接纳——</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c9-b3b0-fb35e504d042" class="">「哈哈哈…那才是好故事。叙述贵种流离，又寻得宿命回到光荣的好故事…」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c7-a215-ee80db4c404e" class="">「黄金的梦乡，在召唤流浪的沙子…」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-809d-8b5b-e8e55841e2d3" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-8024-8e14-df754486b368" class="image"><a href="%E6%B7%B1%E6%9E%97%E7%9A%84%E8%AE%B0%E5%BF%86/UI_RelicIcon_15025_3.png"><img style="width:144px" src="%E6%B7%B1%E6%9E%97%E7%9A%84%E8%AE%B0%E5%BF%86/UI_RelicIcon_15025_3.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80eb-ac70-da5801b9a65b" class=""><strong>月桂的宝冠：草木的主神赠送的冠冕，曾在迷宫的王之间代代相传，最终由王的侍者继承。</strong></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8024-bd8b-f34d079b4c98" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-803c-9a42-fc5473a0b094" class="">万物生灭皆有定期，其循环往复不停，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ba-8488-fff828366277" class="">树的君王曾经如是传喻生生不息之道。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ef-b013-f422f8673f2c" class="">凡死去的，将借另一副躯体得获新生，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80b1-9935-ed7fee62a9e4" class="">凡腐朽的，将催发出纯净幼嫩的新芽。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-805b-9973-fd7482b0e465" class="">落入大地的果实将会成为走兽的养料，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8090-a55a-c21855b247da" class="">而走兽最终又将回归大地，变成果实。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8081-b201-d087154a0d70" class="">森林中始终充满了生命。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-802a-aede-f0778afe258b" class="">传说树木的神为了在沙中造出深林，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8026-bdca-d87acf8ce6cf" class="">先是在大地深处造出了唤雨的机关。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-805e-9bc9-f729f98298b1" class="">于是明月在水上映出了迷宫的光纹，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8036-86a0-e66283b1608a" class="">而「虎」就从中诞生了。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-801c-90c9-d9a36ad33c7d" class="">虎的斑纹千变万化，与树木的路径一致，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8097-9e6f-cf93809b9e7d" class="">于是虎成为了迷宫的王者，名唤毗伽罗。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80e9-bfb1-e4a53f65fb33" class="">得到祝福的森林王在其御苑中昂首而行，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8078-a557-cb03a19e04c9" class="">管辖灵长之外，仰赖迷宫的飞鸟与走兽。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8036-b105-e097f20ca032" class="">再后来，石榴的种子落在土里，生出森林的精灵。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c2-8377-d50c5314fed3" class="">森林王在最初的莎兰树下祝福他们，与神主约定，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80df-b6bb-e8bea53295e7" class="">将迷宫与他们分享，又命令林中鸟兽皆不得加害。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8095-a596-c66289259a72" class="">即使阳光一度被遮蔽，流水一度腐败，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-801d-902f-f9077d480592" class="">最后的森林王为了捍卫生的苗圃而死，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-800f-8368-cc15f6f97a69" class="">依旧有长鬓的大猫继承了王者的名号，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-800c-9bb9-da4123af31bd" class="">模仿着王的形姿，巡视着林中的百兽。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8069-b8e2-c40983679563" class="">尽管不及王的气概与力量的万分之一，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80b3-8088-eb992c6e3bdc" class="">也依旧遵守王的约定，长久守卫森林，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a1-b722-d8ceec7eda37" class="">也不曾一次试图伤害过树木的守护灵。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80e4-b5ae-c8a6335ab32d" class="">是的，尽管变换无穷的迷宫已经死去，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8065-9ee2-ef741aa05649" class="">森林中仍然充满了生命。</p></div></div></details></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

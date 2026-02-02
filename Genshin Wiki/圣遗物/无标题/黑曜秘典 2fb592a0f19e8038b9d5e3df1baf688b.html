@@ -1,0 +1,723 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>黑曜秘典</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2fb592a0-f19e-8038-b9d5-e3df1baf688b" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="%E9%BB%91%E6%9B%9C%E7%A7%98%E5%85%B8/UI_RelicIcon_15038_4.png"/></div><h1 class="page-title" dir="auto"><strong>黑曜秘典</strong></h1><p class="page-description" dir="auto"></p><table class="properties"><tbody><tr class="property-row property-row-status"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/burst_gray.svg" style="width:14px;height:14px;display:block"/></span>状态</th><td><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>完成</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>编号</th><td>15038</td></tr></tbody></table></header><div class="page-body"><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-8013-860c-fdcdc41beb6e" class="image" style="text-align:left"><a href="%E9%BB%91%E6%9B%9C%E7%A7%98%E5%85%B8/UI_RelicIcon_15038_4%201.png"><img style="width:132px" src="%E9%BB%91%E6%9B%9C%E7%A7%98%E5%85%B8/UI_RelicIcon_15038_4%201.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8056-b059-ca9134eee2c5" class=""><mark class="highlight-yellow"><strong>二件套</strong></mark></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-808a-8d4b-da23063596bc" class="">装备者处于夜魂加持状态，并且在场上时，造成的伤害提高15%。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8008-b9ea-f632d7e37849" class=""><mark class="highlight-yellow"><strong>四件套</strong></mark></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8024-ba98-e078fe7bf3f3" class="">装备者在场上消耗1点夜魂值后，暴击率提高40%，持续6秒。该效果每1秒至多触发一次。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80da-a0b4-dab867c53ac5" class="">
+</p></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">故事</summary><div class="indented"><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-8070-a7b3-e5a4acb5b295" class="image"><a href="%E9%BB%91%E6%9B%9C%E7%A7%98%E5%85%B8/UI_RelicIcon_15038_4%202.png"><img style="width:120px" src="%E9%BB%91%E6%9B%9C%E7%A7%98%E5%85%B8/UI_RelicIcon_15038_4%202.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8080-b4ac-e30b5535de46" class=""><strong>异种的期许：用黑色晶石精心雕琢而成的花朵，在夜间似乎会散发出神秘的幽光。</strong></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80b9-a1de-c01ec7035215" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8092-ac2c-d6c127a27fdd" class="">在流离的御使堕入无光之域，再临的君王焚灭亵渎之城的时代，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ca-a446-d2c0b59de9b5" class="">有着诸多不曾为任何人间的史册所记载，亦不曾被传颂的故事。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c6-9b86-c97e6c06c0bf" class="">那是在侥幸从天地崩裂的浩劫中幸存，为赤土瀚海所隔绝的龙蜥之国，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c3-b3f1-d83198afa2c8" class="">当同族只可偷生于外海穷荒之时，它们却因那火主的恩泽而得享自由。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8079-9edb-c6cf66111472" class="">然而火的智慧已为浊黑的浪潮所夺去，如今只余灰色的形骸苟延性命，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80d4-9be3-e3d5da065041" class="">为了维系龙众的余威，盲目愚顽的子嗣们将肆行暴虐视作统治的律则。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a7-82c4-d19d1e2a7903" class="">就在这柴薪焚尽的残阳之国，唯有一「人」将目光投向了晦暗的未来。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8034-b7f6-d6d27cfcdda3" class="">「我看见，灯火倾倒在无根的土宇，群龙匍匐于垂死的君王。」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8020-80c4-fe99e2cd775b" class="">「我看见，伟大的智慧、伟大的艺术、伟大的文明都将死去。」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80cc-a720-cfa335148ad1" class="">「但循环不息乃是世界的法则，历史亦不会因吾等的悲泣而停下脚步。」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-800e-8ff6-d71299ac9274" class="">「然而我可悲的同族，却不知道它们的愚行只能成为历史铁则的助力。」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8026-810a-f29e4e130a1b" class="">「今日的奴仆将要成为明日的君王，过去的奴隶将要成为未来的主人。」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8013-ba36-f9672f5cc025" class="">「吾等族类深陷于不可逆转的矛盾螺旋，而唯一的救赎便是播下种子。」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80aa-bf74-dd8cfdcb928a" class="">「或许在丰饶原始的荒野之域，还有着不曾为烂腐的污秽垢染的土地。」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-807b-96b6-ee04460985e2" class="">于是穿过炽焰与烈风，它从熔岩之下的悠古圣宫取走了尚未熄灭的原初火种。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80f7-b049-f17e38f8374e" class="">背负着异种的期许，群龙中最智慧的那位告别了辉耀的禁城，从此踏上旅途。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a8-86bc-c92b4bf0dbea" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-80dc-a937-cd36f353a893" class="image"><a href="%E9%BB%91%E6%9B%9C%E7%A7%98%E5%85%B8/UI_RelicIcon_15038_2.png"><img style="width:120px" src="%E9%BB%91%E6%9B%9C%E7%A7%98%E5%85%B8/UI_RelicIcon_15038_2.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ea-9e5d-d866a149d331" class=""><strong>灵髓的根脉：模仿古龙之翼打造的羽饰，或许曾是某段已被遗忘的历史的见证。</strong></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-808a-b621-c1125b562f1e" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-809e-8e74-ee3bdb03a76a" class="">在那野火烧却大地的根脉，蛮陌之族披斩荆棘以启山林的时代，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-800e-a35c-efc2759859ab" class="">有着诸多不曾为任何人间的史册所记载，亦不曾被传颂的故事。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-800d-b517-d25f2777957a" class="">携着自源火中分离的种子，群龙中最智慧的那位穿过燃烧的原野，步入尚未开化的崎岖之地。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8093-b7b6-fa5524481006" class="">然而踏遍了龙迹罕至的温泉与山谷，无论是土里生长的亦或受造的，却都无法满足它的期许。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8039-a3b0-e95a2920938f" class="">直到终于有一天，在迷雾散尽后的深谷间它发现了那创造者最为钟爱，却也最为孱弱的种族，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8059-af00-d8ccc39fc8dd" class="">那本应是尚在襁褓中的族类，但生在群龙狂舞的国度，便只能在古老者的羽翼之下以求生存。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8067-af50-ff806af08432" class="">虽然早已失去了向导，忘却了过去的历史与记忆，迷途于山林之间，却依旧顽强地存活下来。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-809b-af29-ea13b134a7fd" class="">惊叹于人类的坚韧、团结与勇气，龙中的贤者决心要将智慧的火种赠与他们，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8039-b6bc-ccd971e3a305" class="">但是那昂贵的礼物并非无偿，它将为蛮族带来文明，却也规划了他们的命途。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80cb-935e-e3229ace2137" class="">因为不同于原初神圣的规划，最智慧的那位带来的乃是渎神的「进化」之道，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ac-b7ed-d6ab84c51f3a" class="">在它的远见中，在那条道路的尽头，属人的血将会注入垂死大地衰朽的身躯，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c3-893e-d25925977d69" class="">两个种族、两条血脉因此合二为一，新生的文明也将再度激涌起古老的脉搏。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-804b-9700-d4e0f6b21a52" class="">这也正如面对第一位攀上浮土觐见它的蛮人之时，最智慧的那位所说的那样：</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8099-bc63-fd943ea1f3bb" class="">「在你的子嗣中将要诞生两个世界的救主，他要暴虐如狮蝎，又要狡猾如野狐。」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80f9-858a-d73355d77362" class="">「终有一日他将斩杀火的君主，登上最古的王座。赞颂吧，为两个世界的君王！」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8079-aa5f-f7df2dfd4689" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-8074-ac34-ca6e8dd6eeb0" class="image"><a href="%E9%BB%91%E6%9B%9C%E7%A7%98%E5%85%B8/UI_RelicIcon_15038_5.png"><img style="width:132px" src="%E9%BB%91%E6%9B%9C%E7%A7%98%E5%85%B8/UI_RelicIcon_15038_5.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-807f-b495-cdedbcff62ea" class=""><strong>夜域的迷思：既非时计亦非罗盘的神秘仪表，如今世上已无人知晓其用途。</strong></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a8-8eeb-cd2113aa5d34" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80fd-af19-d87b2dba4321" class="">在太古之人化身阻挡黑潮的堤坝，浮土与永夜尚分殊途的时代，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-808a-a74b-df8ddb07cb90" class="">有着诸多不曾为任何人间的史册所记载，亦不曾被传颂的故事。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c0-a2d5-c2b536bae20f" class="">众人皆知，勇敢又智慧的察阿克，从盗火的贤者手中取得了常明的火种，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80b9-bcfa-ffe3a6da6be2" class="">他将火种分给部族中的同胞，也将火的秘密传授给任何前来求学的访客。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8056-b341-e311a1bfc299" class="">告别了长久的无序与蒙昧，文明的新芽又再度从蛮荒的原野中生长出来，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80f6-97e5-d953cdd69276" class="">但在巨墙之内，高踞其上的羽翼之族们却尚未意识到命运之轮已然转动。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-802d-8b72-cdf478a9b981" class="">传说那位居住在静滞的浮土中的伟大贤者知晓人世间一切问题的答案，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8076-9fd3-d85139f1d587" class="">但却有两件事情就连他也无法解答，那便是生者的末路与亡者的归途。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8095-9b23-c5023afe48a7" class="">或许是因为掌管冥府的乃是夜域的神祇，他们是太古之时贤者的大敌，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80fb-a2ef-c6a6b9162eb4" class="">又或是倘若常明之火重新连通大地的根系，那便会败坏他久虑的计划。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a1-9ce6-d8d3570d2c9f" class="">掌握了源火的伟力，无畏的察阿克与他的伙伴们终于击败肆虐的恶龙，建起最初的部族，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-807a-9725-d2779ec54f9b" class="">然而即便是太古的英雄也无法违逆岁月的裁决，时间永是流逝，伙伴们也一一与他告别。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ba-ba98-d7d037e0c3b1" class="">最后，身经百战的察阿克又只剩下了孤身之人，他的部族已经离散，故事也不再被传颂，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8093-a651-ebea589ef549" class="">唯有在最深沉的夜中，他会听到那来自遥远国度的呼唤，似要燃起他心中渐渐熄灭的火。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ad-b5bd-db18a69a6212" class="">在生命中的最后一夜，他攀上高山点燃初火。他呼唤着，希望能与曾经的伙伴再度重逢。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8083-b75b-d311b4e374f9" class="">而夜域的神祇也确实回应了他。那一夜，全地的人们似乎都听到来自另一个世界的声音，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80dd-a697-eef1ffb6521a" class="">那或是母亲清唱的歌谣，又或是故友低沉的絮语，那是夜神之国第一位大灵诞生的初啼。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-809b-b127-c18e619f6676" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-8058-b7ff-f29185e9ca3c" class="image"><a href="%E9%BB%91%E6%9B%9C%E7%A7%98%E5%85%B8/UI_RelicIcon_15038_1.png"><img style="width:132px" src="%E9%BB%91%E6%9B%9C%E7%A7%98%E5%85%B8/UI_RelicIcon_15038_1.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ec-aaa6-d9b685ef9b21" class=""><strong>纷争的前宴：似乎是将石块随意扭曲敲打做成的容器，不知何人拥有这样的臂力。</strong></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8083-ad16-e727f9429003" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-801f-b75f-e253bee70348" class="">在永不停息的号角于炽热的国度吹响，英雄们互相征战的时代，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8062-a43a-c660fd0d10d7" class="">有着诸多不曾为任何人间的史册所记载，亦不曾被传颂的故事。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8057-af5a-cba33d2673a3" class="">当烟雾的司祭燃起蔽日的篝火，向他们的英雄祖先与看不见的神灵献上异种的血食之时；</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-803d-bd17-d46f7f673c7a" class="">当掣着烈火的英雄骑乘着驯服的猛兽，循着部族大灵的启示，抵达巨石垒砌的城塞之时；</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-802d-a044-c864c71149a5" class="">当居住在那古老到不知由何人所建造的都邑中的爬虫，惊恐地登上扭曲奇异的塔楼之时，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8007-bd06-f9789dce8309" class="">唯有群龙中最智慧的那位，站在静滞的虚空中，默默地观察着这宏大而又漫长的悲喜剧。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-807d-b090-f6ea7de04f72" class="">尽管夜暮的使者并不在它的计划之内，所幸「进化」的道路并未因此而偏离，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8096-aa9e-c8dce4a3de28" class="">经过精心的挑选与栽培，它所培育的部族英雄也陆续登上了四方角逐的舞台。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80f2-996e-db6355e0fd53" class="">想必在他们当中最强的那位，将会成为统合黑石之上所有人类部族的豪杰吧。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8083-89a8-da01c7a10424" class="">以他为名的盟约将会竖起炽日的旌旗，踏入就连上神也未曾攻破的深井之城，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8081-847b-d5150235a693" class="">那日，从王座上的行尸中喷涌而出的火光将会染红苍天，新王将会得到源火作为登阶的赐礼。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c9-8a17-fe5bbbf052f6" class="">那日，群龙将会重新拜倒在两世界的君主脚下，千万年文明积累的知识与库藏都将向他敞开。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8056-b51b-e61aa7a4cce3" class="">因为它知道，阴影中的敌人并未远去。它们还躲藏在夜域的最深处，等待着发起最后的总攻。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8041-ac1c-e70c7b092773" class="">因为它知道，高天的神明与龙众的大王皆不足恃，须赶在那日到来前集合全部的知识与力量。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80f3-9e1d-d5f40b41e620" class="">只有这样，他那愚顽的同族们才能从衰朽君王残破的旧梦中清醒过来。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80da-ba17-eee63c7d4185" class="">只有这样，古老的文明才能迎来恰当的继承者，重新屹立于大地之上。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a6-a15e-d8d56703887d" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-80ee-a535-e76886f905b8" class="image"><a href="%E9%BB%91%E6%9B%9C%E7%A7%98%E5%85%B8/UI_RelicIcon_15038_3.png"><img style="width:144px" src="%E9%BB%91%E6%9B%9C%E7%A7%98%E5%85%B8/UI_RelicIcon_15038_3.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8030-8765-deaaa61112e4" class=""><strong>诸圣的礼冠：用黑曜石制作的宝冠，在古时曾用于部族中高贵王酋的加冕仪式。</strong></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8028-93bf-ca076934eb17" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8062-abb3-ed640c81a565" class="">在那秽恶的黑潮从天边涌起，如太阳般的英雄踏上征途的时代，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80b7-9d4e-cfce27a00d77" class="">有着诸多不曾为任何人间的史册所记载，亦不曾被传颂的故事。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8019-8ba4-d71d0ce809ab" class="">当人类的勇士告别隐居深谷的村落，将大灵的祝福带往曾经不可抵达的禁域，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80e3-aac8-f2c4610ae593" class="">远古的巨龙亦从它们一度奔行的原野上绝迹，沃土与流泉都被染上新的颜色。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-800b-b326-c02d3d5d0207" class="">那些建造在熔岩绝壁上的宫殿与庙宇失去了光辉，正静静等待着末日的裁决，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80e5-b0e1-c78045fe2bc0" class="">在这与世隔绝的幻梦般的国度，那个属于古老者的时代也终于将要宣告落幕。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8050-8a1d-c54b22ce5f21" class="">而在无光的夜域中，诸圣依旧争论不休，尚未决定由谁来下达这最终的判罚。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ee-a995-e2b6760e09bd" class="">那是不曾为任何先知所预言的勇士，那是不曾被写入任何计划的英雄。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-809d-8e7c-eec9c0b07f64" class="">当诸部族的战酋们将斩除恶龙的大业抛诸脑后，沉醉于争逐霸主之时；</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-806c-9537-c4459bf8ecb9" class="">当诸部族的武士们被投入无休止的战争，把残虐的野兽视作助力之时。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ba-b98b-dba1b5cb3554" class="">那时从黑色大地上崛起的，乃是如初阳般耀眼，又如晨曦般温暖的王，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a8-893b-f69fd918e0b8" class="">他用金黄的花朵编成荣冠，背起黑曜石的巨剑，造访一个又一个部族。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8027-83b4-fc171068318c" class="">因刀剑而起的纷争，只有用刀剑才可弥合。因野心而生的妄念，唯有以更大的野心慑服。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8030-920c-c5ce6bed66ac" class="">而自以为掌控「进化」的那位，却从未设想过拥有力量之人会给出征服与杀戮外的答案。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-808e-a826-ec50f7b68ea0" class="">在日轮的辉光下，各部族的战酋订下休战的盟约，夜域的诸圣也放下争执为他献上礼冠。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80d6-a731-c5bad9a21cfa" class="">新时代的曙光已经出现在天际，当那光芒普照大地之时，就连漆黑的兽类也将无从隐藏。</p></div></div></details></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

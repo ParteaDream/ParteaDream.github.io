@@ -1,0 +1,723 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>纺月的夜歌</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2fb592a0-f19e-80bb-83ed-c61f4d785fcb" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="%E7%BA%BA%E6%9C%88%E7%9A%84%E5%A4%9C%E6%AD%8C/UI_RelicIcon_15042_4.png"/></div><h1 class="page-title" dir="auto"><strong>纺月的夜歌</strong></h1><p class="page-description" dir="auto"></p><table class="properties"><tbody><tr class="property-row property-row-status"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/burst_gray.svg" style="width:14px;height:14px;display:block"/></span>状态</th><td><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>完成</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>编号</th><td>15042</td></tr></tbody></table></header><div class="page-body"><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-80ce-a918-d764c9dd380d" class="image" style="text-align:left"><a href="%E7%BA%BA%E6%9C%88%E7%9A%84%E5%A4%9C%E6%AD%8C/UI_RelicIcon_15042_4%201.png"><img style="width:132px" src="%E7%BA%BA%E6%9C%88%E7%9A%84%E5%A4%9C%E6%AD%8C/UI_RelicIcon_15042_4%201.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-809a-8fdc-d6eb3ea5dbd9" class=""><mark class="highlight-yellow"><strong>二件套</strong></mark></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-801f-80e7-eb08d5596af0" class="">攻击力提高18%。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-805c-9f2d-d027ce009be6" class=""><mark class="highlight-yellow"><strong>四件套</strong></mark></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8098-98d6-e2353d2fe760" class="">施放元素战技时，如果角色的元素能量高于或等于15点，则会流失15点元素能量，使接下来的10秒内，普通攻击、重击、下落攻击造成的伤害提高50%，持续期间内该效果不会再次触发。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80f6-a1a6-cec00f9c7b18" class="">
+</p></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">故事</summary><div class="indented"><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-8060-ab84-d78693666ba1" class="image"><a href="%E7%BA%BA%E6%9C%88%E7%9A%84%E5%A4%9C%E6%AD%8C/UI_RelicIcon_15042_4%202.png"><img style="width:120px" src="%E7%BA%BA%E6%9C%88%E7%9A%84%E5%A4%9C%E6%AD%8C/UI_RelicIcon_15042_4%202.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80b3-aa61-f2dd073e7970" class=""><strong>流离者的晶泪：纯净无垢的花朵，传说是因冰风而保持了永恒的美丽。</strong></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80d9-8234-c193576c0702" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8099-9934-de063bc2e4ae" class="">那是霜色的柔光尚未如银镜般破碎，而黄金国已失陨的年岁。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c5-a07c-ea8c6f7116cf" class="">一夕之间，光耀的精金塔像无花果树般倾倒；从圣城到古都，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8049-a177-d070aff33484" class="">极北的冰原上，凡有血气的城邑，皆被幽蓝的晶钉尽行毁灭。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-804b-bbaf-e1f8719fab78" class="">无论是那受颂的圣徒还是最初的神使，均于灾厄后不知所踪，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-800a-a1e5-c2abc4fe87af" class="">而那些因远离诸城而侥幸生还的人们，亦只能瑟缩于风雪中，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80e4-98b9-fd5def04486e" class="">在荒废凄凉的幽暗中等待灭亡的终临，因为他们已无所依归。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-802d-8482-f85ac97755b7" class="">这便是后世的祷歌中所说的迁灭之时。往日繁荣如雪尘溃落，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-809e-92f2-c34a47806b89" class="">哀求与呼告，诅咒与痛骂，缄默不语的诸神对一切置若罔闻。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80bc-a327-f7eb44b343cb" class="">长夜的绝望中，唯有一位高天之上的主宰为凡人的苦厄垂泪，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80d2-a9bd-f12084871c1c" class="">那是霜月的女主人，天车与光的君王，与世界同源的代行者，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-808d-8111-c06bcd00f39c" class="">出于哀怜，也出于更为隐秘的心愿，她回应了幸存者的祷唤。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a3-b492-d9355f6af717" class="">传说她用银白的辉光纺出丝线，指引流离的遗民走出了霜原，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8060-b750-f8ba546fd24b" class="">那饱含思念的泪水落入极北的冻土，化作冰风中永恒的铃兰。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80cc-85ad-f3875e445e97" class="">正因如此，亥珀波瑞亚高傲的后嗣开始以「霜月之子」自称——</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80e3-80b3-e209c2b39a9d" class="">无论究竟是出于什么样的本意，那都是赐予众人新生的神明。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-801a-bd0f-f6cee85b7cd4" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-803e-9933-ca076180cbc4" class="image"><a href="%E7%BA%BA%E6%9C%88%E7%9A%84%E5%A4%9C%E6%AD%8C/UI_RelicIcon_15042_2.png"><img style="width:120px" src="%E7%BA%BA%E6%9C%88%E7%9A%84%E5%A4%9C%E6%AD%8C/UI_RelicIcon_15042_2.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8068-9b53-f5c6b2727d1e" class=""><strong>受福者的白羽：纯净无垢的羽饰，据说是由最初的咏月使亲手锻造而成。</strong></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8016-b8bd-e662bc3846a1" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a8-881f-d8e0223cc7d4" class="">那是霜色的柔光早已如银镜般破碎，而新月尚未升起的年岁，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80e5-8736-e132f165bd5a" class="">原本不应成为受福之人的、以残次品之名诞生的姐妹的故事。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-807a-bdb2-c14b597a5144" class="">月光亦是陌客的幽闭圣所里，稚弱的灵魂共享着同一道吐息，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8023-b1a5-fd6d84754ecb" class="">在理应是欢荣的苦痛间隙，依偎着汲取彼此微不足道的暖意。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80bd-aab7-f0fa1d0cfa60" class="">未曾见到过父母的面容，亦未曾听过风穿行于苍林间的絮语，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-807a-9639-ca11a2eb620f" class="">陪伴二人的唯有祖母，而世界的模样仅存于褪色的故事书中。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8073-984e-f35fbb5f0df9" class="">那泛黄的残破书页中，描摹着她们从未得见过的天穹与大地，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a8-8305-f0499bc24fd0" class="">绘本中翩然翱翔的白鸟，在无瑕的月光下舒展着纯净的羽翼。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8032-9fbc-c1a0dc59ce85" class="">歆慕于童话中自由的生灵，彼时依然幼小的二人许下了约定，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8012-b21d-d69a3ee92303" class="">约定有朝一日要像白鸟那般，相伴着飞向那更为广袤的苍空。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8013-a585-c1fc4092d234" class="">「既然从出生的那一天开始，就只有我们两个人陪伴着彼此」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8017-ace3-ffcb60416d84" class="">「那么到了离开这里的日子，我们也要紧紧靠在一起活下去」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8002-988b-e7bc5cb66f15" class="">许多年后，其中一人背弃了当初许下的约定，孤身行往远方，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-807a-b562-c2086c14e8a5" class="">那并非是遁入故事中澄澈的晴空，而是没入了更深暗的夜色。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-800f-880e-cb95fb5c2b05" class="">与她一同离去的，还有一半的梦，与一半本该被分担的苦痛，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80e9-bd05-d2a27183b385" class="">日后被尊为第一位咏月使的爱依菈，自此承受起双倍的折磨。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80db-b015-fa55b5046406" class="">「原来您也只是在说谎呀…我唯一信任过的，我亲爱的姐姐」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80b6-a8ae-d85fdc71c237" class="">「但我不会怨恨您…因为我对外面的天空，早已失去期待了」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80d9-b952-d2fa79ccc44b" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-80fa-b5d8-f4d8da810c6c" class="image"><a href="%E7%BA%BA%E6%9C%88%E7%9A%84%E5%A4%9C%E6%AD%8C/UI_RelicIcon_15042_5.png"><img style="width:132px" src="%E7%BA%BA%E6%9C%88%E7%9A%84%E5%A4%9C%E6%AD%8C/UI_RelicIcon_15042_5.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80b9-afdb-c1a77ae9681e" class=""><strong>祭霜者的迷狂：纯净无垢的时计，如今早已伴着其旧主的妄执一同停转。</strong></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-804a-9f2b-cba33a5ced76" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-809b-85d4-f310883d72ac" class="">那是霜色的柔光早已如银镜般破碎，而新月尚未升起的年岁，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8026-83c5-d5139a94fad8" class="">自迁灭之时以降，无数世代传续的擘划即将迎来完遂的时刻。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-805e-99e9-c70db92729ee" class="">千载纯化的血脉，终于要诞下那预言中君临乐园的圣选之嗣。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80d0-b901-e00c33faf00a" class="">高天虚假的七重光必俯伏在她的脚前，地骨也必转去跟从她，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8096-a89c-ea64e17d25bc" class="">因为她要成为与世界合而为一的泉源，再度铸造始动的伟业。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8081-868f-c1194243fd50" class="">这便是终北的女儿们承继的至圣职责，本应如此，本应如此——</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80fb-874a-f79025a098dd" class="">直到那本应诞下圣嗣的少女在无月的雪夜与北国的少年相逢，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-802c-806e-f567c0bc63c8" class="">在他那双清澈如冬日的眼瞳中，望见了自己从未知晓的倒影。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8090-821c-c2c1f93253f6" class="">只为心间陌生的悸动，圣女竟为外来的年轻士官抛却了使命，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-801f-b2ca-ff76dec112d1" class="">锯下染血的角冠，藉着名为爱的劣情将其弃入雪浪下的尘泥。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80af-a6b0-e0bed4501f71" class="">那背叛族裔的堕落之人最终还是没有履行她命中注定的职责，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-807e-a8d6-f72a45e34cf9" class="">被妖僧的密探追获、即将被迎奉回到她理应深爱的故乡之前，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8080-9572-d6c68bb58cb9" class="">面对脚边的士官与他身下漫溢的朱红，她将匕首吻向了喉咙。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80f5-a966-edd2f6200269" class="">就这样，未能如期诞下圣嗣便被草草埋葬的女人耽延了预言，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8001-b245-ed827ac4aac9" class="">所幸历代首领皆有万全的准备，以应对蒙福的圣女过早夭折。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ee-a3be-dae482b5944e" class="">时任主祭之人的娄维娅很快便从旁系的血脉中拣选出备用品，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80e3-a376-d00357951603" class="">只是那备用品诞下的孪生姐妹，与圣女相比，依然相差甚远。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a6-9419-e4e590ff0a34" class="">如此一来，或许还要数百年，才能再度诞下那般纯净的孩子。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8076-b573-c938e87846fb" class="">无法忍受一度唾手可得的功业如露水般消散在冰冷的冬夜间，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8003-863e-ee0b41e50e29" class="">头戴角冠的主祭之人，在迷狂与妄执中，纺出了可怖的毒谋。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-807e-97b8-f28b50ddc7d7" class="">既然她们不够纯净，以至于羸弱的血肉无法承载至洁的月光，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80d8-b66e-ded78c70306a" class="">既然众人的██中，皆流淌着霜月之主微茫却又平等的祝赐，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c5-9e41-ffc954fa03d6" class="">那便以███洗净她们的██，何必苦待千风吹过数个世代？</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8052-8681-e82827ed0a32" class="">就这样，以无垢的月华之名，司祭祀之人犯下了不可饶恕的、</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-805e-96c5-c9eb2eb7a34f" class="">即便是霜月的女主人目睹，也会因那亵渎而感到震骇的恶行…</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80df-9335-feed21677790" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-8085-8250-ff7d9fdd1c22" class="image"><a href="%E7%BA%BA%E6%9C%88%E7%9A%84%E5%A4%9C%E6%AD%8C/UI_RelicIcon_15042_1.png"><img style="width:132px" src="%E7%BA%BA%E6%9C%88%E7%9A%84%E5%A4%9C%E6%AD%8C/UI_RelicIcon_15042_1.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ce-9b7d-d19ebc2dae4b" class=""><strong>至纯者的欢荣：纯净无垢的银杯，据说在霜月之子过去的仪式中曾被用作圣器。如今的仪式早已用不到这样的银杯了。</strong></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8001-a798-ed6286740865" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8063-b1d4-c7180397e77c" class="">那是霜色的柔光早已如银镜般破碎，而新月尚未升起的年岁，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a1-841d-d9c1ab751c92" class="">终北的遗嗣再也听不到高天的启训，如旧日亦于烈怒中焚毁。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8030-a766-cc9378ea1876" class="">无人知晓如何再度锻造黄金城的圣徒向他们先祖示现的奇物，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8056-a662-ef265d0c6871" class="">但流亡者的野心，凡人的野心，却总是比神们自己还要狷固。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-805d-866a-cfaa9c533a8a" class="">若是失去了能一夜间在冥茫的冰海上垦耕出万顷良田的圣匣，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80aa-86af-cfcc1a141c87" class="">那便将野牛笼在犁沟之中，以火、锄与镰，一寸寸征服苔原；</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-805c-97a6-caa79ab52552" class="">若是失去了足以射落神明，连虚假的天幕也能一并刺穿的箭，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8021-9b33-d02eac632c54" class="">那便将犁头锻为刀剑，将锄镰锻为戈矛，以血为灯驱散黑暗。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8009-8469-c200fe51d4e0" class="">而若是天使之中最尊贵的那一位赐予的创生权柄也已被折断，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80cc-9707-f66e02d82acc" class="">那便以最为粗陋而原始的手段，以典律掌控数百世代的繁衍，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80dd-8ec4-f9a1568d9f98" class="">直至那因灾厄与流离而日益稀薄的血脉被纯化为至圣的籽种，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c0-9c93-fc7f0ec01ef8" class="">直至有朝一日，在凡人的子嗣中诞生与世界相融的完美生命。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80b2-98d6-e89da0a9bea8" class="">众生的坚忍与决心终将战胜一切厄难——至少他们如此坚信，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80f4-b175-dade1e896e6c" class="">毕竟规划族裔未来的人，总是不必亲身遭罹他们蔑视的苦痛。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8008-ad81-d4e7bb4818ec" class="">「饮下这无垢的月光吧，我亲爱的孩子，我最眷宠的孩子呀」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-804e-8859-de8159ed6fd8" class="">「让它纺成你们的血肉，如此，你们便同样配领受神的恩典」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8082-9056-de6801d2647f" class="">「正如黄金城的圣徒曾饮下苦酒，为他所爱的同胞争得自由」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80e6-822c-e14270f9258c" class="">「你们也应当欣慕这欢荣的苦痛，因为苦痛终将要诞下完美」</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-802b-ad8c-d7847db0ea90" class="">古老的银杯中满盈的究竟是何物，彼时的二人早已无从分辨，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80c5-9c4d-f0dfda13873f" class="">但若是那慈和温蔼的老祖母如此言说，想必也是神明的旨念。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80b3-8d59-cae476d2e948" class="">是呀，是呀，一切皆为铸就完美，一切皆为允遂千年的悲愿，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a2-83d3-e7b8218978e1" class="">为预言中应许的乐园与临到世界的王，必先渡越不洁与磨难…</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8032-9b9e-cf9a4ff72aa8" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fb592a0-f19e-80cb-be65-e9920202800f" class="image"><a href="%E7%BA%BA%E6%9C%88%E7%9A%84%E5%A4%9C%E6%AD%8C/UI_RelicIcon_15042_3.png"><img style="width:144px" src="%E7%BA%BA%E6%9C%88%E7%9A%84%E5%A4%9C%E6%AD%8C/UI_RelicIcon_15042_3.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-809a-af10-d69894e6e108" class=""><strong>司信者的圣冕：纯净无垢的头饰，形貌似乎是仿照苍林灵使的角冠打造而成。</strong></p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ca-81b5-eb1c71c9f4dc" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8015-8767-da685e7bba20" class="">那是霜色的柔光早已如银镜般破碎，而新月尚未升起的年岁。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8039-a6b0-c9d08ca51d96" class="">得赐于神明的古老祝福，终究像是苔原上的星火般日渐黯淡，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-806a-8afd-d69d2b63a7ce" class="">伴着那高悬天穹的空月逝去，未能成为月的大地亦开始枯竭。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80f7-8001-c7b92c593bdf" class="">昔日行奇事者的伟业化为缥缈的祷歌，祷歌化为众人的忧惑，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8046-8a13-e89079f2f3e4" class="">即便是蒙受拣选、拥有至纯血脉的圣女，在朽败的无月之夜，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-801e-a2cb-c1a9276533e6" class="">也难以再像她的祖辈那般，将流淌的辉光纺成撼动尘世的歌。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80ee-b53e-dbb96d6fc935" class="">无论终北的先祖曾经如何向逝去的神明立下永世追随的誓言，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80f6-b1ca-dc487e415d91" class="">他们的后嗣，栖居月下世界的凡人，生命毕竟如流火般短暂。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8096-985d-f85ff92a961d" class="">若是说，在过去依然能见证圣女与主祭之人代行神恩的年代，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80f3-babf-f054701a68b2" class="">人们还愿意相信，新月终有一日会从破碎的光明中再度升起，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8023-ad9b-e4985e7e287b" class="">那到了就连最后的恩泽也已经散尽、无人能目睹神迹的岁月，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80f9-a8fc-cd21385739f3" class="">所谓信仰与所谓谎言之间的分隔，便也变得与晨雾一般稀薄。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80d4-aac0-e9593cf837a6" class="">传说，如今咏月使的角冠，乃是霜月于迁灭之时降下的恩典。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8045-b950-e5e6cbd34f7b" class="">银树摧折后，再也无法寻得白枝的祭司们哀求得到新的礼冠，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80a7-9cb5-edeb677e8ba6" class="">月的女主人便怜悯他们，用无瑕的月光织就与生俱来的圣冕。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80f1-bb6b-d0902d42e123" class="">正是因为如此，最后的主祭者用纯净的冷铁锻出了她的头环。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80fb-ba39-fb7ff7da17d1" class="">彼时仍是少女的娄维娅，从未见证过月光祝福的祭司娄维娅，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80f4-a045-d7705fecf74c" class="">梦想着能够用这种自欺欺人的谎言，维系起离心离德的信众。</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-8076-a7b8-d7ab038a1377" class="">直到数十年后，那虚假的角冠坠入污秽的血，映入她瞳中的，</p></div><div style="display:contents" dir="auto"><p id="2fb592a0-f19e-80bd-ad50-caff51de5fe1" class="">依旧不是无垢的月光，而是被她自己的影子彻底吞没的寒夜。</p></div></div></details></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
