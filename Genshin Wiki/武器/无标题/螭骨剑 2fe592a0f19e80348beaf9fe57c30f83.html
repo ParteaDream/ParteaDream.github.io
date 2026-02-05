@@ -1,0 +1,713 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>螭骨剑</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2fe592a0-f19e-8034-8bea-f9fe57c30f83" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="%E8%9E%AD%E9%AA%A8%E5%89%91/UI_EquipIcon_Claymore_Kione_Awaken.png"/></div><h1 class="page-title" dir="auto"><strong>螭骨剑</strong></h1><p class="page-description" dir="auto"></p><table class="properties"><tbody><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/clock_gray.svg" style="width:14px;height:14px;display:block"/></span>创建时间</th><td><time>@2026年2月5日 20:47</time></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>品质</th><td>4</td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/list_gray.svg" style="width:14px;height:14px;display:block"/></span>武器类型</th><td><span class="selected-value select-value-color-red">双手剑</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>攻击力</th><td>510</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>副属性</th><td><strong>+27.6% 暴击率</strong></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>简介</th><td>来自古代大海的稀有兵器，舞剑猎猎宛如太古的涛声。</td></tr><tr class="property-row property-row-status"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/burst_gray.svg" style="width:14px;height:14px;display:block"/></span>状态</th><td><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>完成</span></td></tr></tbody></table></header><div class="page-body"><div style="display:contents" dir="auto"><div id="2fe592a0-f19e-80c2-94fe-dc4f7be92094" class="column-list"><div style="display:contents" dir="auto"><div id="2fe592a0-f19e-80c8-97fa-fcfee92ac4c7" style="width:50%" class="column"><div style="display:contents" dir="ltr"><figure id="2fe592a0-f19e-80bd-93fe-fd8d784cc2a7" class="image"><a href="%E8%9E%AD%E9%AA%A8%E5%89%91/UI_EquipIcon_Claymore_Kione.png"><img style="width:240px" src="%E8%9E%AD%E9%AA%A8%E5%89%91/UI_EquipIcon_Claymore_Kione.png"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="2fe592a0-f19e-8087-87a0-d4e8823c35b7" style="width:50%" class="column"><div style="display:contents" dir="ltr"><figure id="2fe592a0-f19e-8017-973b-f75021999c45" class="image"><a href="%E8%9E%AD%E9%AA%A8%E5%89%91/UI_EquipIcon_Claymore_Kione_Awaken%201.png"><img style="width:240px" src="%E8%9E%AD%E9%AA%A8%E5%89%91/UI_EquipIcon_Claymore_Kione_Awaken%201.png"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8058-b2bc-dbfeefa2596a" class=""><strong>破浪</strong></p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8065-995e-d66465441129" class="">角色在场上时，每4秒提升 <mark class="highlight-yellow">6% </mark><mark class="highlight-default">/</mark><mark class="highlight-yellow"> 7% </mark><mark class="highlight-default">/</mark><mark class="highlight-yellow"> 8% </mark><mark class="highlight-default">/</mark><mark class="highlight-yellow"> 9% </mark><mark class="highlight-default">/</mark><mark class="highlight-yellow"> 10% </mark>造成的伤害， <mark class="highlight-yellow">3% </mark><mark class="highlight-default">/</mark><mark class="highlight-yellow"> 2.7% </mark><mark class="highlight-default">/</mark><mark class="highlight-yellow"> 2.4% </mark><mark class="highlight-default">/</mark><mark class="highlight-yellow"> 2.2% </mark><mark class="highlight-default">/</mark><mark class="highlight-yellow"> 2% </mark>受到的伤害。该效果最多叠加5层，不随角色退场重置，受到伤害后会减少1层效果。</p></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">培养材料</summary><div class="indented"><div style="display:contents" dir="ltr"><table id="2fe592a0-f19e-80aa-a50f-c81fe3703716" class="simple-table"><tbody><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8086-80be-dcbfe9de6050"><td id="rIUl" class="" style="width:215.33333333333334px">材料</td><td id="wFBp" class="" style="width:215.33333333333334px">数量</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-804e-a7ef-dd026cf8c3b1"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%BC%86%E9%BB%91%E9%99%A8%E9%93%81%E7%9A%84%E4%B8%80%E7%B2%92%202fe592a0f19e806c8dddec83dfb75d4d.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%BC%86%E9%BB%91%E9%99%A8%E9%93%81%E7%9A%84%E4%B8%80%E7%B2%92/UI_ItemIcon_114021.png"/>漆黑陨铁的一粒</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">3</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-80e7-8517-f5c230009ba1"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%BC%86%E9%BB%91%E9%99%A8%E9%93%81%E7%9A%84%E4%B8%80%E7%89%87%202fe592a0f19e80b1a12cc7341b47c57e.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%BC%86%E9%BB%91%E9%99%A8%E9%93%81%E7%9A%84%E4%B8%80%E7%89%87/UI_ItemIcon_114022.png"/>漆黑陨铁的一片</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">9</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-80ed-899d-db2866f9a417"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%BC%86%E9%BB%91%E9%99%A8%E9%93%81%E7%9A%84%E4%B8%80%E8%A7%92%202fe592a0f19e806680bceb3fc83c0d5f.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%BC%86%E9%BB%91%E9%99%A8%E9%93%81%E7%9A%84%E4%B8%80%E8%A7%92/UI_ItemIcon_114023.png"/>漆黑陨铁的一角</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">9</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-80b0-b3f4-cb8a73c191ce"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%BC%86%E9%BB%91%E9%99%A8%E9%93%81%E7%9A%84%E4%B8%80%E5%9D%97%202fe592a0f19e8010b707cc0dbbbeefa1.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%BC%86%E9%BB%91%E9%99%A8%E9%93%81%E7%9A%84%E4%B8%80%E5%9D%97/UI_ItemIcon_114024.png"/>漆黑陨铁的一块</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">4</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8089-b698-c433c28b4be7"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E8%84%86%E5%BC%B1%E7%9A%84%E9%AA%A8%E7%89%87%202fe592a0f19e8070aa38fb65bf3fe57f.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E8%84%86%E5%BC%B1%E7%9A%84%E9%AA%A8%E7%89%87/UI_ItemIcon_112041.png"/>脆弱的骨片</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">15</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8094-b6a1-c4bf5e516595"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E7%BB%93%E5%AE%9E%E7%9A%84%E9%AA%A8%E7%89%87%202fe592a0f19e80cb9d94d8cff5c391a4.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E7%BB%93%E5%AE%9E%E7%9A%84%E9%AA%A8%E7%89%87/UI_ItemIcon_112042.png"/>结实的骨片</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">18</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8026-9696-ffbd770bd895"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E7%9F%B3%E5%8C%96%E7%9A%84%E9%AA%A8%E7%89%87%202fe592a0f19e80699a19f2fa40ed22e0.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E7%9F%B3%E5%8C%96%E7%9A%84%E9%AA%A8%E7%89%87/UI_ItemIcon_112043.png"/>石化的骨片</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">27</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8019-8fa9-e6e5cfafeec7"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E9%AA%97%E9%AA%97%E8%8A%B1%E8%9C%9C%202fa592a0f19e808994aff6ca26df6e08.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E9%AA%97%E9%AA%97%E8%8A%B1%E8%9C%9C/UI_ItemIcon_112038.png"/>骗骗花蜜</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">10</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-806a-a16a-e3a0fe8eb855"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%BE%AE%E5%85%89%E8%8A%B1%E8%9C%9C%202fa592a0f19e802080b8d822f3d67bb2.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%BE%AE%E5%85%89%E8%8A%B1%E8%9C%9C/UI_ItemIcon_112039.png"/>微光花蜜</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">15</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-80d4-a8a6-eb86c6e868d7"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%8E%9F%E7%B4%A0%E8%8A%B1%E8%9C%9C%202fa592a0f19e80d9aa85ce3480e8a53a.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%8E%9F%E7%B4%A0%E8%8A%B1%E8%9C%9C/UI_ItemIcon_112040.png"/>原素花蜜</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">18</td></tr></div></tbody></table></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">故事</summary><div class="indented"><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80ec-903f-f26d459a628f" class="">取海兽脊髓制成的大剑，森森骨色中各有故事。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8081-8de7-d8cf190bc3d1" class="">在过去，跑船者会以这种兽骨装饰船首、龙骨，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80cd-9e80-d6ac5bc5674e" class="">以此威吓深邃的海渊中，觊觎生者的海中巨兽。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80e4-883a-ecf2ea606f0c" class="">在大海尚不平静的遥远过去，驾船出海常常是生离死别。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80d2-b326-e24e353d8f4d" class="">如今悠扬畅快的船歌，在当时则几乎是令人缄默的骊歌。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-802b-9375-f55930584c76" class="">彼时有执大剑的船师，出海前饮酒欢歌。旁人问则笑曰：</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80b9-a586-e98d7e95bff9" class="">「我自有分寸，置酒尽欢又如何。待到海流风向正确时」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80da-a811-deefe1bce2db" class="">却不再继续说下去。只是高举角杯，大笑招呼众人饮酒。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8021-b8f1-c38ebcb5addd" class="">海流风向正确之时终于来到，艨艟巨舰载着他扬帆起航。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-806a-9f8f-f4a4da367b19" class="">深入悠远的海雾，远远去往暗流涌动，海兽腾跃的大洋。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8011-b244-f489542edc60" class="">最终欢歌的船师与他的船也没有回到山石嶙峋的港湾中。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8041-8a43-c76ee17e1bd5" class="">一些时日之后，有深海巨兽的遗骸被海流浪涛送到岸边，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8082-8f1d-e5074891e71d" class="">大剑撕开的创口中露出森森白骨。血已经被海流冲洗净。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80d7-8def-d01effde0112" class="">「待到海流风向正确时，我便出海为她寻仇，沉迷涛声的人儿啊」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8074-920a-fb31b848d39b" class="">「葬身鱼腹又如何，这样便能将她中意的船歌传到她所在的深海」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-807c-8da6-d0e8a03f6dab" class="">如今的海上，再也没有会在暴雨中，伴随着惊涛骇浪升起的巨兽。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8007-a7f4-ed4ae31439b4" class="">以海兽的遗骨装饰船首、龙骨的风俗，也随着海兽绝迹被遗忘了。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8075-965e-e4f77d73b84f" class="">但远航时，偶尔还能听见深海中如同雷声，令人脊背发麻的低鸣…</p></div></div></details></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

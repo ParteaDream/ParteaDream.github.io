@@ -1,0 +1,713 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>朏魄含光</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2fe592a0-f19e-80b1-85fb-e8c15687f089" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="%E6%9C%8F%E9%AD%84%E5%90%AB%E5%85%89/UI_EquipIcon_Sword_SilverwareSaw_Awaken.png"/></div><h1 class="page-title" dir="auto"><strong>朏魄含光</strong></h1><p class="page-description" dir="auto"></p><table class="properties"><tbody><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/clock_gray.svg" style="width:14px;height:14px;display:block"/></span>创建时间</th><td><time>@2026年2月5日 15:09</time></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>品质</th><td>5</td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/list_gray.svg" style="width:14px;height:14px;display:block"/></span>武器类型</th><td><span class="selected-value select-value-color-blue">单手剑</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>攻击力</th><td>542</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>副属性</th><td>+88.2% 暴击伤害</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>简介</th><td>传说中隐于清泉的仙人用井月的流光铸成的宝剑，唯有在日夕昏明时才会显露真形。</td></tr><tr class="property-row property-row-status"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/burst_gray.svg" style="width:14px;height:14px;display:block"/></span>状态</th><td><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>完成</span></td></tr></tbody></table></header><div class="page-body"><div style="display:contents" dir="auto"><div id="2fe592a0-f19e-8098-aae5-e8e9c357a395" class="column-list"><div style="display:contents" dir="auto"><div id="2fe592a0-f19e-8034-9052-cc42ff331f0f" style="width:50%" class="column"><div style="display:contents" dir="ltr"><figure id="2fe592a0-f19e-8046-b512-d07ceb9290c0" class="image"><a href="%E6%9C%8F%E9%AD%84%E5%90%AB%E5%85%89/UI_EquipIcon_Sword_SilverwareSaw.png"><img style="width:240px" src="%E6%9C%8F%E9%AD%84%E5%90%AB%E5%85%89/UI_EquipIcon_Sword_SilverwareSaw.png"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="2fe592a0-f19e-80d6-a26c-c82ff9e3ff14" style="width:50%" class="column"><div style="display:contents" dir="ltr"><figure id="2fe592a0-f19e-801b-90b8-e4ac53332140" class="image"><a href="%E6%9C%8F%E9%AD%84%E5%90%AB%E5%85%89/UI_EquipIcon_Sword_SilverwareSaw_Awaken%201.png"><img style="width:240px" src="%E6%9C%8F%E9%AD%84%E5%90%AB%E5%85%89/UI_EquipIcon_Sword_SilverwareSaw_Awaken%201.png"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-804e-adab-d018473ef15d" class=""><strong>琅玕衍义</strong></p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80b9-bd58-e810503cc593" class="">防御力提高 <mark class="highlight-yellow">20% </mark><mark class="highlight-default">/</mark><mark class="highlight-yellow"> 25% </mark><mark class="highlight-default">/</mark><mark class="highlight-yellow"> 30% </mark><mark class="highlight-default">/</mark><mark class="highlight-yellow"> 35% </mark><mark class="highlight-default">/</mark><mark class="highlight-yellow"> 40%</mark> 。装备者施放元素战技后的5秒内，月结晶反应伤害提升<mark class="highlight-yellow"> 64% </mark><mark class="highlight-default">/</mark><mark class="highlight-yellow"> 80% </mark><mark class="highlight-default">/</mark><mark class="highlight-yellow"> 96% </mark><mark class="highlight-default">/</mark><mark class="highlight-yellow"> 112% </mark><mark class="highlight-default">/</mark><mark class="highlight-yellow"> 128%</mark> 。</p></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">培养材料</summary><div class="indented"><div style="display:contents" dir="ltr"><table id="2fe592a0-f19e-803e-8fd4-e2aae0c935f7" class="simple-table"><tbody><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-80cd-bc0b-ebca10c7206b"><td id="rIUl" class="" style="width:215.328125px">材料</td><td id="wFBp" class="" style="width:215.33333333333334px">数量</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-80f5-bb30-fc2bbaf4e861"><td id="rIUl" class="" style="width:215.328125px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%BC%86%E9%BB%91%E9%99%A8%E9%93%81%E7%9A%84%E4%B8%80%E7%B2%92%202fe592a0f19e806c8dddec83dfb75d4d.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%BC%86%E9%BB%91%E9%99%A8%E9%93%81%E7%9A%84%E4%B8%80%E7%B2%92/UI_ItemIcon_114021.png"/>漆黑陨铁的一粒</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">5</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8030-9ea5-fbd9d396ded6"><td id="rIUl" class="" style="width:215.328125px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%BC%86%E9%BB%91%E9%99%A8%E9%93%81%E7%9A%84%E4%B8%80%E7%89%87%202fe592a0f19e80b1a12cc7341b47c57e.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%BC%86%E9%BB%91%E9%99%A8%E9%93%81%E7%9A%84%E4%B8%80%E7%89%87/UI_ItemIcon_114022.png"/>漆黑陨铁的一片</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">14</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-802b-96ea-dbee8d409813"><td id="rIUl" class="" style="width:215.328125px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%BC%86%E9%BB%91%E9%99%A8%E9%93%81%E7%9A%84%E4%B8%80%E8%A7%92%202fe592a0f19e806680bceb3fc83c0d5f.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%BC%86%E9%BB%91%E9%99%A8%E9%93%81%E7%9A%84%E4%B8%80%E8%A7%92/UI_ItemIcon_114023.png"/>漆黑陨铁的一角</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">14</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-80a7-b6f9-ef5923ba54e4"><td id="rIUl" class="" style="width:215.328125px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%BC%86%E9%BB%91%E9%99%A8%E9%93%81%E7%9A%84%E4%B8%80%E5%9D%97%202fe592a0f19e8010b707cc0dbbbeefa1.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%BC%86%E9%BB%91%E9%99%A8%E9%93%81%E7%9A%84%E4%B8%80%E5%9D%97/UI_ItemIcon_114024.png"/>漆黑陨铁的一块</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">6</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-807f-87a4-f2a7f5e1391e"><td id="rIUl" class="" style="width:215.328125px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%B9%BD%E9%9B%BE%E5%8C%96%E5%BD%A2%202fe592a0f19e8096b6d3d386d7c7518c.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%B9%BD%E9%9B%BE%E5%8C%96%E5%BD%A2/UI_ItemIcon_112134.png"/>幽雾化形</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">23</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-805a-a352-dd0477597720"><td id="rIUl" class="" style="width:215.328125px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%B9%BD%E9%9B%BE%E7%89%87%E7%94%B2%202fe592a0f19e80a8982de6e3ae59c658.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%B9%BD%E9%9B%BE%E7%89%87%E7%94%B2/UI_ItemIcon_112135.png"/>幽雾片甲</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">27</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8026-864b-dc011c77ab9c"><td id="rIUl" class="" style="width:215.328125px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%B9%BD%E9%9B%BE%E5%85%9C%E7%9B%94%202fe592a0f19e80ecacb0ef1c625e87f7.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%B9%BD%E9%9B%BE%E5%85%9C%E7%9B%94/UI_ItemIcon_112136.png"/>幽雾兜盔</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">41</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-807a-bce0-c90587639bbc"><td id="rIUl" class="" style="width:215.328125px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%AF%81%E6%8D%9F%E6%9C%BA%E8%BD%B4%202fe592a0f19e80bc81abce204754ee6c.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%AF%81%E6%8D%9F%E6%9C%BA%E8%BD%B4/UI_ItemIcon_112122.png"/>毁损机轴</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">15</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-80fc-8073-f2fa15782dd0"><td id="rIUl" class="" style="width:215.328125px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%8A%A0%E5%9B%BA%E6%9C%BA%E8%BD%B4%202fe592a0f19e80b89791d50c809a24bf.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%8A%A0%E5%9B%BA%E6%9C%BA%E8%BD%B4/UI_ItemIcon_112123.png"/>加固机轴</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">23</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8048-8f0f-e570fd0d2183"><td id="rIUl" class="" style="width:215.328125px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E7%B2%BE%E5%88%B6%E6%9C%BA%E8%BD%B4%202fe592a0f19e809e9e47e2d8fc126d3d.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E7%B2%BE%E5%88%B6%E6%9C%BA%E8%BD%B4/UI_ItemIcon_112124.png"/>精制机轴</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">27</td></tr></div></tbody></table></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">故事</summary><div class="indented"><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80ca-909f-e030fe78026f" class="">穿过层叠的岩嶂，坟典无载的荒陵隐泉，终于在日夕昏明之际显露出来。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-800e-ae9a-eb5236dba27b" class="">那是仅流传于采砂部族中的稗说，曾有以流光铸剑的仙人隐入渊底水月。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-800e-b089-e2dab24629ed" class="">为寻访仙迹而踏入幽谷的少女，踩着登山的齿屐小心翼翼地从松间跃下。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80af-82be-f3b0502b6787" class="">四下无人，唯有月光沿极狭的孔隙流淌，映照出竹幕后似有若无的幻影。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80e6-979d-ef523640f4ae" class="">「昔者天衡未立，海波不宁，有国名琅玕居西海之隅。」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8016-a723-d2f20e54d821" class="">「燔黍捭豚，蒉桴土鼓，其民敬事天神，至诚而无违。」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80d8-b4b7-dbedb458012d" class="">「于是天人乃降，教其五谷稼穑之业，纺绩织纴之事。」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8056-95b1-d3b81c304c67" class="">「告曰：国祚熙长，与天共寿；锡福丕显，与地无穷…」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8053-8cea-d7d39d03e923" class="">那曾一度与岩王并肩的巨龙，最后也难逃倏忽的戕伐，践踏人主的繁囿。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80c7-ad47-ff9ed50ff6f8" class="">山民唯有操起祖辈的干戈，跟从王下夜叉的旌旗，抵御自天而降的祸殃。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8051-8ea0-d6cdfc5dfed1" class="">为求救厄的宝剑，峭岩与晶砂的女儿循着太古的歌谣，终抵窟中的故国。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80bd-8d18-f13e084e0c65" class="">听闻少女的来意，银光的影子却像是轻笑般，与月下清泉一同泛起涟漪。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8088-87e4-c7eb2223c1ae" class="">「呜呼！天道糜常，莫之能晓；祸福相倚，莫之能测。」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8050-8a78-dfb00a0bd542" class="">「当其时也，有孛星东坠，落于西疆，由是家邦不宁…」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80dc-a0f9-e4ba4c48a347" class="">「遂至于天倾墟海，地陷鲸渊；生民歼尽，社稷离殃…」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80da-8e61-f54de1fdbd4e" class="">「繁花着锦俱是镜花水月，欲求长盛不败，岂可得哉？」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-802c-9d9e-ec0915cec9b3" class="">或许山间的岩砦，终有一日也会如碧色的残迹化作商人手中的琉璃晶砂。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-803a-9ba9-c0e98ec6f838" class="">但对于少女而言，那应当是百代之后的闲说戏语，无论如何不是在今日。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8070-9f08-e1f7265ecc3b" class="">影中人随手抽出斜生岩壁上的野竹，竹梢折坠，不及于地便被少女拾得。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-805c-96da-cc2922b751c1" class="">「朏魄含光，追形逐影。已而，已而，既已得剑之意，何必求剑之形？」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-806c-95f2-f4bd2a200a4c" class="">据说后来少女以剑戟之术练成精兵百人，追随着岩王爷镇压巨龙，平定四方。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-807e-9ce0-fbb628a35484" class="">直到妖氛殄灭，天下乂安，昔日善战的部民也成了盛露厅中锱铢必较的商人。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-801a-b847-db81000ecdaf" class="">如今，只有在他们兜售以晶砂烧制的精美瓷器时，才会说起古时不经的逸话。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-802f-8926-ea2fefe74842" class="">群山不言，唯有高悬港城之上的冷月，依旧如千百年前般映照着每一条河川。</p></div></div></details></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

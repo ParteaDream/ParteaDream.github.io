@@ -1,0 +1,713 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>息燧之笛</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2fe592a0-f19e-806b-ba72-e3c39dd6f804" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="%E6%81%AF%E7%87%A7%E4%B9%8B%E7%AC%9B/UI_EquipIcon_Sword_Isikhulu_Awaken.png"/></div><h1 class="page-title" dir="auto"><strong>息燧之笛</strong></h1><p class="page-description" dir="auto"></p><table class="properties"><tbody><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/clock_gray.svg" style="width:14px;height:14px;display:block"/></span>创建时间</th><td><time>@2026年2月5日 21:22</time></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>品质</th><td>4</td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/list_gray.svg" style="width:14px;height:14px;display:block"/></span>武器类型</th><td><span class="selected-value select-value-color-blue">单手剑</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>攻击力</th><td><strong>454</strong></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>副属性</th><td><strong>+69.0% 防御力</strong></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>简介</th><td>造型奇特的玉石长刀，在烟谜主的传承中被称作「祭司之笛」的礼器。</td></tr><tr class="property-row property-row-status"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/burst_gray.svg" style="width:14px;height:14px;display:block"/></span>状态</th><td><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>完成</span></td></tr></tbody></table></header><div class="page-body"><div style="display:contents" dir="auto"><div id="2fe592a0-f19e-807c-ada4-d35ab0b3e6d0" class="column-list"><div style="display:contents" dir="auto"><div id="2fe592a0-f19e-80f7-a652-feaf8203964a" style="width:50%" class="column"><div style="display:contents" dir="ltr"><figure id="2fe592a0-f19e-8001-9d77-fc954802b344" class="image"><a href="%E6%81%AF%E7%87%A7%E4%B9%8B%E7%AC%9B/UI_EquipIcon_Sword_Isikhulu.png"><img style="width:240px" src="%E6%81%AF%E7%87%A7%E4%B9%8B%E7%AC%9B/UI_EquipIcon_Sword_Isikhulu.png"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="2fe592a0-f19e-802e-bfdf-cbf761b6bc05" style="width:50%" class="column"><div style="display:contents" dir="ltr"><figure id="2fe592a0-f19e-80a3-b7c6-ebe673ffc5d4" class="image"><a href="%E6%81%AF%E7%87%A7%E4%B9%8B%E7%AC%9B/UI_EquipIcon_Sword_Isikhulu_Awaken%201.png"><img style="width:240px" src="%E6%81%AF%E7%87%A7%E4%B9%8B%E7%AC%9B/UI_EquipIcon_Sword_Isikhulu_Awaken%201.png"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8084-babe-c64ad173858a" class=""><strong>镜与烟色的隐谜</strong></p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80cd-b231-e8effcb54d77" class="">施放元素战技时，防御力提升 <mark class="highlight-yellow">16% </mark><mark class="highlight-default">/</mark><mark class="highlight-yellow"> 20% </mark><mark class="highlight-default">/</mark><mark class="highlight-yellow"> 24% </mark><mark class="highlight-default">/ </mark><mark class="highlight-yellow">28% </mark><mark class="highlight-default">/ </mark><mark class="highlight-yellow">32%</mark> ，持续15秒。</p></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">培养材料</summary><div class="indented"><div style="display:contents" dir="ltr"><table id="2fe592a0-f19e-8061-861f-e051cb273817" class="simple-table"><tbody><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8044-8a7b-d4bbcbe61a7f"><td id="rIUl" class="" style="width:215.33333333333334px">材料</td><td id="wFBp" class="" style="width:215.33333333333334px">数量</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8000-aa31-c2498964e97e"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E8%B4%A1%E7%A5%AD%E7%82%BD%E5%BF%83%E7%9A%84%E6%83%B6%E6%81%90%202fa592a0f19e8049abd2ca12e7492d54.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E8%B4%A1%E7%A5%AD%E7%82%BD%E5%BF%83%E7%9A%84%E6%83%B6%E6%81%90/UI_ItemIcon_114061.png"/>贡祭炽心的惶恐</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">3</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-80c9-81fa-da6c5fd2b692"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E8%B4%A1%E7%A5%AD%E7%82%BD%E5%BF%83%E7%9A%84%E8%B8%8C%E8%BA%87%202fa592a0f19e80e1915efb6d745b7fea.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E8%B4%A1%E7%A5%AD%E7%82%BD%E5%BF%83%E7%9A%84%E8%B8%8C%E8%BA%87/UI_ItemIcon_114062.png"/>贡祭炽心的踌躇</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">9</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8042-b2c3-d4c518a3dfe1"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E8%B4%A1%E7%A5%AD%E7%82%BD%E5%BF%83%E7%9A%84%E5%86%B3%E7%BB%9D%202fa592a0f19e804cab7ad5f0bd629850.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E8%B4%A1%E7%A5%AD%E7%82%BD%E5%BF%83%E7%9A%84%E5%86%B3%E7%BB%9D/UI_ItemIcon_114063.png"/>贡祭炽心的决绝</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">9</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-80c6-a390-fcc62c32412e"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E8%B4%A1%E7%A5%AD%E7%82%BD%E5%BF%83%E7%9A%84%E8%8D%A3%E8%86%BA%202fa592a0f19e805c8d7eda138fdeda6e.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E8%B4%A1%E7%A5%AD%E7%82%BD%E5%BF%83%E7%9A%84%E8%8D%A3%E8%86%BA/UI_ItemIcon_114064.png"/>贡祭炽心的荣膺</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">4</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8009-9769-eca425e07f35"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%AE%8B%E6%AF%81%E7%9A%84%E5%89%91%E6%9F%84%202fe592a0f19e80c0b90ce02f87102d2a.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%AE%8B%E6%AF%81%E7%9A%84%E5%89%91%E6%9F%84/UI_ItemIcon_112098.png"/>残毁的剑柄</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">15</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-805c-8554-f48c1398cfef"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E8%A3%82%E6%96%AD%E7%9A%84%E5%89%91%E6%9F%84%202fe592a0f19e80caa725fc7fb5322efb.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E8%A3%82%E6%96%AD%E7%9A%84%E5%89%91%E6%9F%84/UI_ItemIcon_112099.png"/>裂断的剑柄</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">18</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-80b7-9da9-e32b94aeb224"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%9C%AA%E7%86%84%E7%9A%84%E5%89%91%E6%9F%84%202fe592a0f19e8097a60fdf07b886a090.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%9C%AA%E7%86%84%E7%9A%84%E5%89%91%E6%9F%84/UI_ItemIcon_112100.png"/>未熄的剑柄</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">27</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-804e-be10-dc26c39d07b1"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E7%A8%9A%E5%AB%A9%E7%9A%84%E5%B0%96%E9%BD%BF%202fa592a0f19e803e8c87c1e20ed61682.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E7%A8%9A%E5%AB%A9%E7%9A%84%E5%B0%96%E9%BD%BF/UI_ItemIcon_112101.png"/>稚嫩的尖齿</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">10</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8081-9ba6-c802375167aa"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E8%80%81%E7%BB%83%E7%9A%84%E5%9D%9A%E9%BD%BF%202fa592a0f19e807ea662d39979cd6939.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E8%80%81%E7%BB%83%E7%9A%84%E5%9D%9A%E9%BD%BF/UI_ItemIcon_112102.png"/>老练的坚齿</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">15</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-803b-b167-eed759da4c32"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%A8%AA%E8%A1%8C%E9%9C%B8%E8%80%85%E7%9A%84%E5%88%A9%E9%BD%BF%202fa592a0f19e80679c91f33cf496d866.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%A8%AA%E8%A1%8C%E9%9C%B8%E8%80%85%E7%9A%84%E5%88%A9%E9%BD%BF/UI_ItemIcon_112103.png"/>横行霸者的利齿</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">18</td></tr></div></tbody></table></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">故事1</summary><div class="indented"><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80fe-9add-fa59f1453b29" class="">那是于今已被称作神话的久远过去，巨龙依然阔步于深谷之中的年岁，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-808c-b6cd-dea9fb9d1c56" class="">自降生之刻便被剜去了双踝的少女，依循例定的擘划继承了圣王之名。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80f0-84ab-c12e88d7edf9" class="">彼时的深谷尚无「米克特兰」之称，唯有蒙昧的村落，受龙庇佑而生。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80f1-a0de-d6fa0b1746c2" class="">古老的烽燧焚尽了群龙矜傲的尊荣，使它们畏怯着逃入那衰朽的迷梦，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8006-8ae7-d75560b9a320" class="">又与渴盼得到庇护的凡人立下盟约，吩咐他们拣选出天赋异禀的圣王…</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8021-8277-d2c452addfcd" class="">「我等将筑起镜的迷宫与雾的城塞，为凡人渺小的部族隔绝一切兵灾」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8041-bc48-f188f2707982" class="">「作为回报，我等也只会索求一物，求你们拣选出指引我等入梦的王」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80dc-9915-f1a54c3be290" class="">正如世间的愿景，梦亦是欲望之火，其所焚噬的亦是名为生命的薪柴。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-803a-a4e0-f8b31fb41940" class="">所谓命定之王不过是奉予梦的燔祭，终将如同烟烬般散入冰冷的夜风。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80df-8d97-fedc250e396e" class="">也正因为如此，陪伴在圣王身边的，唯有芦笛与她那沉默寡言的侍从，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80f9-ad36-f936f5773f8a" class="">或许是出于忠诚，或许是出于同情，他从未离开注定早逝的幼主身侧。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8064-b52c-da0c396e7ae1" class="">只是后世尊荣的英杰此刻尚未知晓，年轻的全视者早已洞悉梦的终局。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-803d-8d85-f7e1fb122dcb" class="">直至勇者循着她的笛声穿过镜与烟，失去双踝的少女才将他拥入怀中，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8048-98da-fc7c428a2671" class="">将缥缈的夜风与低语纺成轻柔的歌，将她所聆见的一切在他耳畔呢喃…</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8007-b732-c2317ff47784" class="">「……」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8001-bbc0-e05817da4a36" class="">「再度相逢的那一日，我要你刺穿我的心脏，让烽燧与灼风吞噬我的名字」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8054-823b-c8ca1576426f" class="">「旧日的盟约将破碎，新的盟约将由你立定，你将为它们带去真正的和平」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80b4-a586-f8d9b933d9ca" class="">「直至再度相逢之日，我最忠诚的侍仆丁加，命定为王的屠龙者马古汉啊」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-809e-832f-fd184de6f038" class="">「这是我最后的命令，只属于我一人的英雄，让米克特兰之名延续千年吧」</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">故事2</summary><div class="indented"><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80cd-afd4-d6665f6b8c9a" class="">炎日灼灼，终究焚碎了黑夜。甘美如蜜的梦伴着烟雾散尽，无处可寻。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8033-b699-c88e8fdfe951" class="">血色的宴火尚未殄熄，烬城之主便将崇信群龙的村落斥为叛族的死敌…</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-806b-8961-e57224f7360e" class="">镜的迷宫在蛇王的烈怒中轰然倒塌，雾的城塞在那如潮的军势前崩毁，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8054-9559-d4fb6117ed11" class="">曾与随葬源火者并肩而战的英杰马古汉丝毫不减当年勇武，奋锐先登，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-808c-83cb-ca0f14903656" class="">在群龙自梦中苏醒前，便将那与龙立约的叛贼贯穿，就此终结了战端。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80cd-a129-e8dd5035456d" class="">然而暮年的英雄并未领受烬城之主的眷赏，只是以请罪之名觐见君王…</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80ab-a54b-e4f2a50195e1" class="">「王上啊，我竟未能追上那些凶兽，让它们逃入了迷烟缭绕的深谷中」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8097-bfed-e44c0f363968" class="">「屠龙者已年老体衰，无法再为联盟效力。请王上准许我告老还乡吧」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8077-9f1b-d98fdfed68e0" class="">这便是在此后的千年中，六大部族之一「米克特兰」迎来肇始的时刻。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8091-824e-f9f86732646b" class="">至于在烬城殒落的时日，祭司马古汉的继承者如何与龙再度立定盟约，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80a7-9f1f-de1842975bf2" class="">又是如何按照他的遗愿，将他埋葬在无名的坟茔之间，而非归于圣火，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80f7-8bcb-ebb7cc44a509" class="">那就是与这些事情无关，也从未属于过屠龙者马古汉的另一个故事了。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8050-8d3c-f4fd56f15d1a" class="">「我梦见无忧的岁月…绿松石之城将筑于日轮升起之地，新王将再度诞生」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80d2-9fdb-ca6ecfb11b91" class="">「黄金的使者将到来，苍翠的鸟将到来，阿洛查克将到来，这是夜的依允」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80de-8cb9-f75bc5d7c48e" class="">「我梦见你的后嗣们…不必再畏惧幻梦与迷烟，不再有泪水，不再有苦痛」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8004-bbd3-da224d9b03d1" class="">「炽焰与焚燔的主人…终将会平等地庇护人与龙的梦，直至群星不复转动」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8087-9acb-d21fa265f62b" class="">「这是我最后的愿景，只属于我一人的英雄，请让那样的明日化作现实吧」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8097-bc23-fbfe1385cd6f" class="">「……」</p></div></div></details></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

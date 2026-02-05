@@ -1,0 +1,723 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>华馆梦醒形骸记</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2fe592a0-f19e-80bb-8995-eca5e09bdc62" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="%E5%8D%8E%E9%A6%86%E6%A2%A6%E9%86%92%E5%BD%A2%E9%AA%B8%E8%AE%B0/UI_RelicIcon_15021_4.png"/></div><h1 class="page-title" dir="auto"><strong>华馆梦醒形骸记</strong></h1><p class="page-description" dir="auto"></p><table class="properties"><tbody><tr class="property-row property-row-status"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/burst_gray.svg" style="width:14px;height:14px;display:block"/></span>状态</th><td><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>完成</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>编号</th><td>15021</td></tr></tbody></table></header><div class="page-body"><div style="display:contents" dir="ltr"><figure id="2fe592a0-f19e-80c0-b5e4-d9b91136db59" class="image" style="text-align:left"><a href="%E5%8D%8E%E9%A6%86%E6%A2%A6%E9%86%92%E5%BD%A2%E9%AA%B8%E8%AE%B0/UI_RelicIcon_15021_4%201.png"><img style="width:132px" src="%E5%8D%8E%E9%A6%86%E6%A2%A6%E9%86%92%E5%BD%A2%E9%AA%B8%E8%AE%B0/UI_RelicIcon_15021_4%201.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8078-a4a7-fca248303274" class=""><mark class="highlight-yellow"><strong>二件套</strong></mark></p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-803f-9b27-e347f77b4b7c" class="">防御力提高30%。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-802d-a97c-cc5cb60cd646" class=""><mark class="highlight-yellow"><strong>四件套</strong></mark></p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-804e-a4ea-ef09f14c4a26" class="">装备此圣遗物套装的角色在以下情况下，将获得「问答」效果：在场上用岩元素攻击命中敌人后获得一层，每0.3秒至多触发一次；在队伍后台中，每3秒获得一层。问答至多叠加4层，每层能提供6%防御力与6%岩元素伤害加成。每6秒，若未获得问答效果，将损失一层。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8051-9643-ef351e0b5843" class="">
+</p></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">故事</summary><div class="indented"><div style="display:contents" dir="ltr"><figure id="2fe592a0-f19e-80b3-9ab5-e59f76921d3d" class="image"><a href="%E5%8D%8E%E9%A6%86%E6%A2%A6%E9%86%92%E5%BD%A2%E9%AA%B8%E8%AE%B0/UI_RelicIcon_15021_4%202.png"><img style="width:120px" src="%E5%8D%8E%E9%A6%86%E6%A2%A6%E9%86%92%E5%BD%A2%E9%AA%B8%E8%AE%B0/UI_RelicIcon_15021_4%202.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80d6-bcf7-f64b00cbedce" class=""><strong>荣花之期：六瓣花形状的小型金饰，以永不凋零之姿，阅遍俗世易逝的荣华。</strong></p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-802f-89d2-c99ddd8d8209" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8065-bf4d-f76d26b54fad" class="">梦中所见是月色下随歌起舞的幻影，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-804e-af71-d0ec81a59c66" class="">仿佛是遥远往昔那白纸一般的少年；</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80a5-9c7c-cf92fe40b52c" class="">又仿佛是怨憎与苦难悉数消散之后，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80d0-82ee-f2f7da75e296" class="">才最终显露出的易碎而单纯的自我。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8043-8749-ff3fb5f7028a" class="">浮浪人并不知道自己拥有做梦的机能，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80b6-87b8-d3eedb323a60" class="">以为这或许是学者们的小把戏，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8017-803b-fcf53cb36cba" class="">又或许是曾经那颗心脏微不足道的抵抗。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8066-9210-e15bfe12037e" class="">「你曾获得过梦寐以求之『心』，」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8093-a094-f5b891fd4d5f" class="">「可那不过是谎言与欺瞒的道具；」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8089-890c-f11b46e42b18" class="">「而如今，你终将真正获得属于你的东西，」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80fd-b1a9-c94d339bd276" class="">「这具假合之身也将得以问鼎尘世的大权。」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8069-a9de-e71e76f40ed2" class="">「然而，这些都不过是一期荣华之梦，」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-809c-a366-f876c8c0c3d1" class="">「终究会飘散在大地苦难的嗟叹里吧…」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8076-86d1-c805bb7fb368" class="">不知是未来还是过去的自我这么说道。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80a3-8fb0-f9c9e80113fe" class="">浮浪人根本不以为意，毕竟梦醒之时，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80d9-ad9a-d2e4c4fc46ce" class="">消散的并不是自己，而是缥缈的未来。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8033-9511-dad7a2ca67b8" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fe592a0-f19e-8052-ae68-e6c5c6bfe8bb" class="image"><a href="%E5%8D%8E%E9%A6%86%E6%A2%A6%E9%86%92%E5%BD%A2%E9%AA%B8%E8%AE%B0/UI_RelicIcon_15021_2.png"><img style="width:120px" src="%E5%8D%8E%E9%A6%86%E6%A2%A6%E9%86%92%E5%BD%A2%E9%AA%B8%E8%AE%B0/UI_RelicIcon_15021_2.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80c4-85e1-e79952757e22" class=""><strong>华馆之羽：于避世之幽馆中一同带出的箭羽状的凭证，因创造者的怜悯之情，而与某具沉睡之躯一同置于馆中。</strong></p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8044-a071-c1fec5391cd0" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80d0-879d-f86e4e6d5fe3" class="">流浪多年的倾奇者已不会再想起它，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8064-a864-e71821d63dc5" class="">但闭上双眼，却仍能看到踏鞴砂的月夜与炉火。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8064-9561-fd09af6ffc56" class="">年轻仁厚的副官说：</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8080-9546-e9f2e55ded0e" class="">「这金饰是将军大人所赐身份之证，」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80b2-b048-c7c6747a13a3" class="">「但你行走世间时，若非万不得已，」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8024-a3b8-c9731e52cf2a" class="">切不可将自己的身份透露给他人。」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-807e-96ce-ef2346d4a156" class="">刚正不阿的目付说：</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-804d-857a-f371abb3a881" class="">「这枚金饰是将军大人所赐身份之证，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-807f-8438-c37e8ae8df92" class="">但你既非人类亦非器物，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8069-8eba-c8e2101fd493" class="">在下只能这样处置你，还请你不要怨恨！」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80fa-8c1d-d90cbf90c0a7" class="">摒弃昨日的倾奇者已不会再想起它，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80d8-888d-ef82fb07e287" class="">但捂住耳朵，却仍能听见那年的暴雨与狂风。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80cd-8c0f-c93018a77123" class="">一双双期盼的眼睛说：</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80b5-bb75-d1ab61f60355" class="">「这金饰是将军大人所赐身份之证，」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8091-a16f-e62ff5cec28c" class="">「定能救众人于水火吧。」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-801b-8999-d573cf9a5ff0" class="">灵动美丽的巫女说：</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8094-9f18-fe38811751a0" class="">「这金饰是将军大人所赐身份之证，」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-800e-8009-ea1f11cb2952" class="">「将军绝不会弃你不顾。」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80c9-8322-f7d1a0557d92" class="">「我亦会尽己所能，即刻派人相救…」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8089-a542-e201a18695c7" class="">…然而，金色的箭羽最终被尘土覆盖，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8035-8930-ca212e5d037f" class="">一切故事也被业火焚烧得无影无踪。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80f0-9d23-fbe53b106b70" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fe592a0-f19e-8076-a77e-e749ff0ca5ea" class="image"><a href="%E5%8D%8E%E9%A6%86%E6%A2%A6%E9%86%92%E5%BD%A2%E9%AA%B8%E8%AE%B0/UI_RelicIcon_15021_5.png"><img style="width:132px" src="%E5%8D%8E%E9%A6%86%E6%A2%A6%E9%86%92%E5%BD%A2%E9%AA%B8%E8%AE%B0/UI_RelicIcon_15021_5.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8070-8c5e-ef104909d3c3" class=""><strong>众生之谣：于稻妻而言乃是舶来品的小物件。名为机芯的零件已被卸下，指针也不再转动。</strong></p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8079-a294-fc7746c71397" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-808d-a138-ce7751ba3847" class="">他最初是作为「心」的容器而诞生，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8036-bd3b-cefd44dc1e70" class="">却在睡梦中淌下泪珠。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8035-9439-e3ee7f9bf54d" class="">创造者无可奈何地察觉到：</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-809a-a93e-cc07b4f15e7c" class="">他无论作为器物或人类，都过于脆弱了。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8009-832e-fb382b743c38" class="">创造者不忍将他毁弃，于是让他继续沉睡下去。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8075-9152-ccc9fbdf2de0" class="">在她之后的创造里，也摒弃了存放心脏的设计。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8038-b1af-dc3038b26396" class="">不久后，世间最为尊贵、最为殊胜的「证」，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8083-a8fb-f5251f3559c8" class="">便因无处安放，被送到了影向山的大社之中。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80be-8723-d1598eb7df28" class="">后来，美丽的人偶苏醒了，开始了流浪。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80ad-963e-c7783a25ae58" class="">他见到了许许多多的心，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8053-bbf3-d3a0a4d4d047" class="">善良的，正直的，坚毅的，柔软的…</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80be-af56-fc989f17a0ea" class="">人偶也想拥有一颗心脏。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8044-83d6-c43c2b4d1393" class="">再后来，美丽的人偶终于拿到了那颗「心」，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8040-ba57-f4a9b85afc0e" class="">那是他诞生的意义，存在的目的。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8061-b0eb-e0e05d89bb40" class="">但是，它却并非人偶真正想要的东西，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80b5-8824-ee7b48b1d1b6" class="">因为它并未蕴含任何祝福，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80be-80e7-c9bef24a0389" class="">只是一颗用友善的外表所包裹的，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80d2-b21c-e860ec36f48e" class="">充满自私、虚伪、狡诈与诅咒的祭品。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-803f-9dc4-daf1ee66e4bd" class="">善与恶，皆是众生之谣，无用而聒噪。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80ce-8456-fd59fdddeddc" class="">但只要将这颗「心」挖出来，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80f1-8d6b-c3f5a72cbc7b" class="">就什么都感受不到了…</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80a9-b89b-d51a51cac9d0" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fe592a0-f19e-804c-a1aa-df7bfab9ec46" class="image"><a href="%E5%8D%8E%E9%A6%86%E6%A2%A6%E9%86%92%E5%BD%A2%E9%AA%B8%E8%AE%B0/UI_RelicIcon_15021_1.png"><img style="width:132px" src="%E5%8D%8E%E9%A6%86%E6%A2%A6%E9%86%92%E5%BD%A2%E9%AA%B8%E8%AE%B0/UI_RelicIcon_15021_1.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80a5-84ca-d2e6971af86e" class=""><strong>梦醒之瓢：以黑漆与金粉装饰过的葫芦，已看不出本来的颜色，好像主要作用是演出的道具。</strong></p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-802a-bf79-c4ddb69f6054" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8078-949f-cddee7cf018a" class="">天目、经津、一心、百目、千手，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80c3-b3d1-e4961a4b5246" class="">曾并为稻妻「雷电五传」五支。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8011-bc9d-ccdbda38602a" class="">而今却只剩「天目」一支仍有师徒传承，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-801a-9c57-e99774759d1b" class="">「一心」一支，勉强算得有后人在世。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8070-b83a-dc90234905f1" class="">在民间看来，这不过是时间流转的必然结果，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8029-83a9-f16effd2e5b5" class="">却不曾想那些突如其来的衰败都暗藏玄机。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8088-a2f0-fecb2a203419" class="">流浪者绝不会承认，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-806b-abb4-d08ada9268eb" class="">自己的所作所为是出于对刀匠的报复；</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8044-ada3-cbb662986a0e" class="">当然也绝不会提起，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80c0-91dc-d17ef9c7925c" class="">计划才进行一半，自己就突然索然无味的原因。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80a0-8263-c77a1b1e120d" class="">他只会用从某个学者那里学来的语气说：</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-803a-8ad9-c8e45195685a" class="">「这一切，不过是人性的小小实验。」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8022-a54f-cd66c7b7adf0" class="">稻妻的传统戏剧中，有一类角色被称呼为「国崩」。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-801f-9e2c-d4fbfa5eddb8" class="">他们通常都是意图窃取一国、玩弄阴谋诡计之人。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8055-9817-d7cbc6d25b88" class="">在流浪的最后，他凭借自己的意志选择了这个名字。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8043-895d-eef233f85299" class="">而他之前使用过的名字，就连他自己也不记得了。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8043-8e0c-f2dc550ab5c3" class="">稻妻的传统戏剧，常以三幕之名相连为剧名，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8076-80c3-d2f70ef97923" class="">譬如《堇染》、《山月》、《虎啮鉴》三幕，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80f3-ad65-d1a7fb02fa72" class="">合为《堇染山月虎啮鉴》一剧。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8013-9fd8-c4d3c2b1aefe" class="">或许终有一天，这具形骸所经历的一切，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80b5-819a-e339366eeafe" class="">也会化为人类口中的故事，地脉遥远的记忆。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8063-87db-eeeef7a1292f" class="">只是现在，属于他的第三幕仍在上演。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8070-9840-d289033bdfdc" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2fe592a0-f19e-8061-b54c-da6da66dfa57" class="image"><a href="%E5%8D%8E%E9%A6%86%E6%A2%A6%E9%86%92%E5%BD%A2%E9%AA%B8%E8%AE%B0/UI_RelicIcon_15021_3.png"><img style="width:144px" src="%E5%8D%8E%E9%A6%86%E6%A2%A6%E9%86%92%E5%BD%A2%E9%AA%B8%E8%AE%B0/UI_RelicIcon_15021_3.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80a5-86b8-d6f1c054bbd5" class=""><strong>形骸之笠：流浪者在旅途中遮光避雨的斗笠，但后来却成为了遮挡面目、隐藏表情的便利道具。</strong></p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-803e-a862-d84df2d85652" class="">
+</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8016-a974-cdefceb047ab" class="">「流浪者，流浪者，你要去哪里啊？」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8053-9e5f-c79d609e74c7" class="">流浪的少年被孩子喊住。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80df-a319-e08f06913b92" class="">他是踏鞴砂工匠的孩子，虽然生了病，却仍有清澈的双眼。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80ca-bebc-ec38f78094da" class="">少年告诉孩子，自己必须去稻妻城。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8047-807f-cede64b24d1f" class="">「可现在好大的雨，他们说之前离开的人也都没有回来！」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80b6-b0c8-ca8f283c8f13" class="">少年张了张嘴，最后只好对孩子微笑。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-806e-9833-cee8e713c1bd" class="">等他再次踏上这座岛屿，孩子已经不见影踪。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8003-be75-f48bc4c3ab66" class="">「稻妻人，你要去哪？这可不是你能坐的船！」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80c9-9cb3-f8c3af5d9346" class="">流浪的少年被港口的船夫拦下。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8037-920c-d9db8319df01" class="">在少年拔刀之前，同行的男人伸手止住了他。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80f4-a4f2-e70d6672d350" class="">男人告知船夫，这个异国的少年将与自己同行。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8045-a2b0-dd30b02ec9bb" class="">「原来是大人的客人，是我冒昧了。」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8008-9357-ca0eace66c99" class="">男人递给少年御寒的外套，但少年摇了摇头。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-808f-9177-fc906053d494" class="">现在他只想知道，此次远行能见到什么有趣的东西。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-808c-be43-c7e4b1ce5623" class="">「执行官大人，你要去哪里？」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8001-847d-cd9483c756d8" class="">少年最讨厌聒噪的人类，他反手打了部下的脸。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80a3-85a0-fc9f80d1bb2e" class="">但少年也最喜欢观察人类的惊恐与无助，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8059-aeac-cdc55730a3db" class="">或许正因为表情丰富，这个愚蠢的部下才会被他留在身边。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-804b-97c0-d97f0e17a47c" class="">他告诉跪在地上战战兢兢的人，这次东去蒙德。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80b5-9b25-e837986d2422" class="">「属下明白了，这就让直属护卫们准备！」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80e5-87e5-fd8b5dd68b48" class="">护卫并无必要，但他已懒得再与蠢材废话。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80a4-9ca3-d762c499f057" class="">他再度戴上了流浪人的斗笠，只身向东行去。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8095-8b7e-da1a8989dfb0" class="">「孩子，你要去哪儿啊？」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80ef-bea8-ccf83bbf7565" class="">归国的少年在路边被名老妪喊住。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8021-a11b-fb20365a485c" class="">他告知老妪，自己准备向西去。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8063-996c-f023ab2414c7" class="">「要去八酝岛吗，是去做什么啊？」</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8043-b069-eef41aed6d92" class="">老妪并没有多想，只是最近很不太平。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-806f-bf5a-c1e72fad2061" class="">少年带着真诚的笑容谢过她的关心，说自己与人有约在先。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8042-95f9-dad71d4c2dab" class="">小船缓缓靠岸，一个异国装束的女人站在岸边，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-803d-b394-efb36b6a0431" class="">远远地向少年抛出一枚小小的晶球。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80c1-8525-e3aa81b59c85" class="">少年轻松接住了晶球，将它对准了如血残阳。</p></div></div></details></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

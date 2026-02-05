@@ -1,0 +1,715 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>兹白</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2fe592a0-f19e-8082-8c18-f1c84c49a311" class="page sans"><header><img class="page-cover-image" src="%E5%85%B9%E7%99%BD/UI_NameCardPic_Zibai_P%201.png" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="%E5%85%B9%E7%99%BD/UI_AvatarIcon_Zibai.png.webp"/></div><h1 class="page-title" dir="auto">兹白</h1><p class="page-description" dir="auto"></p><table class="properties"><tbody><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/water_gray.svg" style="width:14px;height:14px;display:block"/></span>元素类型</th><td>岩</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/archery_gray.svg" style="width:14px;height:14px;display:block"/></span>武器类型</th><td>单手剑</td></tr><tr class="property-row property-row-number"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/star_gray.svg" style="width:14px;height:14px;display:block"/></span>品质</th><td>5</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/fleur-de-lis_gray.svg" style="width:14px;height:14px;display:block"/></span>称号</th><td>驹隙隐泉</td></tr><tr class="property-row property-row-number"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/heart_gray.svg" style="width:14px;height:14px;display:block"/></span>生命值</th><td>12919</td></tr><tr class="property-row property-row-number"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/sword_gray.svg" style="width:14px;height:14px;display:block"/></span>攻击力</th><td>225</td></tr><tr class="property-row property-row-number"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/shield_gray.svg" style="width:14px;height:14px;display:block"/></span>防御力</th><td>957</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>突破属性</th><td>暴击伤害 +38.4%</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/cake_gray.svg" style="width:14px;height:14px;display:block"/></span>生日</th><td>5/15</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/map-pin-alternate_gray.svg" style="width:14px;height:14px;display:block"/></span>国家</th><td>璃月</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/home_gray.svg" style="width:14px;height:14px;display:block"/></span>所属</th><td>璃月港</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/stars_gray.svg" style="width:14px;height:14px;display:block"/></span>命之座</th><td>白驹座</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/card_gray.svg" style="width:14px;height:14px;display:block"/></span>简介</th><td>璃月传说中的白马仙人，其名为兹白，璃月仙话中最神秘的一位。</td></tr><tr class="property-row property-row-status"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/burst_gray.svg" style="width:14px;height:14px;display:block"/></span>Status</th><td><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>完成</span></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/calendar_gray.svg" style="width:14px;height:14px;display:block"/></span>上线时间</th><td><time>@2026年2月3日</time></td></tr></tbody></table></header><div class="page-body"><div style="display:contents" dir="ltr"><figure id="2fe592a0-f19e-8034-ba55-c40c8ad23641" class="image"><a href="%E5%85%B9%E7%99%BD/UI_Gacha_AvatarImg_Zibai.png.webp"><img style="width:872px" src="%E5%85%B9%E7%99%BD/UI_Gacha_AvatarImg_Zibai.png.webp"/></a></figure></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">天赋</summary><div class="indented"><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">机制简述</summary><div class="indented"><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">擢升</summary><div class="indented"><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-816d-aba2-dff4c2d7fa3e" class="">特殊的伤害提升效果，与其他的伤害提升效果分别独立计算。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><strong>月转时隙</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8064-b4af-f90a8e6805f4" class="">施放元素战技<mark class="highlight-yellow">天地忽然身</mark>后，兹白将切换至该模式。该模式至多持续15秒，并具有以下特性：</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80ac-a740-e836e2b79a8e" class="">· 进行普通攻击与重击时，将转为造成无法被附魔覆盖的<mark class="highlight-yellow">岩元素伤害</mark>；</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80b8-9ed5-ea6a66215f2d" class="">· 元素战技<mark class="highlight-yellow">天地忽然身</mark>将会被替换为特殊的元素战技<mark class="highlight-yellow">灵驹飞踏</mark>：当兹白拥有至少70点<mark class="highlight-yellow">「时隙浮光」</mark>时，兹白可以消耗70点「时隙浮光」，施放灵驹飞踏，造成两次<mark class="highlight-yellow">岩元素伤害</mark>，其中的第二段伤害视为月结晶反应伤害。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80b7-89cc-f0eefdd6efe9" class=""><mark class="highlight-yellow">「时隙浮光」</mark>上限为100点，兹白可以通过以下方式积攒「时隙浮光」：</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-805f-9590-c5b45d0e50fb" class="">· 处于<mark class="highlight-yellow">「月转时隙」</mark>模式下时，每秒积攒10点「时隙浮光」；</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80ad-9ee3-c2cd28262485" class="">· 普通攻击命中敌人时，会积攒5点「时隙浮光」，每0.5秒至多通过这种方式为兹白积攒一次「时隙浮光」。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8064-a38d-c426ba4f6f4b" class=""><mark class="highlight-yellow">月兆 · 满辉</mark></p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-809e-b798-cca0093ab45c" class="">队伍中附近的角色触发月结晶反应时，也会为兹白积攒35点<mark class="highlight-yellow">「时隙浮光」</mark>，每4秒至多通过这种方式为兹白积攒一次「时隙浮光」，施放特殊元素战技<mark class="highlight-yellow">灵驹飞踏</mark>将会重置通过这种方式积攒<mark class="highlight-yellow">「时隙浮光」</mark>的冷却时间。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80a1-a95b-f0898019a6b4" class="">施放4次<mark class="highlight-yellow">灵驹飞踏</mark>后，或持续时间结束时，兹白将退出该模式。</p></div></div></details></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">战斗天赋</summary><div class="indented"><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">普通攻击 · <strong>金铗点桂</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8105-a02f-c66bd6322f96" class=""><mark class="highlight-yellow"><strong>普通攻击</strong></mark></p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-81c3-a6f0-e760112c074d" class="">进行至多四段的连续剑击。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-819f-8172-faf2307d50b6" class=""><mark class="highlight-yellow"><strong>重击</strong></mark></p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-81f1-ab06-feb5cffed6c7" class="">消耗一定体力，瞬间向前方挥出两剑。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-81af-97e9-e38529e878e5" class=""><mark class="highlight-yellow"><strong>下落攻击</strong></mark></p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-81fe-98ea-c55005e7b467" class="">从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-81c1-9573-c0924183116f" class="">
+</p></div><div style="display:contents" dir="ltr"><table id="2fe592a0-f19e-8198-a4de-c09abc273f98" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-813f-abbf-cdc93b1515cc"><th id="Q;oN" class="simple-table-header-color simple-table-header" style="width:104px">Lv</th><th id="fQxv" class="simple-table-header-color simple-table-header" style="width:90px">1</th><th id="mTkN" class="simple-table-header-color simple-table-header" style="width:96px">2</th><th id="~Ezx" class="simple-table-header-color simple-table-header" style="width:101px">3</th><th id="}N]V" class="simple-table-header-color simple-table-header" style="width:98px">4</th><th id="|yns" class="simple-table-header-color simple-table-header" style="width:113px">5</th><th id="{HMY" class="simple-table-header-color simple-table-header" style="width:116px">6</th><th id="ZG&lt;l" class="simple-table-header-color simple-table-header" style="width:123px">7</th><th id="ZI]g" class="simple-table-header-color simple-table-header" style="width:121px">8</th><th id="XGn`" class="simple-table-header-color simple-table-header" style="width:111px">9</th><th id=";&lt;e_" class="simple-table-header-color simple-table-header" style="width:119px">10</th><th id="TkR}" class="simple-table-header-color simple-table-header" style="width:124px">11</th><th id="DKiH" class="simple-table-header-color simple-table-header" style="width:133px">12</th><th id="|QWc" class="simple-table-header-color simple-table-header" style="width:124px">13</th><th id="w?nU" class="simple-table-header-color simple-table-header" style="width:133px">14</th><th id="PuMI" class="simple-table-header-color simple-table-header" style="width:131px">15</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-812f-8423-c16048208bdc"><th id="Q;oN" class="simple-table-header-color simple-table-header" style="width:104px">一段伤害</th><td id="fQxv" class="" style="width:90px">50.55%</td><td id="mTkN" class="" style="width:96px">54.67%</td><td id="~Ezx" class="" style="width:101px">58.78%</td><td id="}N]V" class="" style="width:98px">64.66%</td><td id="|yns" class="" style="width:113px">68.78%</td><td id="{HMY" class="" style="width:116px">73.48%</td><td id="ZG&lt;l" class="" style="width:123px">79.95%</td><td id="ZI]g" class="" style="width:121px">86.41%</td><td id="XGn`" class="" style="width:111px">92.88%</td><td id=";&lt;e_" class="" style="width:119px">99.93%</td><td id="TkR}" class="" style="width:124px">106.99%</td><td id="DKiH" class="" style="width:133px">114.04%</td><td id="|QWc" class="" style="width:124px">121.10%</td><td id="w?nU" class="" style="width:133px">128.15%</td><td id="PuMI" class="" style="width:131px">135.20%</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-810c-942f-fec6cdc43c74"><th id="Q;oN" class="simple-table-header-color simple-table-header" style="width:104px">二段伤害</th><td id="fQxv" class="" style="width:90px">46.55%</td><td id="mTkN" class="" style="width:96px">50.34%</td><td id="~Ezx" class="" style="width:101px">54.13%</td><td id="}N]V" class="" style="width:98px">59.54%</td><td id="|yns" class="" style="width:113px">63.33%</td><td id="{HMY" class="" style="width:116px">67.66%</td><td id="ZG&lt;l" class="" style="width:123px">73.62%</td><td id="ZI]g" class="" style="width:121px">79.57%</td><td id="XGn`" class="" style="width:111px">85.53%</td><td id=";&lt;e_" class="" style="width:119px">92.02%</td><td id="TkR}" class="" style="width:124px">98.52%</td><td id="DKiH" class="" style="width:133px">105.01%</td><td id="|QWc" class="" style="width:124px">111.51%</td><td id="w?nU" class="" style="width:133px">118.01%</td><td id="PuMI" class="" style="width:131px">124.50%</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-81e7-b695-f161f8afef63"><th id="Q;oN" class="simple-table-header-color simple-table-header" style="width:104px">三段伤害</th><td id="fQxv" class="" style="width:90px">30.8882%+30.8882%</td><td id="mTkN" class="" style="width:96px">33.4023%+33.4023%</td><td id="~Ezx" class="" style="width:101px">35.9165%+35.9165%</td><td id="}N]V" class="" style="width:98px">39.5082%+39.5082%</td><td id="|yns" class="" style="width:113px">42.0223%+42.0223%</td><td id="{HMY" class="" style="width:116px">44.8956%+44.8956%</td><td id="ZG&lt;l" class="" style="width:123px">48.8464%+48.8464%</td><td id="ZI]g" class="" style="width:121px">52.7973%+52.7973%</td><td id="XGn`" class="" style="width:111px">56.7481%+56.7481%</td><td id=";&lt;e_" class="" style="width:119px">61.058%+61.058%</td><td id="TkR}" class="" style="width:124px">65.368%+65.368%</td><td id="DKiH" class="" style="width:133px">69.678%+69.678%</td><td id="|QWc" class="" style="width:124px">73.988%+73.988%</td><td id="w?nU" class="" style="width:133px">78.298%+78.298%</td><td id="PuMI" class="" style="width:131px">82.6079%+82.6079%</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8028-b620-cc7b94b1f2e3"><th id="Q;oN" class="simple-table-header-color simple-table-header" style="width:104px">四段伤害</th><td id="fQxv" class="" style="width:90px">77.90%</td><td id="mTkN" class="" style="width:96px">84.24%</td><td id="~Ezx" class="" style="width:101px">90.58%</td><td id="}N]V" class="" style="width:98px">99.63%</td><td id="|yns" class="" style="width:113px">105.97%</td><td id="{HMY" class="" style="width:116px">113.22%</td><td id="ZG&lt;l" class="" style="width:123px">123.18%</td><td id="ZI]g" class="" style="width:121px">133.15%</td><td id="XGn`" class="" style="width:111px">143.11%</td><td id=";&lt;e_" class="" style="width:119px">153.98%</td><td id="TkR}" class="" style="width:124px">164.85%</td><td id="DKiH" class="" style="width:133px">175.72%</td><td id="|QWc" class="" style="width:124px">186.59%</td><td id="w?nU" class="" style="width:133px">197.46%</td><td id="PuMI" class="" style="width:131px">208.32%</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-815c-afe6-e495d320dd9d"><th id="Q;oN" class="simple-table-header-color simple-table-header" style="width:104px">重击伤害</th><td id="fQxv" class="" style="width:90px">73.659%+73.659%</td><td id="mTkN" class="" style="width:96px">79.6545%+79.6545%</td><td id="~Ezx" class="" style="width:101px">85.65%+85.65%</td><td id="}N]V" class="" style="width:98px">94.215%+94.215%</td><td id="|yns" class="" style="width:113px">100.2105%+100.2105%</td><td id="{HMY" class="" style="width:116px">107.0625%+107.0625%</td><td id="ZG&lt;l" class="" style="width:123px">116.484%+116.484%</td><td id="ZI]g" class="" style="width:121px">125.9055%+125.9055%</td><td id="XGn`" class="" style="width:111px">135.327%+135.327%</td><td id=";&lt;e_" class="" style="width:119px">145.605%+145.605%</td><td id="TkR}" class="" style="width:124px">155.883%+155.883%</td><td id="DKiH" class="" style="width:133px">166.161%+166.161%</td><td id="|QWc" class="" style="width:124px">176.439%+176.439%</td><td id="w?nU" class="" style="width:133px">186.717%+186.717%</td><td id="PuMI" class="" style="width:131px">196.995%+196.995%</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8150-abc6-ec6fbdbf3aa9"><th id="Q;oN" class="simple-table-header-color simple-table-header" style="width:104px">重击体力消耗</th><td id="fQxv" class="" style="width:90px">20</td><td id="mTkN" class="" style="width:96px">20</td><td id="~Ezx" class="" style="width:101px">20</td><td id="}N]V" class="" style="width:98px">20</td><td id="|yns" class="" style="width:113px">20</td><td id="{HMY" class="" style="width:116px">20</td><td id="ZG&lt;l" class="" style="width:123px">20</td><td id="ZI]g" class="" style="width:121px">20</td><td id="XGn`" class="" style="width:111px">20</td><td id=";&lt;e_" class="" style="width:119px">20</td><td id="TkR}" class="" style="width:124px">20</td><td id="DKiH" class="" style="width:133px">20</td><td id="|QWc" class="" style="width:124px">20</td><td id="w?nU" class="" style="width:133px">20</td><td id="PuMI" class="" style="width:131px">20</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-817b-a2be-d891e3049058"><th id="Q;oN" class="simple-table-header-color simple-table-header" style="width:104px">下坠期间伤害</th><td id="fQxv" class="" style="width:90px">63.93%</td><td id="mTkN" class="" style="width:96px">69.14%</td><td id="~Ezx" class="" style="width:101px">74.34%</td><td id="}N]V" class="" style="width:98px">81.77%</td><td id="|yns" class="" style="width:113px">86.98%</td><td id="{HMY" class="" style="width:116px">92.93%</td><td id="ZG&lt;l" class="" style="width:123px">101.10%</td><td id="ZI]g" class="" style="width:121px">109.28%</td><td id="XGn`" class="" style="width:111px">117.46%</td><td id=";&lt;e_" class="" style="width:119px">126.38%</td><td id="TkR}" class="" style="width:124px">135.30%</td><td id="DKiH" class="" style="width:133px">144.22%</td><td id="|QWc" class="" style="width:124px">153.14%</td><td id="w?nU" class="" style="width:133px">162.06%</td><td id="PuMI" class="" style="width:131px">170.98%</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8162-b674-fd5c1c168aa3"><th id="Q;oN" class="simple-table-header-color simple-table-header" style="width:104px">低空/高空坠地冲击伤害</th><td id="fQxv" class="" style="width:90px">127.8377%/159.6762%</td><td id="mTkN" class="" style="width:96px">138.2431%/172.6731%</td><td id="~Ezx" class="" style="width:101px">148.6485%/185.67%</td><td id="}N]V" class="" style="width:98px">163.5134%/204.237%</td><td id="|yns" class="" style="width:113px">173.9187%/217.2339%</td><td id="{HMY" class="" style="width:116px">185.8106%/232.0875%</td><td id="ZG&lt;l" class="" style="width:123px">202.162%/252.5112%</td><td id="ZI]g" class="" style="width:121px">218.5133%/272.9349%</td><td id="XGn`" class="" style="width:111px">234.8646%/293.3586%</td><td id=";&lt;e_" class="" style="width:119px">252.7025%/315.639%</td><td id="TkR}" class="" style="width:124px">270.5403%/337.9194%</td><td id="DKiH" class="" style="width:133px">288.3781%/360.1998%</td><td id="|QWc" class="" style="width:124px">306.2159%/382.4802%</td><td id="w?nU" class="" style="width:133px">324.0537%/404.7606%</td><td id="PuMI" class="" style="width:131px">341.8915%/427.041%</td></tr></div></tbody></table></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><strong>元素战技 · 天地忽然身</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-801d-8a1d-f7e302c05210" class="">唤起旧日权能的片影，切换至<mark class="highlight-yellow">「月转时隙」</mark>模式。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8043-abf2-ea5788f1c217" class="">在该模式下，兹白进行普通攻击与重击时，将转为造成无法被附魔覆盖的<mark class="highlight-yellow">岩元素伤害</mark>，并可以通过不同的方式，积攒特殊的<mark class="highlight-yellow">「时隙浮光」</mark>；兹白可以消耗「时隙浮光」，施放特殊的元素战技<mark class="highlight-yellow">灵驹飞踏</mark>。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8071-9bb2-d02b13144935" class=""><mark class="highlight-yellow">月兆 · 满辉</mark></p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8044-ab8d-db2aeec907f3" class="">处于<mark class="highlight-yellow">「月转时隙」</mark>模式下时，兹白进行普通攻击时，第四段攻击将额外造成一次<mark class="highlight-yellow">岩元素伤害</mark>，该伤害视为月结晶反应伤害。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80bd-9671-d1877acb12bc" class=""><em><mark class="highlight-gray">世人常述光阴易逝如白驹过隙，孩童常问若白驹胖一点是不是就没法那么快过隙了，她听闻此事后神色奇怪：「过隙是一种身法，与胖瘦有什么干系？」</mark></em></p></div><div style="display:contents" dir="ltr"><table id="2fe592a0-f19e-811e-98d6-f1f7d49a66f7" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8103-b6a2-f31eb6bd097e"><th id="E=QU" class="simple-table-header-color simple-table-header" style="width:131px">Lv</th><th id="W?F;" class="simple-table-header-color simple-table-header">1</th><th id="q|K^" class="simple-table-header-color simple-table-header">2</th><th id="WFBk" class="simple-table-header-color simple-table-header">3</th><th id="vNuP" class="simple-table-header-color simple-table-header">4</th><th id="GjzX" class="simple-table-header-color simple-table-header">5</th><th id="AmWp" class="simple-table-header-color simple-table-header">6</th><th id="tT?R" class="simple-table-header-color simple-table-header">7</th><th id="`kSO" class="simple-table-header-color simple-table-header">8</th><th id="}}dC" class="simple-table-header-color simple-table-header">9</th><th id="eKmF" class="simple-table-header-color simple-table-header">10</th><th id="QNk=" class="simple-table-header-color simple-table-header">11</th><th id="F&gt;KT" class="simple-table-header-color simple-table-header">12</th><th id="dlBd" class="simple-table-header-color simple-table-header">13</th><th id="Afm&lt;" class="simple-table-header-color simple-table-header">14</th><th id="aHJY" class="simple-table-header-color simple-table-header">15</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-81d0-a190-c69851014c66"><th id="E=QU" class="simple-table-header-color simple-table-header" style="width:131px">月转时隙一段伤害</th><td id="W?F;" class="">56.5792%防御力</td><td id="q|K^" class="">60.8226%防御力</td><td id="WFBk" class="">65.0661%防御力</td><td id="vNuP" class="">70.724%防御力</td><td id="GjzX" class="">74.9674%防御力</td><td id="AmWp" class="">79.2109%防御力</td><td id="tT?R" class="">84.8688%防御力</td><td id="`kSO" class="">90.5267%防御力</td><td id="}}dC" class="">96.1846%防御力</td><td id="eKmF" class="">101.8426%防御力</td><td id="QNk=" class="">107.5005%防御力</td><td id="F&gt;KT" class="">113.1584%防御力</td><td id="dlBd" class="">120.2308%防御力</td><td id="Afm&lt;" class="">127.3032%防御力</td><td id="aHJY" class="">134.3756%防御力</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-819d-929e-d19e08a8949c"><th id="E=QU" class="simple-table-header-color simple-table-header" style="width:131px">月转时隙二段伤害</th><td id="W?F;" class="">52.1007%防御力</td><td id="q|K^" class="">56.0083%防御力</td><td id="WFBk" class="">59.9158%防御力</td><td id="vNuP" class="">65.1259%防御力</td><td id="GjzX" class="">69.0335%防御力</td><td id="AmWp" class="">72.941%防御力</td><td id="tT?R" class="">78.1511%防御力</td><td id="`kSO" class="">83.3612%防御力</td><td id="}}dC" class="">88.5712%防御力</td><td id="eKmF" class="">93.7813%防御力</td><td id="QNk=" class="">98.9914%防御力</td><td id="F&gt;KT" class="">104.2014%防御力</td><td id="dlBd" class="">110.714%防御力</td><td id="Afm&lt;" class="">117.2266%防御力</td><td id="aHJY" class="">123.7392%防御力</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8136-a6eb-d8176bc65a75"><th id="E=QU" class="simple-table-header-color simple-table-header" style="width:131px">月转时隙三段伤害</th><td id="W?F;" class="">34.5694%+34.5694%防御力</td><td id="q|K^" class="">37.1621%+37.1621%防御力</td><td id="WFBk" class="">39.7548%+39.7548%防御力</td><td id="vNuP" class="">43.2117%+43.2117%防御力</td><td id="GjzX" class="">45.8044%+45.8044%防御力</td><td id="AmWp" class="">48.3971%+48.3971%防御力</td><td id="tT?R" class="">51.854%+51.854%防御力</td><td id="`kSO" class="">55.311%+55.311%防御力</td><td id="}}dC" class="">58.7679%+58.7679%防御力</td><td id="eKmF" class="">62.2248%+62.2248%防御力</td><td id="QNk=" class="">65.6818%+65.6818%防御力</td><td id="F&gt;KT" class="">69.1387%+69.1387%防御力</td><td id="dlBd" class="">73.4599%+73.4599%防御力</td><td id="Afm&lt;" class="">77.7811%+77.7811%防御力</td><td id="aHJY" class="">82.1022%+82.1022%防御力</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8121-95a7-f0acc925a41d"><th id="E=QU" class="simple-table-header-color simple-table-header" style="width:131px">月转时隙四段伤害</th><td id="W?F;" class="">87.1788%防御力</td><td id="q|K^" class="">93.7172%防御力</td><td id="WFBk" class="">100.2556%防御力</td><td id="vNuP" class="">108.9735%防御力</td><td id="GjzX" class="">115.5119%防御力</td><td id="AmWp" class="">122.0503%防御力</td><td id="tT?R" class="">130.7682%防御力</td><td id="`kSO" class="">139.4861%防御力</td><td id="}}dC" class="">148.204%防御力</td><td id="eKmF" class="">156.9218%防御力</td><td id="QNk=" class="">165.6397%防御力</td><td id="F&gt;KT" class="">174.3576%防御力</td><td id="dlBd" class="">185.2549%防御力</td><td id="Afm&lt;" class="">196.1523%防御力</td><td id="aHJY" class="">207.0496%防御力</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-81d8-ba4c-fbe29de15e44"><th id="E=QU" class="simple-table-header-color simple-table-header" style="width:131px">月转时隙重击伤害</th><td id="W?F;" class="">65.95%+65.95%防御力</td><td id="q|K^" class="">70.8962%+70.8962%防御力</td><td id="WFBk" class="">75.8425%+75.8425%防御力</td><td id="vNuP" class="">82.4375%+82.4375%防御力</td><td id="GjzX" class="">87.3838%+87.3838%防御力</td><td id="AmWp" class="">92.33%+92.33%防御力</td><td id="tT?R" class="">98.925%+98.925%防御力</td><td id="`kSO" class="">105.52%+105.52%防御力</td><td id="}}dC" class="">112.115%+112.115%防御力</td><td id="eKmF" class="">118.71%+118.71%防御力</td><td id="QNk=" class="">125.305%+125.305%防御力</td><td id="F&gt;KT" class="">131.9%+131.9%防御力</td><td id="dlBd" class="">140.1437%+140.1437%防御力</td><td id="Afm&lt;" class="">148.3875%+148.3875%防御力</td><td id="aHJY" class="">156.6312%+156.6312%防御力</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-807b-b657-e3dd638b8924"><th id="E=QU" class="simple-table-header-color simple-table-header" style="width:131px">灵驹飞踏第一段伤害</th><td id="W?F;" class="">172.528%防御力</td><td id="q|K^" class="">185.4676%防御力</td><td id="WFBk" class="">198.4072%防御力</td><td id="vNuP" class="">215.66%防御力</td><td id="GjzX" class="">228.5996%防御力</td><td id="AmWp" class="">241.5392%防御力</td><td id="tT?R" class="">258.792%防御力</td><td id="`kSO" class="">276.0448%防御力</td><td id="}}dC" class="">293.2976%防御力</td><td id="eKmF" class="">310.5504%防御力</td><td id="QNk=" class="">327.8032%防御力</td><td id="F&gt;KT" class="">345.056%防御力</td><td id="dlBd" class="">366.622%防御力</td><td id="Afm&lt;" class="">388.188%防御力</td><td id="aHJY" class="">409.754%防御力</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8071-8c33-e4551f62497e"><th id="E=QU" class="simple-table-header-color simple-table-header" style="width:131px">灵驹飞踏第二段伤害</th><td id="W?F;" class="">140.968%防御力</td><td id="q|K^" class="">151.5406%防御力</td><td id="WFBk" class="">162.1132%防御力</td><td id="vNuP" class="">176.21%防御力</td><td id="GjzX" class="">186.7826%防御力</td><td id="AmWp" class="">197.3552%防御力</td><td id="tT?R" class="">211.452%防御力</td><td id="`kSO" class="">225.5488%防御力</td><td id="}}dC" class="">239.6456%防御力</td><td id="eKmF" class="">253.7424%防御力</td><td id="QNk=" class="">267.8392%防御力</td><td id="F&gt;KT" class="">281.936%防御力</td><td id="dlBd" class="">299.557%防御力</td><td id="Afm&lt;" class="">317.178%防御力</td><td id="aHJY" class="">334.799%防御力</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8163-b38a-e65ab633a5cd"><th id="E=QU" class="simple-table-header-color simple-table-header" style="width:131px">月转时隙第四段额外伤害</th><td id="W?F;" class="">29.456%防御力</td><td id="q|K^" class="">31.6652%防御力</td><td id="WFBk" class="">33.8744%防御力</td><td id="vNuP" class="">36.82%防御力</td><td id="GjzX" class="">39.0292%防御力</td><td id="AmWp" class="">41.2384%防御力</td><td id="tT?R" class="">44.184%防御力</td><td id="`kSO" class="">47.1296%防御力</td><td id="}}dC" class="">50.0752%防御力</td><td id="eKmF" class="">53.0208%防御力</td><td id="QNk=" class="">55.9664%防御力</td><td id="F&gt;KT" class="">58.912%防御力</td><td id="dlBd" class="">62.594%防御力</td><td id="Afm&lt;" class="">66.276%防御力</td><td id="aHJY" class="">69.958%防御力</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8186-b5a2-e0157017ec04"><th id="E=QU" class="simple-table-header-color simple-table-header" style="width:131px">月转时隙持续时间</th><td id="W?F;" class="">15秒</td><td id="q|K^" class="">15秒</td><td id="WFBk" class="">15秒</td><td id="vNuP" class="">15秒</td><td id="GjzX" class="">15秒</td><td id="AmWp" class="">15秒</td><td id="tT?R" class="">15秒</td><td id="`kSO" class="">15秒</td><td id="}}dC" class="">15秒</td><td id="eKmF" class="">15秒</td><td id="QNk=" class="">15秒</td><td id="F&gt;KT" class="">15秒</td><td id="dlBd" class="">15秒</td><td id="Afm&lt;" class="">15秒</td><td id="aHJY" class="">15秒</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-810a-a754-da3b9592b133"><th id="E=QU" class="simple-table-header-color simple-table-header" style="width:131px">冷却时间</th><td id="W?F;" class="">18秒</td><td id="q|K^" class="">18秒</td><td id="WFBk" class="">18秒</td><td id="vNuP" class="">18秒</td><td id="GjzX" class="">18秒</td><td id="AmWp" class="">18秒</td><td id="tT?R" class="">18秒</td><td id="`kSO" class="">18秒</td><td id="}}dC" class="">18秒</td><td id="eKmF" class="">18秒</td><td id="QNk=" class="">18秒</td><td id="F&gt;KT" class="">18秒</td><td id="dlBd" class="">18秒</td><td id="Afm&lt;" class="">18秒</td><td id="aHJY" class="">18秒</td></tr></div></tbody></table></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><strong>元素爆发 · 三垣威仪法</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80c7-b27c-e0265960ff1f" class="">兹白转起青玄乘阳华盖，造成两次<mark class="highlight-yellow">岩元素伤害</mark>，其中的第二段伤害视为月结晶反应伤害。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8062-84a3-ee39f832100f" class="">施放时，若兹白处于<mark class="highlight-yellow">「月转时隙」</mark>模式下，则本次「月转时隙」模式的持续时间还会延长1.7秒。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80d4-a12b-cdf55a4426bf" class=""><em><mark class="highlight-gray">据说很久以前有足以点亮整夜的贼星迫近，世人曾在那时窥得此法宝的华光一眼。</mark></em></p></div><div style="display:contents" dir="ltr"><table id="2fe592a0-f19e-8124-b6c1-e3002b27b16a" class="simple-table"><tbody><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-81c1-9e14-ffbbdb91ee2c"><td id="MjFj" class="">Lv</td><td id="Oeq:" class="">1</td><td id="qtQC" class="">2</td><td id="Ke_X" class="">3</td><td id="bTaE" class="">4</td><td id="ZRVx" class="">5</td><td id="vuG]" class="">6</td><td id="YQ@k" class="">7</td><td id="dcFr" class="">8</td><td id="|@Mn" class="">9</td><td id="UJ}T" class="">10</td><td id="T=&lt;}" class="">11</td><td id="kB==" class="">12</td><td id="aj:j" class="">13</td><td id="zfIj" class="">14</td><td id="gX;b" class="">15</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-812b-83d8-f28d0f2ab8b4"><td id="MjFj" class="">技能第一段伤害</td><td id="Oeq:" class="">126.96%防御力</td><td id="qtQC" class="">136.482%防御力</td><td id="Ke_X" class="">146.004%防御力</td><td id="bTaE" class="">158.7%防御力</td><td id="ZRVx" class="">168.222%防御力</td><td id="vuG]" class="">177.744%防御力</td><td id="YQ@k" class="">190.44%防御力</td><td id="dcFr" class="">203.136%防御力</td><td id="|@Mn" class="">215.832%防御力</td><td id="UJ}T" class="">228.528%防御力</td><td id="T=&lt;}" class="">241.224%防御力</td><td id="kB==" class="">253.92%防御力</td><td id="aj:j" class="">269.79%防御力</td><td id="zfIj" class="">285.66%防御力</td><td id="gX;b" class="">301.53%防御力</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-81f4-bdcf-f2578c2b810d"><td id="MjFj" class="">技能第二段伤害</td><td id="Oeq:" class="">177.744%防御力</td><td id="qtQC" class="">191.0748%防御力</td><td id="Ke_X" class="">204.4056%防御力</td><td id="bTaE" class="">222.18%防御力</td><td id="ZRVx" class="">235.5108%防御力</td><td id="vuG]" class="">248.8416%防御力</td><td id="YQ@k" class="">266.616%防御力</td><td id="dcFr" class="">284.3904%防御力</td><td id="|@Mn" class="">302.1648%防御力</td><td id="UJ}T" class="">319.9392%防御力</td><td id="T=&lt;}" class="">337.7136%防御力</td><td id="kB==" class="">355.488%防御力</td><td id="aj:j" class="">377.706%防御力</td><td id="zfIj" class="">399.924%防御力</td><td id="gX;b" class="">422.142%防御力</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-81d3-af77-e4c9f526b691"><td id="MjFj" class="">冷却时间</td><td id="Oeq:" class="">15秒</td><td id="qtQC" class="">15秒</td><td id="Ke_X" class="">15秒</td><td id="bTaE" class="">15秒</td><td id="ZRVx" class="">15秒</td><td id="vuG]" class="">15秒</td><td id="YQ@k" class="">15秒</td><td id="dcFr" class="">15秒</td><td id="|@Mn" class="">15秒</td><td id="UJ}T" class="">15秒</td><td id="T=&lt;}" class="">15秒</td><td id="kB==" class="">15秒</td><td id="aj:j" class="">15秒</td><td id="zfIj" class="">15秒</td><td id="gX;b" class="">15秒</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8164-bcf1-e95f1b7982d2"><td id="MjFj" class="">元素能量</td><td id="Oeq:" class="">60</td><td id="qtQC" class="">60</td><td id="Ke_X" class="">60</td><td id="bTaE" class="">60</td><td id="ZRVx" class="">60</td><td id="vuG]" class="">60</td><td id="YQ@k" class="">60</td><td id="dcFr" class="">60</td><td id="|@Mn" class="">60</td><td id="UJ}T" class="">60</td><td id="T=&lt;}" class="">60</td><td id="kB==" class="">60</td><td id="aj:j" class="">60</td><td id="zfIj" class="">60</td><td id="gX;b" class="">60</td></tr></div></tbody></table></div></div></details></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">固有天赋</summary><div class="indented"><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><strong>月下素娥降仙</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-81bb-b2e7-d401294dbc02" class="">施放元素战技<mark class="highlight-yellow">天地忽然身</mark>时，或触发月笼谐奏时，兹白将获得持续4秒的<mark class="highlight-yellow">「太阴降」</mark>效果：<mark class="highlight-yellow">灵驹飞踏</mark>第二段攻击造成的伤害提升，提升值相当于兹白防御力的60%。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><strong>叠嶂峦岫出云</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-81ae-b5a8-fffaa083f594" class="">队伍中每存在一名元素类型为<mark class="highlight-yellow">岩元素</mark>的其他角色，都会使兹白的防御力提升15%；队伍中每存在一名元素类型为<mark class="highlight-blue">水元素</mark>的其他角色，都会使兹白的元素精通提升60点。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><strong>月兆祝赐 · 浮明若流</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8015-9357-f2997c1b9203" class="">队伍中的角色触发水元素结晶反应时，将转为触发月结晶反应，且基于兹白的防御力，提升队伍中角色造成的月结晶反应的基础伤害：每100点防御力都将提升0.7%月结晶反应的基础伤害，至多通过这种方式提升14%伤害。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8097-bb73-f882f176b05c" class="">此外，兹白在队伍中时，队伍的<mark class="highlight-yellow">月兆</mark>将会上升一级。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><strong>花林如霰</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8016-9075-c09f61855609" class="">在夜间（18时至6时），不处于战斗状态下时，每2秒为兹白恢复1点元素能量。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8074-a291-c5e54638336c" class="">该效果在秘境、征讨领域、深境螺旋中无效。</p></div></div></details></div></div></details></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">命之座</summary><div class="indented"><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">第1层 <strong>出勃然而入寥然</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8023-9f8b-f50a7249553f" class="">施放元素战技<mark class="highlight-yellow">天地忽然身</mark>后，兹白会立即积攒100点<mark class="highlight-yellow">「时隙浮光」</mark>，且<mark class="highlight-yellow">「月转时隙」</mark>模式下<mark class="highlight-yellow">灵驹飞踏</mark>的最大可用次数增加至5次。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8064-b671-f326cc8c42a6" class="">此外，每次切换至「月转时隙」模式后，初次施放灵驹飞踏时，第二段攻击造成的月结晶反应伤害提升220%。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">第2层 <strong>化于生而死于尸</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8042-bed7-f9c4a7e22ad9" class="">处于<mark class="highlight-yellow">「月转时隙」</mark>模式下时，队伍中附近的所有角色造成的月结晶反应伤害提升30%。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8022-a533-cc04b2549f4d" class=""><mark class="highlight-yellow">月兆 · 满辉</mark>：突破天赋<mark class="highlight-yellow">月下素娥降仙</mark>的效果获得提升：<mark class="highlight-yellow">灵驹飞踏</mark>第二段攻击造成的伤害进一步提升，提升值相当于兹白防御力的550%；该效果需要解锁突破天赋月下素娥降仙。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">第3层 <strong>解天韬而堕其帙</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80f3-8970-ef7c1cf740a0" class="">元素战技<mark class="highlight-yellow">天地忽然身</mark>的技能等级提高3级。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8040-9ded-c27de7ba52ad" class="">至多提升至15级。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">第4层 <strong>魂魄往而身从之</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8065-a2fd-dc3c10722a22" class="">处于<mark class="highlight-yellow">「月转时隙」</mark>模式下时，兹白的普通攻击连击段数不会重置，且<mark class="highlight-yellow">灵驹飞踏</mark>命中敌人时，兹白将获得<mark class="highlight-yellow">「月涣华」</mark>效果：下一次进行普通攻击时，第四段额外攻击将造成相当于原本250%的月结晶反应伤害。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">第5层 <strong>明见无值至不论</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80a6-8192-c4a0b5187b69" class="">元素爆发<mark class="highlight-yellow">三垣威仪法</mark>的技能等级提高3级。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80d1-804c-d31b16e45377" class="">至多提升至15级。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">第6层 <strong>天地忽如一远行</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-803b-8351-c32e9c0a16b9" class="">处于<mark class="highlight-yellow">「月转时隙」</mark>模式下时，兹白积攒<mark class="highlight-yellow">「时隙浮光」</mark>的效率提升50%。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80f1-adc1-ed136b0a5ec1" class="">此外，<mark class="highlight-yellow">灵驹飞踏</mark>将转为消耗所有的「时隙浮光」，基于消耗的「时隙浮光」超过70点的部分，每额外消耗1点「时隙浮光」，都会使本次灵驹飞踏与接下来3秒内兹白造成的月结晶反应伤害<mark class="highlight-yellow">擢升</mark>1.6%。该效果无法叠加。</p></div></div></details></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">其它</summary><div class="indented"><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><strong>100级属性</strong></summary><div class="indented"><div style="display:contents" dir="ltr"><table id="2fe592a0-f19e-807a-b76e-d09f2b200e8f" class="simple-table"><tbody><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-80de-8d60-e61ac4be1e34"><td id="UZrz" class="" style="width:197.66666666666666px">生命值</td><td id="Iv@G" class="" style="width:197.66666666666666px">13838</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-802c-8548-df5ad1cdb6f1"><td id="UZrz" class="" style="width:197.66666666666666px">攻击力</td><td id="Iv@G" class="" style="width:197.66666666666666px">275</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-803e-9ccc-c0896337b25d"><td id="UZrz" class="" style="width:197.66666666666666px">防御力</td><td id="Iv@G" class="" style="width:197.66666666666666px">1025</td></tr></div></tbody></table></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">衣装</summary><div class="indented"><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80f0-bd29-de58bc669bce" class=""><strong>白驹邀月</strong></p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8046-9e58-fef29a240f43" class="">兹白的装扮款式。主材是丝与麻。据说数千年前的古国「琅轩」掌握着精巧的纺织技艺，那种技艺正是由高天上的使者兹白带来人间。无数年月后，亘古的国度与久远的历史都被时间冲散，变得如水中幻月般虚无缥缈，不见真容。可缫丝纺麻的技艺却神奇地留存下来。直到如今，依然跳动在璃月港每一架纺车的绳轮与木架之间。</p></div><div style="display:contents" dir="ltr"><figure id="2fe592a0-f19e-804a-9d29-d4bc6a82984f" class="image"><a href="%E5%85%B9%E7%99%BD/UI_Gacha_AvatarImg_Zibai.png%201.webp"><img style="width:799px" src="%E5%85%B9%E7%99%BD/UI_Gacha_AvatarImg_Zibai.png%201.webp"/></a></figure></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">名片</summary><div class="indented"><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-808d-8047-c8bead012827" class=""><mark class="highlight-yellow"><strong>兹白·烟景</strong></mark></p></div><div style="display:contents" dir="ltr"><figure id="2fe592a0-f19e-80b6-9ba7-d830b729c373" class="image"><a href="%E5%85%B9%E7%99%BD/UI_NameCardPic_Zibai_P.png"><img style="width:916.9921875px" src="%E5%85%B9%E7%99%BD/UI_NameCardPic_Zibai_P.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80db-a425-f8d29e0412ee" class="">名片纹饰。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8052-ad53-c241f103ba69" class="">夫天地者，万物之逆旅也；光阴者，百代之过客也。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">特色料理</summary><div class="indented"><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8084-8c4f-ed0d8acfd50c" class="">炸春鲜</p></div><div style="display:contents" dir="ltr"><figure id="2fe592a0-f19e-802b-a69b-da7e63091524" class="image"><a href="%E5%85%B9%E7%99%BD/UI_ItemIcon_108862.webp"><img style="width:240px" src="%E5%85%B9%E7%99%BD/UI_ItemIcon_108862.webp"/></a></figure></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80d3-a896-e75c0d6770e2" class=""><em><mark class="highlight-gray">兹白的特色料理。见其色如金珀，恰似她的眼眸；闻其香则与寻常春卷一般无二；尝其味酥脆中却别具韧性…这会是来自古老琅玕国的秘传肴馔制法吗？</mark></em></p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80be-8b58-e8bc0ec83c8f" class="">队伍中所有角色防御力提高282点，持续300秒。多人游戏时，仅对自己的角色生效。</p></div><div style="display:contents" dir="ltr"><table id="2fe592a0-f19e-80d5-a707-d78464dba9c9" class="simple-table"><tbody><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-807f-b111-f0f62defe3f0"><td id="[YB\" class="" style="width:202.66666666666666px">材料</td><td id="XOTd" class="" style="width:202.66666666666666px">数量</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-80f4-a0ce-d9fc36a519f6"><td id="[YB\" class="" style="width:202.66666666666666px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E8%98%91%E8%8F%87%202fe592a0f19e80c3b210c91a1ccdf8b1.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E8%98%91%E8%8F%87/UI_ItemIcon_100011.png"/>蘑菇</a> </td><td id="XOTd" class="" style="width:202.66666666666666px">2</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-80d4-aa7a-c4446b0071ea"><td id="[YB\" class="" style="width:202.66666666666666px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E7%A6%BD%E8%82%89%202fa592a0f19e80e39afbf2227fa7fe82.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E7%A6%BD%E8%82%89/UI_ItemIcon_100064.png"/>禽肉</a> </td><td id="XOTd" class="" style="width:202.66666666666666px">3</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-80d4-9948-d2da631a1bcc"><td id="[YB\" class="" style="width:202.66666666666666px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E7%AB%B9%E7%AC%8B%202fe592a0f19e80a19a83c89e839bfcea.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E7%AB%B9%E7%AC%8B/UI_ItemIcon_100091.png"/>竹笋</a> </td><td id="XOTd" class="" style="width:202.66666666666666px">2</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-80ba-8278-e184b18da8eb"><td id="[YB\" class="" style="width:202.66666666666666px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E9%9D%A2%E7%B2%89%202fa592a0f19e80448eddccec05efcda2.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E9%9D%A2%E7%B2%89/UI_ItemIcon_110001.png"/>面粉</a> </td><td id="XOTd" class="" style="width:202.66666666666666px">2</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-808c-9002-ed5fc78b1c30" class="">香炸春卷</p></div><div style="display:contents" dir="ltr"><figure id="2fe592a0-f19e-8085-a5b3-c7c54ee3896b" class="image"><a href="%E5%85%B9%E7%99%BD/UI_ItemIcon_108868.webp"><img style="width:144px" src="%E5%85%B9%E7%99%BD/UI_ItemIcon_108868.webp"/></a></figure></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">培养材料</summary><div class="indented"><div style="display:contents" dir="ltr"><table id="2fe592a0-f19e-80b4-8119-c829fc450809" class="simple-table"><tbody><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-80f5-a4c3-cb6cf01f052f"><td id="`iQE" class="" style="width:202.66666666666666px">材料</td><td id="oe^A" class="" style="width:202.66666666666666px">数量</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8046-97c8-f378a72cf64d"><td id="`iQE" class="" style="width:202.66666666666666px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E7%A3%A8%E6%8D%9F%E7%9A%84%E6%89%A7%E5%87%AD%202fb592a0f19e80499079d2a030674b43.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E7%A3%A8%E6%8D%9F%E7%9A%84%E6%89%A7%E5%87%AD/UI_ItemIcon_112125.png.webp"/>磨损的执凭</a> </td><td id="oe^A" class="" style="width:202.66666666666666px">36</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8075-b455-e1d18862e060"><td id="`iQE" class="" style="width:202.66666666666666px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E7%B2%BE%E8%87%B4%E7%9A%84%E6%89%A7%E5%87%AD%202fb592a0f19e8048818fdc246d153c7f.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E7%B2%BE%E8%87%B4%E7%9A%84%E6%89%A7%E5%87%AD/UI_ItemIcon_112126.png"/>精致的执凭</a> </td><td id="oe^A" class="" style="width:202.66666666666666px">96</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8007-990f-f7f3f78f7202"><td id="`iQE" class="" style="width:202.66666666666666px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E9%9C%9C%E9%95%8C%E7%9A%84%E6%89%A7%E5%87%AD%202fb592a0f19e8055b18ded1bfbf2825b.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E9%9C%9C%E9%95%8C%E7%9A%84%E6%89%A7%E5%87%AD/UI_ItemIcon_112127.png.webp"/>霜镌的执凭</a> </td><td id="oe^A" class="" style="width:202.66666666666666px">129</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8070-a8ed-ca2e3fae00d0"><td id="`iQE" class="" style="width:202.66666666666666px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E9%AD%87%E7%BF%BC%E6%9E%AF%E9%AA%B8%202fe592a0f19e8092958cdcc69af48ba0.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E9%AD%87%E7%BF%BC%E6%9E%AF%E9%AA%B8/UI_ItemIcon_113084.png"/>魇翼枯骸</a> </td><td id="oe^A" class="" style="width:202.66666666666666px">46</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-80fd-928c-f12feb18f8cd"><td id="`iQE" class="" style="width:202.66666666666666px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E3%80%8C%E9%BB%84%E9%87%91%E3%80%8D%E7%9A%84%E6%95%99%E5%AF%BC%202fe592a0f19e8096bb54e1f4cbd026fe.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E3%80%8C%E9%BB%84%E9%87%91%E3%80%8D%E7%9A%84%E6%95%99%E5%AF%BC/UI_ItemIcon_104316.png.webp"/>「黄金」的教导</a> </td><td id="oe^A" class="" style="width:202.66666666666666px">9</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8095-848e-e8300d2197cc"><td id="`iQE" class="" style="width:202.66666666666666px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E3%80%8C%E9%BB%84%E9%87%91%E3%80%8D%E7%9A%84%E6%8C%87%E5%BC%95%202fe592a0f19e800db579f9c3e1f1c003.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E3%80%8C%E9%BB%84%E9%87%91%E3%80%8D%E7%9A%84%E6%8C%87%E5%BC%95/UI_ItemIcon_104317.png"/>「黄金」的指引</a> </td><td id="oe^A" class="" style="width:202.66666666666666px">63</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-80af-92b1-cd0d911831a1"><td id="`iQE" class="" style="width:202.66666666666666px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E3%80%8C%E9%BB%84%E9%87%91%E3%80%8D%E7%9A%84%E5%93%B2%E5%AD%A6%202fe592a0f19e804a97dcef92ee8628eb.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E3%80%8C%E9%BB%84%E9%87%91%E3%80%8D%E7%9A%84%E5%93%B2%E5%AD%A6/UI_ItemIcon_104318.png.webp"/>「黄金」的哲学</a> </td><td id="oe^A" class="" style="width:202.66666666666666px">114</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-800b-b7f3-d7826b45b422"><td id="`iQE" class="" style="width:202.66666666666666px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%8D%87%E6%89%AC%E6%A0%B7%E6%9C%AC%20%C2%B7%20%E7%8E%8B%E6%97%8F%202fe592a0f19e809ca0aaf182fc4cc495.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%8D%87%E6%89%AC%E6%A0%B7%E6%9C%AC%20%C2%B7%20%E7%8E%8B%E6%97%8F/UI_ItemIcon_113075.png.webp"/>升扬样本 · 王族</a> </td><td id="oe^A" class="" style="width:202.66666666666666px">18</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-80e5-8b3a-d071bb8c4167"><td id="`iQE" class="" style="width:202.66666666666666px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E7%90%89%E7%92%83%E7%99%BE%E5%90%88%202fe592a0f19e80c59d55cfa8c3fb24ef.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E7%90%89%E7%92%83%E7%99%BE%E5%90%88/UI_ItemIcon_100030.png.webp"/>琉璃百合</a> </td><td id="oe^A" class="" style="width:202.66666666666666px">168</td></tr></div></tbody></table></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">妮可少女的研究</summary><div class="indented"><div style="display:contents" dir="auto"><ul id="2fe592a0-f19e-80c1-b8d4-cc779f81f063" class="bulleted-list"><li style="list-style-type:disc"><strong>产球</strong>普通攻击或元素战技命中时，有 2/3 概率产 1 球，触发冷却为 2s</li></ul></div><div style="display:contents" dir="auto"><ul id="2fe592a0-f19e-8081-ae15-ff01350be50a" class="bulleted-list"><li style="list-style-type:disc"><strong>抗打断</strong>元素战技的「月转时隙」状态期间，有 0.5 抗打断（=赛诺/胡桃/菲林斯等）</li></ul></div></div></details></div></div></details></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80fa-877e-f8700e91d4b3" class="">
+</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

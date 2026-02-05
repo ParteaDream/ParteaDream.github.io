@@ -1,0 +1,714 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>灰河渡手</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2fe592a0-f19e-8092-88c9-d24a8c6ecb39" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="%E7%81%B0%E6%B2%B3%E6%B8%A1%E6%89%8B/UI_EquipIcon_Sword_Machination_Awaken.png"/></div><h1 class="page-title" dir="auto"><strong>灰河渡手</strong></h1><p class="page-description" dir="auto"></p><table class="properties"><tbody><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/clock_gray.svg" style="width:14px;height:14px;display:block"/></span>创建时间</th><td><time>@2026年2月5日 15:49</time></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>品质</th><td>4</td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/list_gray.svg" style="width:14px;height:14px;display:block"/></span>武器类型</th><td><span class="selected-value select-value-color-blue">单手剑</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>攻击力</th><td>510</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>副属性</th><td>+45.9% 元素充能效率</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>简介</th><td>在过去曾经被当作武器使用的趁手废弃铜管，曾经在一些人当中享有盛名或是臭名昭著。</td></tr><tr class="property-row property-row-status"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/burst_gray.svg" style="width:14px;height:14px;display:block"/></span>状态</th><td><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>完成</span></td></tr></tbody></table></header><div class="page-body"><div style="display:contents" dir="auto"><div id="2fe592a0-f19e-8012-a33a-fd8849368fa6" class="column-list"><div style="display:contents" dir="auto"><div id="2fe592a0-f19e-804f-bab2-fc25465a1743" style="width:50%" class="column"><div style="display:contents" dir="ltr"><figure id="2fe592a0-f19e-807b-8a76-dfb2090cb265" class="image"><a href="%E7%81%B0%E6%B2%B3%E6%B8%A1%E6%89%8B/UI_EquipIcon_Sword_Machination.png"><img style="width:240px" src="%E7%81%B0%E6%B2%B3%E6%B8%A1%E6%89%8B/UI_EquipIcon_Sword_Machination.png"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="2fe592a0-f19e-80ff-b998-e4fe3de0d700" style="width:50%" class="column"><div style="display:contents" dir="ltr"><figure id="2fe592a0-f19e-80a4-be9a-f68c59c6d8ba" class="image"><a href="%E7%81%B0%E6%B2%B3%E6%B8%A1%E6%89%8B/UI_EquipIcon_Sword_Machination_Awaken%201.png"><img style="width:240px" src="%E7%81%B0%E6%B2%B3%E6%B8%A1%E6%89%8B/UI_EquipIcon_Sword_Machination_Awaken%201.png"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80fa-8a96-f99fa7f35c1e" class=""><strong>铁骨</strong></p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80a1-b02b-f84201c0615c" class="">元素战技暴击率提升 <mark class="highlight-yellow">8% </mark><mark class="highlight-default">/</mark><mark class="highlight-yellow"> 10% </mark><mark class="highlight-default">/</mark><mark class="highlight-yellow"> 12% </mark><mark class="highlight-default">/</mark><mark class="highlight-yellow"> 14% </mark><mark class="highlight-default">/</mark><mark class="highlight-yellow"> 16%</mark> ；此外，施放元素战技后的5秒内，元素充能效率提升 <mark class="highlight-yellow">16% </mark><mark class="highlight-default">/</mark><mark class="highlight-yellow"> 20% </mark><mark class="highlight-default">/</mark><mark class="highlight-yellow"> 24% </mark><mark class="highlight-default">/</mark><mark class="highlight-yellow"> 28% </mark><mark class="highlight-default">/</mark><mark class="highlight-yellow"> 32%</mark> 。</p></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">培养材料</summary><div class="indented"><div style="display:contents" dir="ltr"><table id="2fe592a0-f19e-80c9-899f-d4412c43d6be" class="simple-table"><tbody><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8011-89c7-d7bf6c8f894e"><td id="rIUl" class="" style="width:215.33333333333334px">材料</td><td id="wFBp" class="" style="width:215.33333333333334px">数量</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-80db-843e-ef4e355b5565"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%82%A0%E5%8F%A4%E5%BC%A6%E9%9F%B3%E7%9A%84%E6%AE%8B%E7%AB%A0%202fa592a0f19e80e4b522c63b00b80a2a.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%82%A0%E5%8F%A4%E5%BC%A6%E9%9F%B3%E7%9A%84%E6%AE%8B%E7%AB%A0/UI_ItemIcon_114049.png"/>悠古弦音的残章</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">3</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8084-96c4-dcfa6e288e35"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%82%A0%E5%8F%A4%E5%BC%A6%E9%9F%B3%E7%9A%84%E6%96%AD%E7%AB%A0%202fa592a0f19e80fd807bed12ce9090c0.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%82%A0%E5%8F%A4%E5%BC%A6%E9%9F%B3%E7%9A%84%E6%96%AD%E7%AB%A0/UI_ItemIcon_114050.png"/>悠古弦音的断章</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">9</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8016-bcfe-cc7dc078bc15"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%82%A0%E5%8F%A4%E5%BC%A6%E9%9F%B3%E7%9A%84%E4%B9%90%E7%AB%A0%202fa592a0f19e80c6b5ffc4a54471037f.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%82%A0%E5%8F%A4%E5%BC%A6%E9%9F%B3%E7%9A%84%E4%B9%90%E7%AB%A0/UI_ItemIcon_114051.png"/>悠古弦音的乐章</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">9</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8052-a176-e21370fe8d1d"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%82%A0%E5%8F%A4%E5%BC%A6%E9%9F%B3%E7%9A%84%E5%9B%9E%E5%93%8D%202fa592a0f19e80ecb7cdd0566e3ec165.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%82%A0%E5%8F%A4%E5%BC%A6%E9%9F%B3%E7%9A%84%E5%9B%9E%E5%93%8D/UI_ItemIcon_114052.png"/>悠古弦音的回响</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">4</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-8018-a725-c1987c291c25"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%B5%8A%E6%B0%B4%E7%9A%84%E4%B8%80%E6%BB%B4%202fa592a0f19e8047a111dbe010716715.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%B5%8A%E6%B0%B4%E7%9A%84%E4%B8%80%E6%BB%B4/UI_ItemIcon_112086.png"/>浊水的一滴</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">15</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-80c3-997f-dea053062600"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%B5%8A%E6%B0%B4%E7%9A%84%E4%B8%80%E6%8E%AC%202fa592a0f19e808c9ae6dae7848b1144.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%B5%8A%E6%B0%B4%E7%9A%84%E4%B8%80%E6%8E%AC/UI_ItemIcon_112087.png"/>浊水的一掬</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">18</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-80a9-b8bb-c512cd33e8d5"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%88%9D%E7%94%9F%E7%9A%84%E6%B5%8A%E6%B0%B4%E5%B9%BB%E7%81%B5%202fa592a0f19e80b6b9c1f56fc7a89b00.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%88%9D%E7%94%9F%E7%9A%84%E6%B5%8A%E6%B0%B4%E5%B9%BB%E7%81%B5/UI_ItemIcon_112088.png"/>初生的浊水幻灵</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">27</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-80c9-a18d-ff460404f3d9"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%BC%82%E6%B5%B7%E5%87%9D%E7%8F%A0%202fa592a0f19e80229140f84b95cb1547.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%BC%82%E6%B5%B7%E5%87%9D%E7%8F%A0/UI_ItemIcon_112080.png"/>异海凝珠</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">10</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-80cf-8cd7-de5f0b207586"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%BC%82%E6%B5%B7%E4%B9%8B%E5%9D%97%202fa592a0f19e80fc9956fef04b9a55f5.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%BC%82%E6%B5%B7%E4%B9%8B%E5%9D%97/UI_ItemIcon_112081.png"/>异海之块</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">15</td></tr></div><div style="display:contents" dir="ltr"><tr id="2fe592a0-f19e-80f9-a41f-e38da91c497f"><td id="rIUl" class="" style="width:215.33333333333334px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%BC%82%E8%89%B2%E7%BB%93%E6%99%B6%E7%9F%B3%202fa592a0f19e807eb3d1d3ed35ce108b.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%BC%82%E8%89%B2%E7%BB%93%E6%99%B6%E7%9F%B3/UI_ItemIcon_112082.png"/>异色结晶石</a> </td><td id="wFBp" class="" style="width:215.33333333333334px">18</td></tr></div></tbody></table></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">故事</summary><div class="indented"><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8070-9e09-ca5b3e0a6dee" class="">流落到下水道的废弃零件，情急时能充当武器用。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8061-a127-f8eb2e9ec493" class="">起初的对手只是「富含营养的水」所育成的怪物。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-803c-b727-cd3188246e6b" class="">总而言之，它粉碎过无数「畜生」的髌骨和下颚。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8086-b6a6-d129352679e4" class="">因为曾将诸多威胁同胞者送入了拥抱一切的灰河，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8075-91da-f22cf4a982de" class="">它在爱德华多的朋友当中被亲切地称为「渡手」。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8040-8a58-fc3204b0bdbe" class="">枫丹城市优化的终点就是下水道成为了城下之城。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-808c-a699-e974d251ab6e" class="">而能够维护灰河秩序的，自然不是枫丹廷的官僚。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80ff-9622-f829de7ae091" class="">所以日后的寇首起点只是用捡来的铜管击退鳄鱼，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80af-8ad7-ce49fad5d272" class="">再后来是保护商贩店家免于强人帮派的侵扰勒索，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80b0-be68-f92983a01a09" class="">调解灰河的「同胞」之间的纷争，为新婚者祝福。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80b9-a13a-d8068fcdf030" class="">最终是「让日光下的归他们，灰河中的归我们」。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80f6-add5-deb085ac7160" class="">但优化是没有尽头的。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80ae-b26c-deec769bd5b9" class="">众人的位置不能变，但位置的坐标可以为此改变。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-809c-bed7-dcf2ee62f510" class="">在一定的视角下也没有「他们」与「我们」之别，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8087-af6a-c3ea07815721" class="">只有能开发的区域与应清理或称「迁移」的垃圾。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80ab-9af3-da4a444457c4" class="">反抗灰河整肃中的被捕的爱德华多一众在被押送沙漠流放途中，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8068-9462-f09872c631ab" class="">被其党羽营救。一行人伙同在秋分山活动的匪徒占领了白淞镇，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80a2-b1d2-cf1422e806ac" class="">挟持负责押送的执律庭成员为人质，据此提出诸多不合理要求。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80f6-b0f0-d781d4e765f6" class="">此次事件最终在逐影猎人的主动介入下平息。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80ed-ad06-d3b3522dee48" class="">当时主动请缨传递谈判要求的记者卡尔·英戈德在事态恶化前，曾经在白淞镇拍下这样的合影：</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-805d-99ba-f95d7196b26f" class="">在画片正中站着的是爱德华多·贝克，他像拐杖一样撑着这根著名的或者臭名昭著的弯头铜管。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-809e-94e6-cd85850164c4" class="">爱德华多另一只手放在其子雅各布的肩上，后者拉着雷内·德·佩特莉可的衣袖，显得很紧张。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8011-ae31-f24b978be1e9" class="">在两人左侧，大魔术师「帕西法尔」看上去十分轻松地靠在栏杆上，露出了标志性的舞台微笑。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-802c-805e-f25e1510e0af" class="">爱德华多右边的是时任白淞镇镇长的雷诺·德·佩特莉可，他为此特地换了礼服，但衣领歪了。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-8049-a2e9-d3d1450752fb" class="">他的儿子雷内站在他的前方，被留影机这样的新奇事物吸引，瞪大了眼睛，显得有些不知所措。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-807d-9411-fefba12321fa" class="">在帕西法尔左边抱着婴儿的是罗莎·里德和她的丈夫汤普逊，照片最右侧的是汤姆·阿尔特。</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80d2-bbd2-c8db92a6ca63" class="">他们看着前方，面容被留影机的灯光照得发白。他们注视着的似乎不是英戈德，也不是留影机，</p></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-803b-8c72-fa3e87e427ad" class="">而是未来。</p></div></div></details></div><div style="display:contents" dir="auto"><p id="2fe592a0-f19e-80fa-bc8b-ff073410e598" class="">
+</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
