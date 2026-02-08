@@ -1,0 +1,715 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>叶洛亚</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="301592a0-f19e-80d0-a27d-d21588349b44" class="page sans"><header><img class="page-cover-image" src="%E5%8F%B6%E6%B4%9B%E4%BA%9A/UI_NameCardPic_Illuga_P%201.png" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="%E5%8F%B6%E6%B4%9B%E4%BA%9A/UI_AvatarIcon_Illuga.png.webp"/></div><h1 class="page-title" dir="auto"><strong>叶洛亚</strong></h1><p class="page-description" dir="auto"></p><table class="properties"><tbody><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/water_gray.svg" style="width:14px;height:14px;display:block"/></span>元素类型</th><td>岩</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/archery_gray.svg" style="width:14px;height:14px;display:block"/></span>武器类型</th><td>长柄武器</td></tr><tr class="property-row property-row-number"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/star_gray.svg" style="width:14px;height:14px;display:block"/></span>品质</th><td>4</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/fleur-de-lis_gray.svg" style="width:14px;height:14px;display:block"/></span>称号</th><td><strong>魇夜燃芯</strong></td></tr><tr class="property-row property-row-number"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/heart_gray.svg" style="width:14px;height:14px;display:block"/></span>生命值</th><td>11962</td></tr><tr class="property-row property-row-number"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/sword_gray.svg" style="width:14px;height:14px;display:block"/></span>攻击力</th><td>191</td></tr><tr class="property-row property-row-number"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/shield_gray.svg" style="width:14px;height:14px;display:block"/></span>防御力</th><td>814</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>突破属性</th><td><strong>元素精通 +96.0</strong></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/cake_gray.svg" style="width:14px;height:14px;display:block"/></span>生日</th><td>12/23</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/map-pin-alternate_gray.svg" style="width:14px;height:14px;display:block"/></span>国家</th><td>挪德卡莱</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/home_gray.svg" style="width:14px;height:14px;display:block"/></span>所属</th><td><strong>执灯人</strong></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/stars_gray.svg" style="width:14px;height:14px;display:block"/></span>命之座</th><td><strong>金莺座</strong></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/card_gray.svg" style="width:14px;height:14px;display:block"/></span>简介</th><td>调查分队「魇夜之莺」成员，执灯人最年轻的分队长。</td></tr><tr class="property-row property-row-status"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/burst_gray.svg" style="width:14px;height:14px;display:block"/></span>Status</th><td><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>完成</span></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/calendar_gray.svg" style="width:14px;height:14px;display:block"/></span>上线时间</th><td><time>@2026年2月3日</time></td></tr></tbody></table></header><div class="page-body"><div style="display:contents" dir="ltr"><figure id="301592a0-f19e-8040-8765-e038a9943d95" class="image"><a href="%E5%8F%B6%E6%B4%9B%E4%BA%9A/UI_Gacha_AvatarImg_Illuga.png"><img style="width:872px" src="%E5%8F%B6%E6%B4%9B%E4%BA%9A/UI_Gacha_AvatarImg_Illuga.png"/></a></figure></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">天赋</summary><div class="indented"><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">机制简述</summary><div class="indented"><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><strong>「夜莺之歌」</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="301592a0-f19e-8010-9b1a-e4401922483c" class="">叶洛亚施放元素爆发<mark class="highlight-yellow">鉴照无影</mark>后获得的效果，可以提升当前场上角色造成的<mark class="highlight-yellow">岩元素伤害</mark>。</p></div></div></details></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">战斗天赋</summary><div class="indented"><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">普通攻击 · <strong>守誓枪术</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="301592a0-f19e-804c-b8bc-f3968a2d955f" class=""><mark class="highlight-yellow"><strong>普通攻击</strong></mark></p></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-8015-92cd-c0eb8527f6b7" class="">进行至多四段的连续枪击。</p></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-80fa-ae70-d4f1ad57e388" class=""><mark class="highlight-yellow"><strong>重击</strong></mark></p></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-809a-ad41-f82e83b37a94" class="">消耗一定体力，向前方突进，对路径上的敌人造成伤害。</p></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-80e8-bccb-f94f49c0c7a4" class=""><mark class="highlight-yellow"><strong>下落攻击</strong></mark></p></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-80ef-b496-e63599580dbb" class="">从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。</p></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-8053-b3f0-fc77595fa7b6" class="">
+</p></div><div style="display:contents" dir="ltr"><table id="301592a0-f19e-8033-a2e5-f278fa8fd77e" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-8048-bf36-d07963599d68"><th id="Q;oN" class="simple-table-header-color simple-table-header" style="width:104px">Lv</th><th id="fQxv" class="simple-table-header-color simple-table-header" style="width:90px">1</th><th id="mTkN" class="simple-table-header-color simple-table-header" style="width:96px">2</th><th id="~Ezx" class="simple-table-header-color simple-table-header" style="width:101px">3</th><th id="}N]V" class="simple-table-header-color simple-table-header" style="width:98px">4</th><th id="|yns" class="simple-table-header-color simple-table-header" style="width:113px">5</th><th id="{HMY" class="simple-table-header-color simple-table-header" style="width:116px">6</th><th id="ZG&lt;l" class="simple-table-header-color simple-table-header" style="width:123px">7</th><th id="ZI]g" class="simple-table-header-color simple-table-header" style="width:121px">8</th><th id="XGn`" class="simple-table-header-color simple-table-header" style="width:111px">9</th><th id=";&lt;e_" class="simple-table-header-color simple-table-header" style="width:119px">10</th><th id="TkR}" class="simple-table-header-color simple-table-header" style="width:124px">11</th><th id="DKiH" class="simple-table-header-color simple-table-header" style="width:133px">12</th><th id="|QWc" class="simple-table-header-color simple-table-header" style="width:124px">13</th><th id="w?nU" class="simple-table-header-color simple-table-header" style="width:133px">14</th><th id="PuMI" class="simple-table-header-color simple-table-header" style="width:131px">15</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-80ce-832f-d33a176dc9f1"><th id="Q;oN" class="simple-table-header-color simple-table-header" style="width:104px">一段伤害</th><td id="fQxv" class="" style="width:90px">47.37%</td><td id="mTkN" class="" style="width:96px">51.22%</td><td id="~Ezx" class="" style="width:101px">55.08%</td><td id="}N]V" class="" style="width:98px">60.58%</td><td id="|yns" class="" style="width:113px">64.44%</td><td id="{HMY" class="" style="width:116px">68.85%</td><td id="ZG&lt;l" class="" style="width:123px">74.90%</td><td id="ZI]g" class="" style="width:121px">80.96%</td><td id="XGn`" class="" style="width:111px">87.02%</td><td id=";&lt;e_" class="" style="width:119px">93.63%</td><td id="TkR}" class="" style="width:124px">100.24%</td><td id="DKiH" class="" style="width:133px">106.85%</td><td id="|QWc" class="" style="width:124px">113.46%</td><td id="w?nU" class="" style="width:133px">120.07%</td><td id="PuMI" class="" style="width:131px">126.68%</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-805a-b8ec-c57beb1bc979"><th id="Q;oN" class="simple-table-header-color simple-table-header" style="width:104px">二段伤害</th><td id="fQxv" class="" style="width:90px">48.53%</td><td id="mTkN" class="" style="width:96px">52.48%</td><td id="~Ezx" class="" style="width:101px">56.43%</td><td id="}N]V" class="" style="width:98px">62.07%</td><td id="|yns" class="" style="width:113px">66.02%</td><td id="{HMY" class="" style="width:116px">70.53%</td><td id="ZG&lt;l" class="" style="width:123px">76.74%</td><td id="ZI]g" class="" style="width:121px">82.94%</td><td id="XGn`" class="" style="width:111px">89.15%</td><td id=";&lt;e_" class="" style="width:119px">95.92%</td><td id="TkR}" class="" style="width:124px">102.69%</td><td id="DKiH" class="" style="width:133px">109.46%</td><td id="|QWc" class="" style="width:124px">116.24%</td><td id="w?nU" class="" style="width:133px">123.01%</td><td id="PuMI" class="" style="width:131px">129.78%</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-8001-95be-eda7ed07aaae"><th id="Q;oN" class="simple-table-header-color simple-table-header" style="width:104px">三段伤害</th><td id="fQxv" class="" style="width:90px">31.433%+31.433%</td><td id="mTkN" class="" style="width:96px">33.9915%+33.9915%</td><td id="~Ezx" class="" style="width:101px">36.55%+36.55%</td><td id="}N]V" class="" style="width:98px">40.205%+40.205%</td><td id="|yns" class="" style="width:113px">42.7635%+42.7635%</td><td id="{HMY" class="" style="width:116px">45.6875%+45.6875%</td><td id="ZG&lt;l" class="" style="width:123px">49.708%+49.708%</td><td id="ZI]g" class="" style="width:121px">53.7285%+53.7285%</td><td id="XGn`" class="" style="width:111px">57.749%+57.749%</td><td id=";&lt;e_" class="" style="width:119px">62.135%+62.135%</td><td id="TkR}" class="" style="width:124px">66.521%+66.521%</td><td id="DKiH" class="" style="width:133px">70.907%+70.907%</td><td id="|QWc" class="" style="width:124px">75.293%+75.293%</td><td id="w?nU" class="" style="width:133px">79.679%+79.679%</td><td id="PuMI" class="" style="width:131px">84.065%+84.065%</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-80d8-a143-d37d0c304849"><th id="Q;oN" class="simple-table-header-color simple-table-header" style="width:104px">四段伤害</th><td id="fQxv" class="" style="width:90px">76.28%</td><td id="mTkN" class="" style="width:96px">82.49%</td><td id="~Ezx" class="" style="width:101px">88.70%</td><td id="}N]V" class="" style="width:98px">97.57%</td><td id="|yns" class="" style="width:113px">103.77%</td><td id="{HMY" class="" style="width:116px">110.87%</td><td id="ZG&lt;l" class="" style="width:123px">120.63%</td><td id="ZI]g" class="" style="width:121px">130.38%</td><td id="XGn`" class="" style="width:111px">140.14%</td><td id=";&lt;e_" class="" style="width:119px">150.78%</td><td id="TkR}" class="" style="width:124px">161.43%</td><td id="DKiH" class="" style="width:133px">172.07%</td><td id="|QWc" class="" style="width:124px">182.71%</td><td id="w?nU" class="" style="width:133px">193.36%</td><td id="PuMI" class="" style="width:131px">204.00%</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-8089-a9a4-ea710a0b2235"><th id="Q;oN" class="simple-table-header-color simple-table-header" style="width:104px">重击伤害</th><td id="fQxv" class="" style="width:90px">111.03%</td><td id="mTkN" class="" style="width:96px">120.06%</td><td id="~Ezx" class="" style="width:101px">129.10%</td><td id="}N]V" class="" style="width:98px">142.01%</td><td id="|yns" class="" style="width:113px">151.05%</td><td id="{HMY" class="" style="width:116px">161.38%</td><td id="ZG&lt;l" class="" style="width:123px">175.58%</td><td id="ZI]g" class="" style="width:121px">189.78%</td><td id="XGn`" class="" style="width:111px">203.98%</td><td id=";&lt;e_" class="" style="width:119px">219.47%</td><td id="TkR}" class="" style="width:124px">234.96%</td><td id="DKiH" class="" style="width:133px">250.45%</td><td id="|QWc" class="" style="width:124px">265.95%</td><td id="w?nU" class="" style="width:133px">281.44%</td><td id="PuMI" class="" style="width:131px">296.93%</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-8004-9755-d15235691cb7"><th id="Q;oN" class="simple-table-header-color simple-table-header" style="width:104px">重击体力消耗</th><td id="fQxv" class="" style="width:90px">25</td><td id="mTkN" class="" style="width:96px">25</td><td id="~Ezx" class="" style="width:101px">25</td><td id="}N]V" class="" style="width:98px">25</td><td id="|yns" class="" style="width:113px">25</td><td id="{HMY" class="" style="width:116px">25</td><td id="ZG&lt;l" class="" style="width:123px">25</td><td id="ZI]g" class="" style="width:121px">25</td><td id="XGn`" class="" style="width:111px">25</td><td id=";&lt;e_" class="" style="width:119px">25</td><td id="TkR}" class="" style="width:124px">25</td><td id="DKiH" class="" style="width:133px">25</td><td id="|QWc" class="" style="width:124px">25</td><td id="w?nU" class="" style="width:133px">25</td><td id="PuMI" class="" style="width:131px">25</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-80cc-945f-e91ecd3fff93"><th id="Q;oN" class="simple-table-header-color simple-table-header" style="width:104px">下坠期间伤害</th><td id="fQxv" class="" style="width:90px">63.93%</td><td id="mTkN" class="" style="width:96px">69.14%</td><td id="~Ezx" class="" style="width:101px">74.34%</td><td id="}N]V" class="" style="width:98px">81.77%</td><td id="|yns" class="" style="width:113px">86.98%</td><td id="{HMY" class="" style="width:116px">92.93%</td><td id="ZG&lt;l" class="" style="width:123px">101.10%</td><td id="ZI]g" class="" style="width:121px">109.28%</td><td id="XGn`" class="" style="width:111px">117.46%</td><td id=";&lt;e_" class="" style="width:119px">126.38%</td><td id="TkR}" class="" style="width:124px">135.30%</td><td id="DKiH" class="" style="width:133px">144.22%</td><td id="|QWc" class="" style="width:124px">153.14%</td><td id="w?nU" class="" style="width:133px">162.06%</td><td id="PuMI" class="" style="width:131px">170.98%</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-807f-9b88-e63858c9ee55"><th id="Q;oN" class="simple-table-header-color simple-table-header" style="width:104px">低空/高空坠地冲击伤害</th><td id="fQxv" class="" style="width:90px">127.8377%/159.6762%</td><td id="mTkN" class="" style="width:96px">138.2431%/172.6731%</td><td id="~Ezx" class="" style="width:101px">148.6485%/185.67%</td><td id="}N]V" class="" style="width:98px">163.5134%/204.237%</td><td id="|yns" class="" style="width:113px">173.9187%/217.2339%</td><td id="{HMY" class="" style="width:116px">185.8106%/232.0875%</td><td id="ZG&lt;l" class="" style="width:123px">202.162%/252.5112%</td><td id="ZI]g" class="" style="width:121px">218.5133%/272.9349%</td><td id="XGn`" class="" style="width:111px">234.8646%/293.3586%</td><td id=";&lt;e_" class="" style="width:119px">252.7025%/315.639%</td><td id="TkR}" class="" style="width:124px">270.5403%/337.9194%</td><td id="DKiH" class="" style="width:133px">288.3781%/360.1998%</td><td id="|QWc" class="" style="width:124px">306.2159%/382.4802%</td><td id="w?nU" class="" style="width:133px">324.0537%/404.7606%</td><td id="PuMI" class="" style="width:131px">341.8915%/427.041%</td></tr></div></tbody></table></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><strong>元素战技 · 衔莺破晓</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="301592a0-f19e-809c-a8c3-c8016a768795" class="">唤出并肩作战的信鸟「阿咚」，依据点按、长按，以不同的方式产生效果。</p></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-801b-9d5e-e4d35a603b5e" class=""><mark class="highlight-yellow">点按</mark></p></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-8066-ab48-ebf161cf9356" class="">阿咚冲向前方的敌人，对触及的敌人造成<mark class="highlight-yellow">岩元素伤害</mark>。</p></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-80cf-b5ef-d64611215994" class=""><mark class="highlight-yellow">长按</mark></p></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-80a2-a37e-d3fb1cca2afb" class="">进行瞄准，并使阿咚冲向被瞄准的敌人，对触及的敌人造成<mark class="highlight-yellow">岩元素伤害</mark>。</p></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-802a-9d34-c197d4f028d4" class=""><em><mark class="highlight-gray">与月矩力共生的信鸟「阿咚」是这片土地的守护者，即便面对凶恶的狂猎也从不退缩。</mark></em></p></div><div style="display:contents" dir="ltr"><table id="301592a0-f19e-8037-852d-dc6353caa0cd" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-8054-9a72-c9cb72ace333"><th id="E=QU" class="simple-table-header-color simple-table-header" style="width:131px">Lv</th><th id="W?F;" class="simple-table-header-color simple-table-header">1</th><th id="q|K^" class="simple-table-header-color simple-table-header">2</th><th id="WFBk" class="simple-table-header-color simple-table-header">3</th><th id="vNuP" class="simple-table-header-color simple-table-header">4</th><th id="GjzX" class="simple-table-header-color simple-table-header">5</th><th id="AmWp" class="simple-table-header-color simple-table-header">6</th><th id="tT?R" class="simple-table-header-color simple-table-header">7</th><th id="`kSO" class="simple-table-header-color simple-table-header">8</th><th id="}}dC" class="simple-table-header-color simple-table-header">9</th><th id="eKmF" class="simple-table-header-color simple-table-header">10</th><th id="QNk=" class="simple-table-header-color simple-table-header">11</th><th id="F&gt;KT" class="simple-table-header-color simple-table-header">12</th><th id="dlBd" class="simple-table-header-color simple-table-header">13</th><th id="Afm&lt;" class="simple-table-header-color simple-table-header">14</th><th id="aHJY" class="simple-table-header-color simple-table-header">15</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-801b-bbfd-fc3801c733bc"><th id="E=QU" class="simple-table-header-color simple-table-header" style="width:131px">点按伤害</th><td id="W?F;" class="">482.56%元素精通+241.28%防御力</td><td id="q|K^" class="">518.752%元素精通+259.376%防御力</td><td id="WFBk" class="">554.944%元素精通+277.472%防御力</td><td id="vNuP" class="">603.2%元素精通+301.6%防御力</td><td id="GjzX" class="">639.392%元素精通+319.696%防御力</td><td id="AmWp" class="">675.584%元素精通+337.792%防御力</td><td id="tT?R" class="">723.84%元素精通+361.92%防御力</td><td id="`kSO" class="">772.096%元素精通+386.048%防御力</td><td id="}}dC" class="">820.352%元素精通+410.176%防御力</td><td id="eKmF" class="">868.608%元素精通+434.304%防御力</td><td id="QNk=" class="">916.864%元素精通+458.432%防御力</td><td id="F&gt;KT" class="">965.12%元素精通+482.56%防御力</td><td id="dlBd" class="">1025.44%元素精通+512.72%防御力</td><td id="Afm&lt;" class="">1085.76%元素精通+542.88%防御力</td><td id="aHJY" class="">1146.08%元素精通+573.04%防御力</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-8015-8f20-ddda657c0a2c"><th id="E=QU" class="simple-table-header-color simple-table-header" style="width:131px">长按伤害</th><td id="W?F;" class="">603.2%元素精通+301.6%防御力</td><td id="q|K^" class="">648.44%元素精通+324.22%防御力</td><td id="WFBk" class="">693.68%元素精通+346.84%防御力</td><td id="vNuP" class="">754.0%元素精通+377.0%防御力</td><td id="GjzX" class="">799.24%元素精通+399.62%防御力</td><td id="AmWp" class="">844.48%元素精通+422.24%防御力</td><td id="tT?R" class="">904.8%元素精通+452.4%防御力</td><td id="`kSO" class="">965.12%元素精通+482.56%防御力</td><td id="}}dC" class="">1025.44%元素精通+512.72%防御力</td><td id="eKmF" class="">1085.76%元素精通+542.88%防御力</td><td id="QNk=" class="">1146.08%元素精通+573.04%防御力</td><td id="F&gt;KT" class="">1206.4%元素精通+603.2%防御力</td><td id="dlBd" class="">1281.8%元素精通+640.9%防御力</td><td id="Afm&lt;" class="">1357.2%元素精通+678.6%防御力</td><td id="aHJY" class="">1432.6%元素精通+716.3%防御力</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-80bd-9982-ec2dad422011"><th id="E=QU" class="simple-table-header-color simple-table-header" style="width:131px">冷却时间</th><td id="W?F;" class="">15秒</td><td id="q|K^" class="">15秒</td><td id="WFBk" class="">15秒</td><td id="vNuP" class="">15秒</td><td id="GjzX" class="">15秒</td><td id="AmWp" class="">15秒</td><td id="tT?R" class="">15秒</td><td id="`kSO" class="">15秒</td><td id="}}dC" class="">15秒</td><td id="eKmF" class="">15秒</td><td id="QNk=" class="">15秒</td><td id="F&gt;KT" class="">15秒</td><td id="dlBd" class="">15秒</td><td id="Afm&lt;" class="">15秒</td><td id="aHJY" class="">15秒</td></tr></div></tbody></table></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><strong>元素爆发 · 鉴照无影</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="301592a0-f19e-80f0-9ed0-e48c94a9fb6e" class="">点亮灯火，造成<mark class="highlight-yellow">岩元素范围伤害</mark>，并获得「魇夜的莺歌」效果，持续20秒：持续期间，叶洛亚获得21层<mark class="highlight-yellow">「夜莺之歌」</mark>，队伍中附近的当前场上角色的普通攻击、重击、下落攻击、元素战技或元素爆发对敌人造成<mark class="highlight-yellow">岩元素伤害</mark>时，将消耗1层「夜莺之歌」，提升造成的伤害，提升值基于叶洛亚的元素精通；若该伤害为月结晶反应造成的伤害，还会进一步提升造成的伤害。</p></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-806f-9133-f97b08041cba" class="">通过上述方式造成的<mark class="highlight-yellow">岩元素伤害</mark>同时命中多名敌人时，会依据命中敌人的数量消耗「夜莺之歌」的层数。</p></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-8087-b37e-f1cc28a4cc1c" class="">此外，叶洛亚在场上存在队伍中附近的角色创造的<mark class="highlight-yellow">岩元素创造物</mark>的情况下施放元素爆发时，或在「魇夜的莺歌」持续期间，队伍中附近的角色创造了<mark class="highlight-yellow">岩元素创造物</mark>时，场上的每个<mark class="highlight-yellow">岩元素创造物</mark>都会使叶洛亚额外获得5层「夜莺之歌」。每次施放元素爆发后的20秒内，叶洛亚至多通过这种方式额外获得15层「夜莺之歌」。</p></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-808d-bcbf-fd1095c83955" class=""><em><mark class="highlight-gray">「夜莺之歌」的层数耗尽时，或持续时间结束时，「魇夜的莺歌」效果将会解除。</mark></em></p></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-8053-9efe-fc854894224e" class=""><em><mark class="highlight-gray">「谁掌中灯火不灭，就不必陷入如此黑暗。」</mark></em></p></div><div style="display:contents" dir="ltr"><table id="301592a0-f19e-8073-a5f0-da2d7a4660e9" class="simple-table"><tbody><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-80c5-8577-c3ae45122324"><td id="MjFj" class="">Lv</td><td id="Oeq:" class="">1</td><td id="qtQC" class="">2</td><td id="Ke_X" class="">3</td><td id="bTaE" class="">4</td><td id="ZRVx" class="">5</td><td id="vuG]" class="">6</td><td id="YQ@k" class="">7</td><td id="dcFr" class="">8</td><td id="|@Mn" class="">9</td><td id="UJ}T" class="">10</td><td id="T=&lt;}" class="">11</td><td id="kB==" class="">12</td><td id="aj:j" class="">13</td><td id="zfIj" class="">14</td><td id="gX;b" class="">15</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-801b-9e18-ca73868a1bba"><td id="MjFj" class="">技能伤害</td><td id="Oeq:" class="">827.2%元素精通+413.6%防御力</td><td id="qtQC" class="">889.24%元素精通+444.62%防御力</td><td id="Ke_X" class="">951.28%元素精通+475.64%防御力</td><td id="bTaE" class="">1034.0%元素精通+517.0%防御力</td><td id="ZRVx" class="">1096.04%元素精通+548.02%防御力</td><td id="vuG]" class="">1158.08%元素精通+579.04%防御力</td><td id="YQ@k" class="">1240.8%元素精通+620.4%防御力</td><td id="dcFr" class="">1323.52%元素精通+661.76%防御力</td><td id="|@Mn" class="">1406.24%元素精通+703.12%防御力</td><td id="UJ}T" class="">1488.96%元素精通+744.48%防御力</td><td id="T=&lt;}" class="">1571.68%元素精通+785.84%防御力</td><td id="kB==" class="">1654.4%元素精通+827.2%防御力</td><td id="aj:j" class="">1757.8%元素精通+878.9%防御力</td><td id="zfIj" class="">1861.2%元素精通+930.6%防御力</td><td id="gX;b" class="">1964.6%元素精通+982.3%防御力</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-8042-a28c-eb155ba9004c"><td id="MjFj" class="">岩元素伤害增加</td><td id="Oeq:" class="">33.6%元素精通</td><td id="qtQC" class="">36.12%元素精通</td><td id="Ke_X" class="">38.64%元素精通</td><td id="bTaE" class="">42.0%元素精通</td><td id="ZRVx" class="">44.52%元素精通</td><td id="vuG]" class="">47.04%元素精通</td><td id="YQ@k" class="">50.4%元素精通</td><td id="dcFr" class="">53.76%元素精通</td><td id="|@Mn" class="">57.12%元素精通</td><td id="UJ}T" class="">60.48%元素精通</td><td id="T=&lt;}" class="">63.84%元素精通</td><td id="kB==" class="">67.2%元素精通</td><td id="aj:j" class="">71.4%元素精通</td><td id="zfIj" class="">75.6%元素精通</td><td id="gX;b" class="">79.8%元素精通</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-805d-9628-da9001993c03"><td id="MjFj" class="">月结晶反应伤害增加</td><td id="Oeq:" class="">282.4%元素精通</td><td id="qtQC" class="">303.58%元素精通</td><td id="Ke_X" class="">324.76%元素精通</td><td id="bTaE" class="">353.0%元素精通</td><td id="ZRVx" class="">374.18%元素精通</td><td id="vuG]" class="">395.36%元素精通</td><td id="YQ@k" class="">423.6%元素精通</td><td id="dcFr" class="">451.84%元素精通</td><td id="|@Mn" class="">480.08%元素精通</td><td id="UJ}T" class="">508.32%元素精通</td><td id="T=&lt;}" class="">536.56%元素精通</td><td id="kB==" class="">564.8%元素精通</td><td id="aj:j" class="">600.1%元素精通</td><td id="zfIj" class="">635.4%元素精通</td><td id="gX;b" class="">670.7%元素精通</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-8011-8ffe-e74caa5be0a7"><td id="MjFj" class="">施放元素爆发时获得夜莺之歌</td><td id="Oeq:" class="">21层</td><td id="qtQC" class="">21层</td><td id="Ke_X" class="">21层</td><td id="bTaE" class="">21层</td><td id="ZRVx" class="">21层</td><td id="vuG]" class="">21层</td><td id="YQ@k" class="">21层</td><td id="dcFr" class="">21层</td><td id="|@Mn" class="">21层</td><td id="UJ}T" class="">21层</td><td id="T=&lt;}" class="">21层</td><td id="kB==" class="">21层</td><td id="aj:j" class="">21层</td><td id="zfIj" class="">21层</td><td id="gX;b" class="">21层</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-80fe-8ebb-f5e0c509b180"><td id="MjFj" class="">创生岩造物获得夜莺之歌</td><td id="Oeq:" class="">每个岩造物/5层</td><td id="qtQC" class="">每个岩造物/5层</td><td id="Ke_X" class="">每个岩造物/5层</td><td id="bTaE" class="">每个岩造物/5层</td><td id="ZRVx" class="">每个岩造物/5层</td><td id="vuG]" class="">每个岩造物/5层</td><td id="YQ@k" class="">每个岩造物/5层</td><td id="dcFr" class="">每个岩造物/5层</td><td id="|@Mn" class="">每个岩造物/5层</td><td id="UJ}T" class="">每个岩造物/5层</td><td id="T=&lt;}" class="">每个岩造物/5层</td><td id="kB==" class="">每个岩造物/5层</td><td id="aj:j" class="">每个岩造物/5层</td><td id="zfIj" class="">每个岩造物/5层</td><td id="gX;b" class="">每个岩造物/5层</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-8078-9299-dcbec915a604"><td id="MjFj" class="">持续时间</td><td id="Oeq:" class="">20秒</td><td id="qtQC" class="">20秒</td><td id="Ke_X" class="">20秒</td><td id="bTaE" class="">20秒</td><td id="ZRVx" class="">20秒</td><td id="vuG]" class="">20秒</td><td id="YQ@k" class="">20秒</td><td id="dcFr" class="">20秒</td><td id="|@Mn" class="">20秒</td><td id="UJ}T" class="">20秒</td><td id="T=&lt;}" class="">20秒</td><td id="kB==" class="">20秒</td><td id="aj:j" class="">20秒</td><td id="zfIj" class="">20秒</td><td id="gX;b" class="">20秒</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-807e-9f19-c9a82ffcd0d3"><td id="MjFj" class="">冷却时间</td><td id="Oeq:" class="">15秒</td><td id="qtQC" class="">15秒</td><td id="Ke_X" class="">15秒</td><td id="bTaE" class="">15秒</td><td id="ZRVx" class="">15秒</td><td id="vuG]" class="">15秒</td><td id="YQ@k" class="">15秒</td><td id="dcFr" class="">15秒</td><td id="|@Mn" class="">15秒</td><td id="UJ}T" class="">15秒</td><td id="T=&lt;}" class="">15秒</td><td id="kB==" class="">15秒</td><td id="aj:j" class="">15秒</td><td id="zfIj" class="">15秒</td><td id="gX;b" class="">15秒</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-807c-89d2-c0e60f6b4a5a"><td id="MjFj" class="">元素能量</td><td id="Oeq:" class="">60</td><td id="qtQC" class="">60</td><td id="Ke_X" class="">60</td><td id="bTaE" class="">60</td><td id="ZRVx" class="">60</td><td id="vuG]" class="">60</td><td id="YQ@k" class="">60</td><td id="dcFr" class="">60</td><td id="|@Mn" class="">60</td><td id="UJ}T" class="">60</td><td id="T=&lt;}" class="">60</td><td id="kB==" class="">60</td><td id="aj:j" class="">60</td><td id="zfIj" class="">60</td><td id="gX;b" class="">60</td></tr></div></tbody></table></div></div></details></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">固有天赋</summary><div class="indented"><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><strong>铸灯者的盟约</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="301592a0-f19e-8048-8d94-f84b4df274f5" class="">施放元素战技<mark class="highlight-yellow">衔莺破晓</mark>或元素爆发<mark class="highlight-yellow">鉴照无影</mark>后，队伍中附近的其他角色将获得持续20秒的「执灯之誓」效果：对敌人造成的<mark class="highlight-yellow">岩元素伤害</mark>，暴击率提升5%，暴击伤害提升10%。</p></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-8030-b5e6-d21334b17bd9" class=""><mark class="highlight-yellow">月兆 · 满辉</mark></p></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-8080-8116-edce269fd0c9" class="">处于「执灯之誓」效果影响下的角色，元素精通提升50点。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><strong>狩魔者的黄昏</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="301592a0-f19e-804e-ae79-f08451470cd5" class=""><mark class="highlight-yellow">「夜莺之歌」</mark>的效果获得强化：当队伍中存在1/2/3名<mark class="highlight-blue">水元素</mark>或<mark class="highlight-yellow">岩元素</mark>角色时，「夜莺之歌」会进一步提升造成的伤害，提升值相当于叶洛亚元素精通的7%/14%/24%；若上述伤害为月结晶反应造成的伤害，提升值则相当于叶洛亚元素精通的48%/96%/160%。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><strong>月兆祝赐 · 凌冬不凋</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="301592a0-f19e-802d-aa35-ceff2c61c0d9" class="">叶洛亚在队伍中时，队伍的<mark class="highlight-yellow">月兆</mark>将会上升一级。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><strong>巡夜者的疾行</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="301592a0-f19e-80b8-ab29-c6a2ae9b1954" class="">在夜间（18时至6时），队伍中自己的角色获得迅行效果：移动速度提高10%。</p></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-8061-a54c-e884e04ebfc7" class="">该效果在秘境、征讨领域、深境螺旋中无效，迅行效果无法叠加。</p></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-806a-88ae-f4451e2f5d73" class="">此外，叶洛亚似乎能听懂狂猎的低语…</p></div></div></details></div></div></details></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">命之座</summary><div class="indented"><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">第1层 <strong>告警之雉</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="301592a0-f19e-809b-bcc8-d0e6196dd080" class="">叶洛亚在场上触发<mark class="highlight-yellow">岩元素相关反应</mark>后，将为叶洛亚恢复12点元素能量，该效果每15秒至多触发一次。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">第2层 <strong>噬枝之麋</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="301592a0-f19e-80ee-85e8-fd0f6e1274e1" class="">元素爆发<mark class="highlight-yellow">鉴照无影</mark>中的「魇夜的莺歌」效果持续期间，每消耗7层<mark class="highlight-yellow">「夜莺之歌」</mark>，叶洛亚都将唤出阿咚，对周围一名敌人造成一次<mark class="highlight-yellow">岩元素伤害</mark>，伤害值基于叶洛亚元素精通的400%与防御力的200%，该伤害视为元素爆发伤害。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">第3层 <strong>山吼之罴</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="301592a0-f19e-806a-a931-e0547f03efcd" class="">元素爆发<mark class="highlight-yellow">鉴照无影</mark>的技能等级提高3级。</p></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-806d-a12e-e5288a2970cb" class="">至多提升至15级。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">第4层 <strong>逐日之狼</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="301592a0-f19e-80ac-89d1-d876cc7db85a" class="">元素爆发<mark class="highlight-yellow">鉴照无影</mark>中的「魇夜的莺歌」效果持续期间，队伍中附近的当前场上角色防御力提升200点。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">第5层 <strong>啸风之马</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="301592a0-f19e-8052-bfbf-d52c67a2d3d5" class="">元素战技<mark class="highlight-yellow">衔莺破晓</mark>的技能等级提高3级。</p></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-80b3-afd3-f2f1cda5437d" class="">至多提升至15级。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">第6层 <strong>魇夜之莺</strong></summary><div class="indented"><div style="display:contents" dir="auto"><p id="301592a0-f19e-8079-b1fd-e6943663ae26" class="">突破天赋<mark class="highlight-yellow">铸灯者的盟约</mark>中「执灯之誓」的效果获得强化：对敌人造成的<mark class="highlight-yellow">岩元素伤害</mark>，暴击率提升10%，暴击伤害提升30%。</p></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-8083-9af7-e2358ac65620" class=""><mark class="highlight-yellow">月兆 · 满辉</mark></p></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-8008-b90e-deff56ff5b37" class="">处于「执灯之誓」效果影响下的角色，元素精通提升80点。</p></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-80ef-9121-db6f47082800" class="">需要解锁突破天赋<mark class="highlight-yellow">铸灯者的盟约</mark>。</p></div></div></details></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">其它</summary><div class="indented"><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><strong>100级属性</strong></summary><div class="indented"><div style="display:contents" dir="ltr"><table id="301592a0-f19e-80c5-aec9-f22a553f399e" class="simple-table"><tbody><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-80a3-b675-e002eac9028a"><td id="UZrz" class="" style="width:197.66666666666666px">生命值</td><td id="Iv@G" class="" style="width:197.66666666666666px"><strong>12790</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-8068-a729-c444f7a13ead"><td id="UZrz" class="" style="width:197.66666666666666px">攻击力</td><td id="Iv@G" class="" style="width:197.66666666666666px"><strong>240</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-8088-93c0-e190da7a77df"><td id="UZrz" class="" style="width:197.66666666666666px">防御力</td><td id="Iv@G" class="" style="width:197.66666666666666px"><strong>870</strong></td></tr></div></tbody></table></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">衣装</summary><div class="indented"><div style="display:contents" dir="auto"><p id="301592a0-f19e-8052-addb-f525b28d9b94" class=""><strong>不懈执望</strong></p></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-80a8-980f-cc3720aa9de8" class="">叶洛亚的装扮款式。出于工作考虑，叶洛亚为自己定制了这套工作用制服。虽说是「工作用制服」，但因为叶洛亚的工作太多，他基本上也没有换衣服的机会，所以，这件衣服基本上也能算作是叶洛亚的「常服」了。</p></div><div style="display:contents" dir="ltr"><figure id="301592a0-f19e-8048-abe0-c465123a9b54" class="image"><a href="%E5%8F%B6%E6%B4%9B%E4%BA%9A/UI_Gacha_AvatarImg_Illuga%201.png"><img style="width:799px" src="%E5%8F%B6%E6%B4%9B%E4%BA%9A/UI_Gacha_AvatarImg_Illuga%201.png"/></a></figure></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">名片</summary><div class="indented"><div style="display:contents" dir="auto"><p id="301592a0-f19e-8040-a354-d6f341438048" class=""><mark class="highlight-yellow"><strong>叶洛亚·魇莺</strong></mark></p></div><div style="display:contents" dir="ltr"><figure id="301592a0-f19e-8060-accf-d7dc3924036b" class="image"><a href="%E5%8F%B6%E6%B4%9B%E4%BA%9A/UI_NameCardPic_Illuga_P.png"><img style="width:916.9921875px" src="%E5%8F%B6%E6%B4%9B%E4%BA%9A/UI_NameCardPic_Illuga_P.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-80a1-a1be-f4165d979918" class="">名片纹饰。</p></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-8095-9d94-c2c82882cf32" class="">挺过了黑夜的莺鸟，会用热情报答白日世界的一切，也会用愤怒去燎尽梦魇。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">特色料理</summary><div class="indented"><div style="display:contents" dir="auto"><p id="301592a0-f19e-80d0-b009-e7e61076cd5c" class=""><strong>夜守暖汤</strong></p></div><div style="display:contents" dir="ltr"><figure id="301592a0-f19e-804a-8ad9-c1d413251181" class="image"><a href="%E5%8F%B6%E6%B4%9B%E4%BA%9A/UI_ItemIcon_108864.png"><img style="width:240px" src="%E5%8F%B6%E6%B4%9B%E4%BA%9A/UI_ItemIcon_108864.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-8022-a1da-fe8dc810ef53" class=""><em><mark class="highlight-gray">叶洛亚的特色料理。暖呼呼的热汤，在巡夜归来后喝上一口，便能驱散身心的疲惫，舒缓紧绷的神经。如此奇效，大概是这位少年队长积攒多年经验才研发出的独创配方吧…</mark></em></p></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-80fb-ab75-f9e92b87cc5c" class="">为选中的角色恢复生命值上限的40%，并额外恢复2350点生命值。</p></div><div style="display:contents" dir="ltr"><table id="301592a0-f19e-8099-acb8-f29a97d27ba3" class="simple-table"><tbody><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-8032-8c43-e0937ea0bf65"><td id="[YB\" class="" style="width:202.66666666666666px">材料</td><td id="XOTd" class="" style="width:202.66666666666666px">数量</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-80ce-aa1f-d776aac2fecd"><td id="[YB\" class="" style="width:202.66666666666666px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E8%83%A1%E8%90%9D%E5%8D%9C%20301592a0f19e80fc89f8ea08b25af331.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E8%83%A1%E8%90%9D%E5%8D%9C/UI_ItemIcon_100013.png"/>胡萝卜</a> </td><td id="XOTd" class="" style="width:202.66666666666666px">3</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-80f6-bcd6-c1eb204b7341"><td id="[YB\" class="" style="width:202.66666666666666px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%8D%B7%E5%BF%83%E8%8F%9C%20301592a0f19e80ad824dcfbf983ba62c.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%8D%B7%E5%BF%83%E8%8F%9C/UI_ItemIcon_100018.png"/>卷心菜</a> </td><td id="XOTd" class="" style="width:202.66666666666666px">3</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-8051-8393-c682bae4992e"><td id="[YB\" class="" style="width:202.66666666666666px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%9C%9F%E8%B1%86%202fa592a0f19e809fae34eae76a6a7535.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%9C%9F%E8%B1%86/UI_ItemIcon_100080.png"/>土豆</a> </td><td id="XOTd" class="" style="width:202.66666666666666px">2</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-8037-b7f1-c02ac5889659"><td id="[YB\" class="" style="width:202.66666666666666px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E9%85%B8%E5%A5%B6%E6%B2%B9%20301592a0f19e808d9040c539208f0ec5.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E9%85%B8%E5%A5%B6%E6%B2%B9/UI_ItemIcon_110015.png"/>酸奶油</a> </td><td id="XOTd" class="" style="width:202.66666666666666px">2</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-8069-be75-c0333591e8b4" class=""><strong>蔬菜罐罐汤</strong></p></div><div style="display:contents" dir="ltr"><figure id="301592a0-f19e-8083-a2a1-c83c7bc29470" class="image"><a href="%E5%8F%B6%E6%B4%9B%E4%BA%9A/UI_ItemIcon_108859.png"><img style="width:144px" src="%E5%8F%B6%E6%B4%9B%E4%BA%9A/UI_ItemIcon_108859.png"/></a></figure></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">培养材料</summary><div class="indented"><div style="display:contents" dir="ltr"><table id="301592a0-f19e-802c-9f7d-f4832d01d731" class="simple-table"><tbody><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-8085-9f6b-fb82c05c1b70"><td id="`iQE" class="" style="width:202.66666666666666px">材料</td><td id="oe^A" class="" style="width:202.66666666666666px">数量</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-80bd-96d0-ef2a2cc69c47"><td id="`iQE" class="" style="width:202.66666666666666px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%AF%81%E6%8D%9F%E6%9C%BA%E8%BD%B4%202fe592a0f19e80bc81abce204754ee6c.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%AF%81%E6%8D%9F%E6%9C%BA%E8%BD%B4/UI_ItemIcon_112122.png"/>毁损机轴</a> </td><td id="oe^A" class="" style="width:202.66666666666666px">36</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-8008-8eca-fcf516ef7ba0"><td id="`iQE" class="" style="width:202.66666666666666px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%8A%A0%E5%9B%BA%E6%9C%BA%E8%BD%B4%202fe592a0f19e80b89791d50c809a24bf.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%8A%A0%E5%9B%BA%E6%9C%BA%E8%BD%B4/UI_ItemIcon_112123.png"/>加固机轴</a> </td><td id="oe^A" class="" style="width:202.66666666666666px">96</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-80b8-b1d7-d41d66440697"><td id="`iQE" class="" style="width:202.66666666666666px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E7%B2%BE%E5%88%B6%E6%9C%BA%E8%BD%B4%202fe592a0f19e809e9e47e2d8fc126d3d.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E7%B2%BE%E5%88%B6%E6%9C%BA%E8%BD%B4/UI_ItemIcon_112124.png"/>精制机轴</a> </td><td id="oe^A" class="" style="width:202.66666666666666px">129</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-800c-9969-c185160ca936"><td id="`iQE" class="" style="width:202.66666666666666px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%BE%AA%E7%8E%AF%E5%BC%8F%E5%86%9B%E7%94%A8%E6%9C%88%E7%9F%A9%E6%A0%B8%E5%BF%83%20301592a0f19e80939523d99fcce3407d.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E5%BE%AA%E7%8E%AF%E5%BC%8F%E5%86%9B%E7%94%A8%E6%9C%88%E7%9F%A9%E6%A0%B8%E5%BF%83/UI_ItemIcon_113080.png"/>循环式军用月矩核心</a> </td><td id="oe^A" class="" style="width:202.66666666666666px">46</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-8044-9a69-fac86af1a405"><td id="`iQE" class="" style="width:202.66666666666666px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E3%80%8C%E4%B9%90%E5%9B%AD%E3%80%8D%E7%9A%84%E6%95%99%E5%AF%BC%20301592a0f19e80c3841ddb563ccc803a.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E3%80%8C%E4%B9%90%E5%9B%AD%E3%80%8D%E7%9A%84%E6%95%99%E5%AF%BC/UI_ItemIcon_104359.png"/>「乐园」的教导</a> </td><td id="oe^A" class="" style="width:202.66666666666666px">9</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-8086-8b29-da563fffd14c"><td id="`iQE" class="" style="width:202.66666666666666px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E3%80%8C%E4%B9%90%E5%9B%AD%E3%80%8D%E7%9A%84%E6%8C%87%E5%BC%95%20301592a0f19e80e9ba78ebbd127e6490.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E3%80%8C%E4%B9%90%E5%9B%AD%E3%80%8D%E7%9A%84%E6%8C%87%E5%BC%95/UI_ItemIcon_104360.png"/>「乐园」的指引</a> </td><td id="oe^A" class="" style="width:202.66666666666666px">63</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-803a-a2f8-ef0ab54644c2"><td id="`iQE" class="" style="width:202.66666666666666px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E3%80%8C%E4%B9%90%E5%9B%AD%E3%80%8D%E7%9A%84%E5%93%B2%E5%AD%A6%20301592a0f19e801a8478d1fc143dc558.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E3%80%8C%E4%B9%90%E5%9B%AD%E3%80%8D%E7%9A%84%E5%93%B2%E5%AD%A6/UI_ItemIcon_104361.png"/>「乐园」的哲学</a> </td><td id="oe^A" class="" style="width:202.66666666666666px">114</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-809c-9c71-fd7378a3c1b0"><td id="`iQE" class="" style="width:202.66666666666666px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E8%9A%80%E7%81%AD%E7%9A%84%E7%81%B5%E7%8A%80%202fa592a0f19e80b8aa37e6f67ac80ca2.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E8%9A%80%E7%81%AD%E7%9A%84%E7%81%B5%E7%8A%80/UI_ItemIcon_113068.png"/>蚀灭的灵犀</a> </td><td id="oe^A" class="" style="width:202.66666666666666px">18</td></tr></div><div style="display:contents" dir="ltr"><tr id="301592a0-f19e-8002-a6e1-dcb330b1aba1"><td id="`iQE" class="" style="width:202.66666666666666px"><a href="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%9D%BE%E7%8F%80%E9%A6%99%20301592a0f19e80448d64e73cb46313bd.html"><img class="icon" src="../../%E6%9D%90%E6%96%99/%E6%97%A0%E6%A0%87%E9%A2%98/%E6%9D%BE%E7%8F%80%E9%A6%99/UI_ItemIcon_101269.png"/>松珀香</a> </td><td id="oe^A" class="" style="width:202.66666666666666px">168</td></tr></div></tbody></table></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">妮可少女的研究</summary><div class="indented"><div style="display:contents" dir="auto"><ul id="301592a0-f19e-804f-ab1d-d67745401bcb" class="bulleted-list"><li style="list-style-type:disc"><strong>产球 </strong>元素战技命中时，产 4 / 5 球，概率平分</li></ul></div></div></details></div></div></details></div><div style="display:contents" dir="auto"><p id="301592a0-f19e-8075-a4ba-c9b3dea4b7a1" class="">
+</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
